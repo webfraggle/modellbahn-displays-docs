@@ -48,14 +48,12 @@
 \setmainfont{IBM Plex Sans}[Ligatures=TeX]
 \setsansfont{IBM Plex Sans}[Ligatures=TeX]
 \setmonofont{JetBrains Mono}[Scale=MatchLowercase]
-% TeX Gyre Pagella (Palatino-Variante) für Überschriften –
-% direkt per OTF-Dateinamen, da fontconfig TeXLive-Fonts nicht sieht
-\newfontfamily\headingfont{texgyrepagella-regular.otf}[
-  BoldFont=texgyrepagella-bold.otf,
-  ItalicFont=texgyrepagella-italic.otf,
-  BoldItalicFont=texgyrepagella-bolditalic.otf,
+% IBM Plex Serif für Überschriften – aus fonts-ibm-plex, bereits
+% installiert und von fontconfig registriert. Bildet mit Plex
+% Sans im Body ein konsistentes typografisches Paar.
+\newfontfamily\headingfont{IBM Plex Serif}[
   Ligatures=TeX,
-  Numbers=OldStyle
+  Numbers=Lining
 ]
 
 % pandoc erwartet diesen Befehl für kompakte Listen
