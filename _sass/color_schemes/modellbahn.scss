@@ -1,48 +1,691 @@
-$link-color: #FD7014;
-$btn-primary-color: #FD7014;
-$base-button-color: #FD7014;
+// =============================================================
+// Modellbahn Displays – Color Scheme
+// Aesthetik: Editorial / Technisches Handwerksmagazin
+// Orange #FD7014 ist dominant. Türkis #037F8C nur isoliert in
+// Tip-/Hinweis-Karten. Akzentfarben werden nie kombiniert.
+// =============================================================
 
-$body-heading-color: #000000;
-$body-text-color: #000000;
+// --- just-the-docs Variablen ----------------------------------
+
+$body-font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+$mono-font-family: "JetBrains Mono", "SF Mono", Consolas, monospace;
+$root-font-size: 16px;
+$body-line-height: 1.65;
+$content-line-height: 1.7;
+
 $body-background-color: #ffffff;
 $sidebar-color: #ffffff;
 $search-background-color: #ffffff;
 $table-background-color: #ffffff;
-$code-background-color: #f6f6f6;
+$code-background-color: #f7f7f5;
 
-$nav-child-link-color: #000000;
+$body-text-color: #141414;
+$body-heading-color: #000000;
+$nav-child-link-color: #3a3a3a;
 
-$border-color: #eaeaea;
-
-// Akzentfarbe 2 (Türkis/Grün)
+$link-color: #FD7014;
+$btn-primary-color: #FD7014;
+$base-button-color: #FD7014;
 $feedback-color: #037F8C;
 
-.site-title {
-  color: #000000 !important;
+$border-color: #ececec;
+$search-result-preview-color: #555;
+
+// --- Globale Grundlagen ---------------------------------------
+
+:root {
+  --mbd-orange: #FD7014;
+  --mbd-orange-soft: #fff5ee;
+  --mbd-teal: #037F8C;
+  --mbd-ink: #000000;
+  --mbd-paper: #ffffff;
+  --mbd-rule: #ececec;
+  --mbd-muted: #6b6b6b;
 }
 
-.btn-primary,
-.label-blue {
-  background-color: #FD7014 !important;
-  background-image: none !important;
+html {
+  scroll-behavior: smooth;
 }
 
-a {
+body {
+  font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-feature-settings: "ss01", "cv11", "cv05";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  color: #141414;
+  background: #ffffff;
+  position: relative;
+}
+
+// Signatur-Element: dünne orange Linie am oberen Seitenrand
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #FD7014;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+// --- Typografie: Headlines ------------------------------------
+
+.main-content {
+  h1, h2, h3, h4, h5, h6 {
+    color: #000000;
+    font-feature-settings: "ss01";
+  }
+
+  h1 {
+    font-family: "Newsreader", Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    font-size: 3rem;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    margin: 0 0 2rem 0;
+    font-variation-settings: "opsz" 72;
+  }
+
+  h2 {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 500;
+    font-size: 1.875rem;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    margin: 3.5rem 0 1.25rem 0;
+    padding-left: 1.1rem;
+    position: relative;
+    font-variation-settings: "opsz" 48;
+    border-bottom: none !important;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.35em;
+      bottom: 0.3em;
+      width: 4px;
+      background: #FD7014;
+    }
+  }
+
+  h3 {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 600;
+    font-size: 1.0625rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 2.5rem 0 0.75rem 0;
+  }
+
+  h4 {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    margin: 2rem 0 0.5rem 0;
+    color: #000000;
+  }
+
+  // Giganten-Titel (Startseite, {: .fs-9 })
+  h1.fs-9,
+  .fs-9 {
+    font-family: "Newsreader", Georgia, serif !important;
+    font-size: 4.5rem !important;
+    line-height: 0.98 !important;
+    letter-spacing: -0.035em !important;
+    font-weight: 400 !important;
+    font-variation-settings: "opsz" 72;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .fs-5 {
+    font-family: "Newsreader", Georgia, serif !important;
+    font-size: 1.375rem !important;
+    font-weight: 300 !important;
+    line-height: 1.45 !important;
+    color: #3a3a3a !important;
+    letter-spacing: -0.005em !important;
+    font-variation-settings: "opsz" 24;
+  }
+}
+
+// --- Fließtext ------------------------------------------------
+
+.main-content {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #141414;
+
+  p {
+    margin: 0 0 1.25rem 0;
+    max-width: 68ch;
+  }
+
+  strong, b {
+    font-weight: 600;
+    color: #000000;
+  }
+
+  em {
+    font-style: italic;
+    color: #000000;
+  }
+
+  ul, ol {
+    max-width: 68ch;
+    margin: 0 0 1.5rem 1.25rem;
+    padding-left: 0;
+
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.65;
+
+      &::marker {
+        color: #FD7014;
+        font-weight: 500;
+      }
+    }
+
+    ul, ol {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  ol li::marker {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.875em;
+  }
+}
+
+// --- Links ----------------------------------------------------
+
+.main-content a:not(.btn):not(.site-button) {
   color: #FD7014;
-  &:hover { color: #037F8C; }
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  text-decoration-color: rgba(253, 112, 20, 0.35);
+  transition: text-decoration-color 0.18s ease, text-decoration-thickness 0.18s ease;
+  font-weight: 500;
+
+  &:hover {
+    text-decoration-color: #FD7014;
+    text-decoration-thickness: 2px;
+  }
 }
 
-h1, h2, h3, h4, h5, h6 {
+// --- Blockquote / Tip-Karte (Türkis, isoliert) ----------------
+
+.main-content blockquote {
+  background: #037F8C;
+  color: #ffffff;
+  border: none !important;
+  border-left: none !important;
+  padding: 1.4rem 1.75rem 1.4rem 3.5rem;
+  margin: 2rem 0;
+  position: relative;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  max-width: 68ch;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 1.25rem;
+    top: 1.55rem;
+    width: 1.35rem;
+    height: 1.35rem;
+    background: #ffffff;
+    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><line x1='12' y1='16' x2='12' y2='12'/><line x1='12' y1='8' x2='12.01' y2='8'/></svg>") center/contain no-repeat;
+    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><line x1='12' y1='16' x2='12' y2='12'/><line x1='12' y1='8' x2='12.01' y2='8'/></svg>") center/contain no-repeat;
+  }
+
+  p {
+    margin: 0;
+    color: #ffffff;
+    max-width: none;
+  }
+
+  p + p {
+    margin-top: 0.5rem;
+  }
+
+  strong, b {
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+
+  a {
+    color: #ffffff !important;
+    text-decoration: underline !important;
+    text-decoration-color: rgba(255, 255, 255, 0.6) !important;
+    text-underline-offset: 0.2em;
+
+    &:hover {
+      text-decoration-color: #ffffff !important;
+    }
+  }
+
+  code {
+    background: rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+  }
+}
+
+// --- Code -----------------------------------------------------
+
+.main-content code {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.86em;
+  background: #f7f7f5;
   color: #000000;
+  border: 1px solid #e8e8e3;
+  padding: 0.1em 0.42em;
+  border-radius: 2px;
+  font-weight: 500;
 }
 
-h2 {
-  border-bottom: 2px solid #FD7014;
-  padding-bottom: 0.2em;
+.main-content div.highlighter-rouge,
+.main-content figure.highlight,
+.main-content pre.highlight {
+  background: #fafaf8 !important;
+  border: 1px solid #e8e8e3;
+  border-left: 3px solid #000000;
+  border-radius: 0;
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  font-family: "JetBrains Mono", monospace;
+
+  pre, code {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    color: #141414;
+  }
 }
 
-blockquote {
-  border-left: 4px solid #037F8C;
-  background: #f6fdfb;
-  padding: 0.6em 1em;
+// Syntax Highlighting – gedämpft, orange-akzentuiert
+.highlight {
+  .k, .kd, .kn, .kp, .kr, .kt { color: #000000; font-weight: 600; }   // keywords
+  .s, .s1, .s2, .se, .sb      { color: #037F8C; }                      // strings (teal isoliert ok – im Code-Block)
+  .c, .c1, .cm                { color: #8a8a8a; font-style: italic; }  // comments
+  .mi, .mf, .mh               { color: #FD7014; font-weight: 500; }    // numbers
+  .na, .nb, .nc, .nf          { color: #000000; font-weight: 500; }    // names
+  .nt                         { color: #FD7014; }                       // tags
+  .nv, .vi                    { color: #141414; }                       // variables
+  .o, .ow                     { color: #000000; }                       // operators
+  .p                          { color: #6b6b6b; }                       // punctuation
+}
+
+// --- Tabellen -------------------------------------------------
+
+.main-content table {
+  border: 1px solid #000000;
+  border-collapse: collapse;
+  margin: 1.75rem 0;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.9375rem;
+  max-width: 100%;
+
+  thead {
+    background: #FD7014;
+
+    th {
+      color: #ffffff !important;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      padding: 0.85rem 1rem;
+      border: none !important;
+      border-bottom: 2px solid #000000 !important;
+      text-align: left;
+    }
+  }
+
+  tbody {
+    tr {
+      background: #ffffff !important;
+      border: none;
+      transition: background 0.1s ease;
+
+      &:hover {
+        background: #fafaf8 !important;
+      }
+    }
+
+    td {
+      padding: 0.85rem 1rem;
+      border: none;
+      border-bottom: 1px solid #ececec;
+      color: #141414;
+      vertical-align: top;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+  }
+}
+
+// --- Horizontal Rule (Taktung) --------------------------------
+
+.main-content hr {
+  border: none;
+  height: 1px;
+  background: #e8e8e3;
+  margin: 3.5rem 0;
+  position: relative;
+  overflow: visible;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -1px;
+    width: 2.5rem;
+    height: 3px;
+    background: #FD7014;
+  }
+}
+
+// --- Sidebar --------------------------------------------------
+
+.side-bar {
+  background: #ffffff;
+  border-right: 1px solid #ececec;
+}
+
+.site-header {
+  border-bottom: 1px solid #ececec;
+}
+
+.site-title {
+  font-family: "Newsreader", Georgia, serif !important;
+  font-weight: 500 !important;
+  font-size: 1.1875rem !important;
+  letter-spacing: -0.01em !important;
+  color: #000000 !important;
+  font-variation-settings: "opsz" 36;
+  padding: 1rem 1.5rem !important;
+
+  &:hover {
+    background: transparent !important;
+    color: #FD7014 !important;
+  }
+}
+
+.site-logo {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  height: 2.25rem;
+  width: 100%;
+}
+
+.nav-list .nav-list-item {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.875rem;
+
+  .nav-list-link {
+    color: #3a3a3a;
+    font-weight: 400;
+    padding: 0.55rem 1.5rem;
+    border-radius: 0;
+    transition: all 0.12s ease;
+    position: relative;
+
+    &:hover {
+      background: #fff5ee;
+      color: #FD7014;
+    }
+
+    &.active {
+      background: transparent;
+      color: #FD7014;
+      font-weight: 600;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.4em;
+        bottom: 0.4em;
+        width: 3px;
+        background: #FD7014;
+      }
+    }
+  }
+
+  .nav-list-expander {
+    color: #6b6b6b;
+
+    &:hover {
+      background: #fff5ee;
+      color: #FD7014;
+    }
+
+    svg {
+      height: 0.75rem;
+    }
+  }
+
+  .nav-list {
+    .nav-list-item {
+      font-size: 0.8125rem;
+
+      .nav-list-link {
+        padding-left: 2.25rem;
+        color: #555;
+
+        &.active {
+          color: #FD7014;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+// --- Search ---------------------------------------------------
+
+.search {
+  background: #ffffff;
+}
+
+.search-input-wrap {
+  background: #ffffff;
+  border-bottom: 1px solid #ececec;
+}
+
+.search-input {
+  font-family: "IBM Plex Sans", sans-serif;
+  background: #ffffff;
+  color: #000000;
+  font-size: 0.9375rem;
+
+  &::placeholder {
+    color: #9a9a9a;
+    font-style: italic;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.search-label .search-icon {
+  color: #6b6b6b;
+}
+
+.search-active .search-input-wrap {
+  box-shadow: 0 0 0 2px rgba(253, 112, 20, 0.2);
+  border-color: #FD7014;
+}
+
+.search-results {
+  border: 1px solid #ececec;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border-radius: 0;
+}
+
+.search-result {
+  font-family: "IBM Plex Sans", sans-serif;
+
+  &:hover,
+  &.active {
+    background: #fff5ee;
+  }
+}
+
+.search-result-title {
+  color: #000000;
+  font-weight: 600;
+}
+
+.search-result-highlight {
+  color: #FD7014;
+  font-weight: 600;
+}
+
+// --- Aux Nav (oben rechts) ------------------------------------
+
+.aux-nav {
+  .aux-nav-list-item {
+    font-family: "IBM Plex Sans", sans-serif;
+
+    a {
+      color: #000000;
+      text-decoration: none;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      padding: 0.4rem 0.9rem;
+      border: 1px solid #000000;
+      transition: all 0.15s ease;
+
+      &:hover {
+        background: #FD7014;
+        color: #ffffff;
+        border-color: #FD7014;
+      }
+    }
+  }
+}
+
+// --- Breadcrumbs ----------------------------------------------
+
+.breadcrumb-nav {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 2rem;
+
+  .breadcrumb-nav-list-item {
+    color: #6b6b6b;
+
+    &::before {
+      color: #c0c0c0;
+    }
+
+    a {
+      color: #6b6b6b;
+      text-decoration: none;
+
+      &:hover {
+        color: #FD7014;
+      }
+    }
+  }
+}
+
+// --- Footer ---------------------------------------------------
+
+.site-footer {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.8125rem;
+  color: #6b6b6b;
+  border-top: 1px solid #ececec;
+  padding-top: 1.25rem;
+  margin-top: 3rem;
+
+  a {
+    color: #6b6b6b;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.15s ease;
+
+    &:hover {
+      color: #FD7014;
+      border-bottom-color: #FD7014;
+    }
+  }
+}
+
+// --- Back to Top ----------------------------------------------
+
+.main-content + a,
+#back-to-top {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #6b6b6b;
+  text-decoration: none;
+
+  &:hover {
+    color: #FD7014;
+  }
+}
+
+// --- Print ----------------------------------------------------
+
+@media print {
+  body::before { display: none; }
+  .side-bar, .aux-nav { display: none; }
+
+  .main-content {
+    h1, h2 { page-break-after: avoid; }
+    blockquote { page-break-inside: avoid; }
+    table { page-break-inside: avoid; }
+
+    h2 {
+      padding-left: 0;
+      &::before { display: none; }
+    }
+
+    blockquote {
+      background: #ffffff;
+      color: #000000;
+      border: 1px solid #000000;
+      border-left: 4px solid #037F8C;
+      padding-left: 1.25rem;
+
+      &::before { display: none; }
+      p, strong, a { color: #000000; }
+    }
+  }
+}
+
+// --- Responsive Tuning ----------------------------------------
+
+@media (max-width: 799px) {
+  .main-content {
+    h1 { font-size: 2.25rem; }
+    h1.fs-9, .fs-9 { font-size: 2.75rem !important; }
+    h2 { font-size: 1.5rem; }
+  }
 }
