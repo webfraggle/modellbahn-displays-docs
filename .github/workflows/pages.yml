@@ -53,14 +53,21 @@ jobs:
 
       - name: Install Newsreader font
         run: |
-          mkdir -p ~/.local/share/fonts
-          BASE="https://raw.githubusercontent.com/google/fonts/main/ofl/newsreader/static"
-          for style in Regular Medium SemiBold Italic MediumItalic SemiBoldItalic; do
-            wget -q "${BASE}/Newsreader-${style}.ttf" \
-              -O "$HOME/.local/share/fonts/Newsreader-${style}.ttf"
-          done
+          set -e
+          mkdir -p "$HOME/.local/share/fonts"
+          rm -rf /tmp/gfonts
+          git clone --depth 1 --filter=blob:none --sparse \
+            https://github.com/google/fonts.git /tmp/gfonts
+          git -C /tmp/gfonts sparse-checkout set --no-cone ofl/newsreader
+          # static/ enthält die klassischen TTFs; Fallback auf das Variable-Font-TTF
+          if ls /tmp/gfonts/ofl/newsreader/static/*.ttf >/dev/null 2>&1; then
+            cp /tmp/gfonts/ofl/newsreader/static/*.ttf "$HOME/.local/share/fonts/"
+          else
+            cp /tmp/gfonts/ofl/newsreader/*.ttf "$HOME/.local/share/fonts/"
+          fi
           fc-cache -f
-          fc-list | grep -i newsreader || (echo "Newsreader nicht gefunden"; exit 1)
+          echo "--- Installierte Newsreader-Faces ---"
+          fc-list | grep -i newsreader || { echo "FEHLER: keine Newsreader-Faces gefunden"; exit 1; }
 
       - name: Generate PDFs
         run: python3 scripts/generate_pdfs.py
