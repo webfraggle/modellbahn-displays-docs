@@ -5,6 +5,7 @@ gem "just-the-docs", "~> 0.10"
 gem "jekyll-remote-theme"
 gem "jekyll-seo-tag"
 gem "jekyll-sitemap"
+gem "jekyll-relative-links"
 
 # Windows / JRuby compatibility
 platforms :mingw, :x64_mingw, :mswin, :jruby do

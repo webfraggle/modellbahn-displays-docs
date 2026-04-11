@@ -29,7 +29,7 @@ Konsequenz für Texte und Anleitungen:
 
 ## Design-System
 
-- Schrift: Newsreader (Serif) für H1/H2, IBM Plex Sans für Body, JetBrains Mono für Code
+- Schrift: IBM Plex Serif für H1/H2, IBM Plex Sans für Body, JetBrains Mono für Code (identisch in Web und PDF)
 - Farben: Orange `#FD7014` als dominanter Akzent, Türkis `#037F8C` **nur isoliert** in Blockquotes/Tip-Karten — **Akzentfarben nie kombinieren**
 - Text auf Akzentfarben immer weiß
 - Weißer Hintergrund, schwarze Schrift

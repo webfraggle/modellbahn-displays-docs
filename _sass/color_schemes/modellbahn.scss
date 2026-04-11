@@ -80,7 +80,7 @@ body::before {
   }
 
   h1 {
-    font-family: "Newsreader", Georgia, "Times New Roman", serif;
+    font-family: "IBM Plex Serif", Georgia, serif;
     font-weight: 400;
     font-size: 3rem;
     line-height: 1.05;
@@ -90,7 +90,7 @@ body::before {
   }
 
   h2 {
-    font-family: "Newsreader", Georgia, serif;
+    font-family: "IBM Plex Serif", Georgia, serif;
     font-weight: 500;
     font-size: 1.875rem;
     line-height: 1.2;
@@ -133,7 +133,7 @@ body::before {
   // Giganten-Titel (Startseite, {: .fs-9 })
   h1.fs-9,
   .fs-9 {
-    font-family: "Newsreader", Georgia, serif !important;
+    font-family: "IBM Plex Serif", Georgia, serif !important;
     font-size: 4.5rem !important;
     line-height: 0.98 !important;
     letter-spacing: -0.035em !important;
@@ -143,7 +143,7 @@ body::before {
   }
 
   .fs-5 {
-    font-family: "Newsreader", Georgia, serif !important;
+    font-family: "IBM Plex Serif", Georgia, serif !important;
     font-size: 1.375rem !important;
     font-weight: 300 !important;
     line-height: 1.45 !important;
@@ -454,7 +454,7 @@ body::before {
 }
 
 .site-title {
-  font-family: "Newsreader", Georgia, serif !important;
+  font-family: "IBM Plex Serif", Georgia, serif !important;
   font-weight: 500 !important;
   font-size: 1.1875rem !important;
   letter-spacing: -0.01em !important;
