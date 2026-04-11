@@ -49,8 +49,11 @@
 \setsansfont{IBM Plex Sans}[Ligatures=TeX]
 \setmonofont{JetBrains Mono}[Scale=MatchLowercase]
 % TeX Gyre Pagella (Palatino-Variante) für Überschriften –
-% im texlive-fonts-extra Paket enthalten, sehr elegant, druckfest
-\newfontfamily\headingfont{TeX Gyre Pagella}[
+% direkt per OTF-Dateinamen, da fontconfig TeXLive-Fonts nicht sieht
+\newfontfamily\headingfont{texgyrepagella-regular.otf}[
+  BoldFont=texgyrepagella-bold.otf,
+  ItalicFont=texgyrepagella-italic.otf,
+  BoldItalicFont=texgyrepagella-bolditalic.otf,
   Ligatures=TeX,
   Numbers=OldStyle
 ]
