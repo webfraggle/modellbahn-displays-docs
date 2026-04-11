@@ -1,0 +1,48 @@
+$link-color: #FD7014;
+$btn-primary-color: #FD7014;
+$base-button-color: #FD7014;
+
+$body-heading-color: #000000;
+$body-text-color: #000000;
+$body-background-color: #ffffff;
+$sidebar-color: #ffffff;
+$search-background-color: #ffffff;
+$table-background-color: #ffffff;
+$code-background-color: #f6f6f6;
+
+$nav-child-link-color: #000000;
+
+$border-color: #eaeaea;
+
+// Akzentfarbe 2 (Türkis/Grün)
+$feedback-color: #037F8C;
+
+.site-title {
+  color: #000000 !important;
+}
+
+.btn-primary,
+.label-blue {
+  background-color: #FD7014 !important;
+  background-image: none !important;
+}
+
+a {
+  color: #FD7014;
+  &:hover { color: #037F8C; }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #000000;
+}
+
+h2 {
+  border-bottom: 2px solid #FD7014;
+  padding-bottom: 0.2em;
+}
+
+blockquote {
+  border-left: 4px solid #037F8C;
+  background: #f6fdfb;
+  padding: 0.6em 1em;
+}

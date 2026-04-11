@@ -1,0 +1,45 @@
+title: Modellbahn Displays – Anleitungen
+description: Anleitungen und Dokumentation zu den Displays von modellbahn-displays.de
+url: https://docs.modellbahn-displays.de
+baseurl: ""
+lang: de
+
+remote_theme: just-the-docs/just-the-docs
+
+color_scheme: modellbahn
+
+logo: /assets/images/logo.png
+
+search_enabled: true
+search:
+  heading_level: 3
+  previews: 2
+  preview_words_before: 3
+  preview_words_after: 3
+  tokenizer_separator: /[\s\-/]+/
+  rel_url: true
+  button: false
+
+heading_anchors: true
+
+aux_links:
+  "modellbahn-displays.de":
+    - "https://www.modellbahn-displays.de"
+
+footer_content: "© Modellbahn Displays · <a href=\"https://www.modellbahn-displays.de/impressum/\">Impressum</a> · <a href=\"https://www.modellbahn-displays.de/datenschutz/\">Datenschutz</a>"
+
+back_to_top: true
+back_to_top_text: "Nach oben"
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+  - README.md
+  - CLAUDE.md
