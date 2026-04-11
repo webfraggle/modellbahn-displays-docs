@@ -294,22 +294,33 @@ body::before {
   font-weight: 500;
 }
 
-.main-content div.highlighter-rouge,
-.main-content figure.highlight,
-.main-content pre.highlight {
+// Nur der äußerste Wrapper bekommt Rahmen/Hintergrund –
+// alle inneren Layer (div.highlight, pre, code) werden platt-
+// gemacht, sonst entstehen Doppel-Rahmen bei just-the-docs.
+.main-content div.highlighter-rouge {
   background: #fafaf8 !important;
-  border: 1px solid #e8e8e3;
-  border-left: 3px solid #000000;
-  border-radius: 0;
+  border: 1px solid #e8e8e3 !important;
+  border-left: 3px solid #000000 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
   margin: 1.5rem 0;
   padding: 1rem 1.25rem;
   overflow-x: auto;
   font-family: "JetBrains Mono", monospace;
 
-  pre, code {
+  .highlight,
+  figure.highlight,
+  pre,
+  pre.highlight,
+  code {
     background: transparent !important;
+    background-color: transparent !important;
     border: none !important;
+    box-shadow: none !important;
     padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    font-family: "JetBrains Mono", monospace;
     font-size: 0.8125rem;
     line-height: 1.6;
     color: #141414;
