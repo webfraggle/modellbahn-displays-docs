@@ -1,6 +1,6 @@
 ---
 title: Einrichtung & Bedienung
-layout: default
+layout: anleitung
 parent: Tankstellenanzeige
 nav_order: 1
 ---

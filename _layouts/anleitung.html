@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+{%- assign dir_parts = page.dir | split: "/" -%}
+{%- assign display_slug = dir_parts[2] -%}
+
+{%- if display_slug and page.parent -%}
+<div class="pdf-download" role="complementary">
+  <a href="{{ '/assets/pdf/' | append: display_slug | append: '.pdf' | relative_url }}"
+     download
+     aria-label="Gesamte Anleitung zu {{ page.parent }} als PDF herunterladen">
+    <span class="pdf-download-icon" aria-hidden="true"></span>
+    <span class="pdf-download-label">Gesamte Anleitung als PDF</span>
+  </a>
+</div>
+{%- endif -%}
+
+{{ content }}

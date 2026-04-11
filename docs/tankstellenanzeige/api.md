@@ -1,6 +1,6 @@
 ---
 title: Eigene API-URL
-layout: default
+layout: anleitung
 parent: Tankstellenanzeige
 nav_order: 2
 ---

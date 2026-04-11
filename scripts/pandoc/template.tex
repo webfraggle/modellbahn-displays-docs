@@ -1,0 +1,255 @@
+% =============================================================
+% Modellbahn Displays – pandoc/xelatex Template
+% =============================================================
+
+\documentclass[$if(fontsize)$$fontsize$,$endif$$if(papersize)$$papersize$paper,$endif$oneside]{$if(documentclass)$$documentclass$$else$article$endif$}
+
+% --- Packages ----------------------------------------------------
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage[spelling=new,babelshorthands=true]{german}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage[most]{tcolorbox}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{upquote}
+\usepackage{fvextra}
+
+% --- Seitenformat ------------------------------------------------
+\geometry{
+  a4paper,
+  left=26mm,
+  right=26mm,
+  top=32mm,
+  bottom=30mm,
+  headheight=14pt,
+  headsep=10mm,
+  footskip=16mm
+}
+
+% --- Farben ------------------------------------------------------
+\definecolor{mbdorange}{HTML}{FD7014}
+\definecolor{mbdteal}{HTML}{037F8C}
+\definecolor{mbdink}{HTML}{0a0a0a}
+\definecolor{mbdmuted}{HTML}{6b6b6b}
+\definecolor{mbdrule}{HTML}{ececec}
+\definecolor{mbdcodebg}{HTML}{fafaf8}
+
+% --- Schriften ---------------------------------------------------
+\setmainfont{IBM Plex Sans}[
+  Ligatures=TeX,
+  Numbers={Lining,Proportional},
+  Scale=1.0
+]
+\setsansfont{IBM Plex Sans}[Ligatures=TeX]
+\setmonofont{JetBrains Mono}[
+  Scale=MatchLowercase,
+  Contextuals={Alternate}
+]
+\newfontfamily\headingfont{Newsreader}[
+  Ligatures=TeX,
+  Numbers=Lining
+]
+
+% --- Überschriften ----------------------------------------------
+\titleformat{\section}
+  {\headingfont\fontsize{26}{30}\selectfont\color{mbdink}}
+  {}{0pt}
+  {\textcolor{mbdorange}{\rule[-3pt]{4pt}{26pt}}\hspace*{14pt}}
+\titlespacing*{\section}{0pt}{2.2em}{1em}
+
+\titleformat{\subsection}
+  {\headingfont\fontsize{17}{21}\selectfont\color{mbdink}}
+  {}{0pt}
+  {\textcolor{mbdorange}{\rule[-2pt]{3pt}{18pt}}\hspace*{10pt}}
+\titlespacing*{\subsection}{0pt}{1.7em}{0.5em}
+
+\titleformat{\subsubsection}
+  {\sffamily\fontsize{10}{12}\selectfont\bfseries\MakeUppercase\color{mbdink}}
+  {}{0pt}
+  {}
+\titlespacing*{\subsubsection}{0pt}{1.4em}{0.4em}
+
+\titleformat{\paragraph}[runin]
+  {\sffamily\bfseries\color{mbdink}}
+  {}{0pt}
+  {}
+
+% --- Tip-Box (ersetzt Blockquote) --------------------------------
+\newtcolorbox{tipbox}{
+  enhanced,
+  colback=mbdteal,
+  colframe=mbdteal,
+  coltext=white,
+  sharp corners,
+  boxrule=0pt,
+  left=18pt,
+  right=18pt,
+  top=13pt,
+  bottom=13pt,
+  before skip=16pt,
+  after skip=16pt,
+  breakable,
+  fontupper=\normalsize
+}
+
+% Pandocs quote-Umgebung durch Tip-Box ersetzen
+\AtBeginDocument{%
+  \let\oldquote\quote
+  \let\oldendquote\endquote
+  \renewenvironment{quote}{\begin{tipbox}}{\end{tipbox}}%
+}
+
+% Innerhalb der Tip-Box: Links weiß
+\newcommand{\tipboxlinks}{\hypersetup{urlcolor=white, linkcolor=white}}
+
+% --- Listen ------------------------------------------------------
+\setlist[itemize]{
+  leftmargin=1.6em,
+  itemsep=3pt,
+  topsep=4pt,
+  label={\textcolor{mbdorange}{\textbullet}}
+}
+\setlist[enumerate]{
+  leftmargin=1.8em,
+  itemsep=3pt,
+  topsep=4pt,
+  label={\textcolor{mbdorange}{\arabic*.}}
+}
+
+% --- Tabellen ----------------------------------------------------
+\renewcommand{\arraystretch}{1.4}
+% Orange Kopfzeile
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+% --- Code-Blöcke -------------------------------------------------
+% pandoc erzeugt \begin{Shaded}\begin{Highlighting}...
+% Wir wrappen Shaded in eine tcolorbox mit schwarzem Linksbalken.
+$if(highlighting-macros)$
+$highlighting-macros$
+\renewenvironment{Shaded}
+  {\begin{tcolorbox}[
+    enhanced,
+    colback=mbdcodebg,
+    colframe=mbdink,
+    sharp corners,
+    boxrule=0pt,
+    leftrule=2.5pt,
+    left=10pt,
+    right=10pt,
+    top=7pt,
+    bottom=7pt,
+    before skip=12pt,
+    after skip=12pt,
+    breakable,
+    fontupper=\small
+  ]}
+  {\end{tcolorbox}}
+$endif$
+
+% Inline-Code leicht abheben
+\let\oldtexttt\texttt
+\renewcommand{\texttt}[1]{{\small\oldtexttt{#1}}}
+
+% --- Hyperlinks --------------------------------------------------
+\hypersetup{
+  colorlinks=true,
+  linkcolor=mbdink,
+  filecolor=mbdorange,
+  urlcolor=mbdorange,
+  citecolor=mbdorange,
+  breaklinks=true,
+  pdftitle={$title$ – Modellbahn Displays},
+  pdfauthor={Modellbahn Displays},
+  pdfcreator={pandoc + xelatex},
+  pdfsubject={Anleitung},
+  bookmarksnumbered=false,
+  pdfstartview={FitH}
+}
+\urlstyle{same}
+
+% --- Kopf- und Fußzeile -----------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize\color{mbdmuted}$title$}
+\fancyfoot[C]{\footnotesize\color{mbdmuted}docs.modellbahn-displays.de}
+\fancyfoot[R]{\footnotesize\color{mbdmuted}\thepage}
+
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \fancyfoot[L]{\footnotesize\color{mbdmuted}$title$}%
+  \fancyfoot[C]{\footnotesize\color{mbdmuted}docs.modellbahn-displays.de}%
+  \fancyfoot[R]{\footnotesize\color{mbdmuted}\thepage}%
+}
+
+% --- Absatz & Umbruch -------------------------------------------
+\widowpenalty=10000
+\clubpenalty=10000
+\setlength{\emergencystretch}{3em}
+\raggedbottom
+
+% --- Abstände bei horizontaler Linie ----------------------------
+\let\oldrule\rule
+% \rule (für ---) durch dezente graue Linie ersetzen
+\providecommand{\pandocbounded}[1]{#1}
+
+% --- Dokument ---------------------------------------------------
+\begin{document}
+
+% ===== Titelseite =====
+\begin{titlepage}
+\thispagestyle{empty}
+\vspace*{3.5cm}
+\noindent
+$if(logo)$\includegraphics[height=3.2cm]{$logo$}$endif$\par
+\vspace{2.8cm}
+
+\noindent
+{\headingfont\fontsize{44}{48}\selectfont\color{mbdink} $title$\par}
+\vspace{0.6cm}
+$if(subtitle)$
+{\headingfont\fontsize{22}{26}\selectfont\itshape\color{mbdmuted} $subtitle$\par}
+$endif$
+
+\vspace{1.4cm}
+\noindent\textcolor{mbdorange}{\rule{4.5cm}{2.5pt}}
+
+\vfill
+
+\noindent
+{\footnotesize\color{mbdmuted}
+Stand: $date$\\[2pt]
+\texttt{docs.modellbahn-displays.de}\par
+}
+\end{titlepage}
+
+% ===== Inhaltsverzeichnis =====
+$if(toc)$
+\pagenumbering{roman}
+\setcounter{page}{1}
+{%
+  \hypersetup{linkcolor=mbdink}%
+  \renewcommand{\contentsname}{Inhalt}%
+  \tableofcontents%
+}
+\clearpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+$endif$
+
+% ===== Inhalt =====
+$body$
+
+\end{document}

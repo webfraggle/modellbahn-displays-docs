@@ -639,6 +639,47 @@ body::before {
   }
 }
 
+// --- PDF-Download-Button --------------------------------------
+
+.main-content .pdf-download {
+  margin: 0 0 2.25rem 0;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    padding: 0.65rem 1.1rem;
+    color: #000000;
+    background: #ffffff;
+    border: 1.5px solid #000000;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    line-height: 1;
+
+    &:hover {
+      background: #FD7014 !important;
+      color: #ffffff !important;
+      border-color: #FD7014 !important;
+      text-decoration: none !important;
+    }
+  }
+
+  .pdf-download-icon {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    background: currentColor;
+    flex-shrink: 0;
+    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><path d='M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4'/><polyline points='7 10 12 15 17 10'/><line x1='12' y1='15' x2='12' y2='3'/></svg>") center/contain no-repeat;
+    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><path d='M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4'/><polyline points='7 10 12 15 17 10'/><line x1='12' y1='15' x2='12' y2='3'/></svg>") center/contain no-repeat;
+  }
+}
+
 // --- Breadcrumbs ----------------------------------------------
 
 .breadcrumb-nav {
