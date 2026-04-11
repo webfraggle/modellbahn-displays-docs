@@ -9,15 +9,21 @@ nav_order: 1
 
 Diese Anleitung beschreibt die Ersteinrichtung und Konfiguration der Tankstellenanzeige.
 
+## Inhalt
+{: .no_toc .text-delta }
+
+- TOC
+{:toc}
+
 ---
 
-## 1. Anschluss und erster Start
+## Anschluss und erster Start
 
 Verbinde den Controller per USB-C-Kabel mit einer Stromquelle (USB-Netzteil, Modellbahn-Trafo mit USB-Ausgang oder Powerbank). Prüfe, dass das Flachbandkabel zwischen Controller und Display richtig eingesteckt ist. Nach wenigen Sekunden erscheint das Boot-Logo auf dem Display und die LED am Controller leuchtet.
 
 ---
 
-## 2. WLAN einrichten
+## WLAN einrichten
 
 Beim ersten Einschalten (oder wenn keine WLAN-Daten gespeichert sind) erstellt die Tankstellenanzeige ein eigenes WLAN-Netzwerk. Die Zugangsdaten werden auf dem Display angezeigt, wenn du kurz die Taste **BTN 0** am Controller drückst:
 
@@ -44,7 +50,7 @@ Die LED am Controller zeigt dir den Status an:
 
 ---
 
-## 3. IP-Adresse herausfinden
+## IP-Adresse herausfinden
 
 Sobald die Tankstellenanzeige mit deinem WLAN verbunden ist, bekommt sie eine IP-Adresse. Diese brauchst du, um das Webinterface zu öffnen.
 
@@ -54,7 +60,7 @@ Gib diese Adresse in einem Browser auf deinem Computer oder Smartphone ein.
 
 ---
 
-## 4. Webinterface
+## Webinterface
 
 Auf der Startseite findest du drei Bereiche:
 
@@ -66,13 +72,13 @@ Klicke auf **Konfiguration**, um zu den Einstellungen zu gelangen.
 
 ---
 
-## 5. Template wählen
+## Template wählen
 
 Unter **Template** findest du eine Liste aller verfügbaren Anzeige-Designs (z.B. Aral, Shell, LED). Wähle das Template, das zu deiner Tankstelle passt.
 
 ---
 
-## 6. Tankstellen-ID eingeben
+## Tankstellen-ID eingeben
 
 Wenn du Live-Preise für eine bestimmte Tankstelle anzeigen möchtest, musst du die Tankstellen-ID eingeben. So findest du die ID:
 
@@ -87,7 +93,7 @@ Wenn du Live-Preise für eine bestimmte Tankstelle anzeigen möchtest, musst du 
 
 ---
 
-## 7. Preise einstellen
+## Preise einstellen
 
 Im Bereich **Preise** siehst du alle Kraftstoffarten. Es gibt zwei Gruppen:
 
@@ -101,19 +107,19 @@ Die relativen Preise musst du nur einmal einstellen — danach werden sie automa
 
 ---
 
-## 8. Zeilen zuordnen
+## Zeilen zuordnen
 
 Im Bereich **Zeilen** legst du fest, welche Kraftstoffart in welcher Zeile auf dem Display angezeigt wird. Du hast bis zu 6 Zeilen zur Verfügung. Nicht benötigte Zeilen einfach leer lassen.
 
 ---
 
-## 9. Update-Intervall
+## Update-Intervall
 
 Das **Intervall** legt fest, wie oft die Preise automatisch online abgerufen werden (in Minuten). Der Mindestwert ist 5 Minuten, um den Preisserver nicht zu überlasten.
 
 ---
 
-## 10. API-URL (für Fortgeschrittene)
+## API-URL (für Fortgeschrittene)
 
 Das Feld **API-URL** kann normalerweise leer gelassen werden — die Tankstellenanzeige nutzt dann automatisch den richtigen Server. Nur wenn du einen eigenen Preisserver betreibst, trägst du hier dessen URL ein. Details siehe [Eigene API-URL](api.md).
 
@@ -121,7 +127,7 @@ Das Feld **API-URL** kann normalerweise leer gelassen werden — die Tankstellen
 
 ---
 
-## 11. Einstellungen speichern
+## Einstellungen speichern
 
 Wenn du alle Einstellungen vorgenommen hast, klicke auf **Konfiguration speichern**. In der Statusleiste am unteren Rand erscheint **Gespeichert** und die Anzeige auf dem Display aktualisiert sich.
 

@@ -9,6 +9,12 @@ nav_order: 2
 
 Diese Anleitung richtet sich an Nutzer, die eine eigene Datenquelle für die Preisanzeige verwenden möchten, anstatt die voreingestellte Live-Preisabfrage zu nutzen.
 
+## Inhalt
+{: .no_toc .text-delta }
+
+- TOC
+{:toc}
+
 ---
 
 ## Überblick
