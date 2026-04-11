@@ -444,37 +444,43 @@ body::before {
     font-weight: 400;
     padding: 0.55rem 1.5rem;
     border-radius: 0;
-    transition: all 0.12s ease;
+    transition: background-color 0.12s ease, color 0.12s ease;
     position: relative;
 
+    // Gradient-Fade aus just-the-docs komplett entfernen
+    background-image: none !important;
+    background: transparent;
+
+    &::before { display: none; }
+
     &:hover {
-      background: #fff5ee;
-      color: #FD7014;
+      background-image: none !important;
+      background-color: #FD7014 !important;
+      color: #ffffff !important;
     }
 
     &.active {
-      background: transparent;
-      color: #FD7014;
+      background-image: none !important;
+      background-color: #FD7014 !important;
+      color: #ffffff !important;
       font-weight: 600;
 
-      &::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0.4em;
-        bottom: 0.4em;
-        width: 3px;
-        background: #FD7014;
+      &:hover {
+        background-color: #FD7014 !important;
+        color: #ffffff !important;
       }
     }
   }
 
   .nav-list-expander {
     color: #6b6b6b;
+    background-image: none !important;
+    background: transparent;
 
     &:hover {
-      background: #fff5ee;
-      color: #FD7014;
+      background-image: none !important;
+      background-color: #FD7014 !important;
+      color: #ffffff !important;
     }
 
     svg {
@@ -490,9 +496,16 @@ body::before {
         padding-left: 2.25rem;
         color: #555;
 
+        &:hover,
         &.active {
-          color: #FD7014;
+          background-image: none !important;
+          background-color: #FD7014 !important;
+          color: #ffffff !important;
           font-weight: 500;
+        }
+
+        &.active {
+          font-weight: 600;
         }
       }
     }
