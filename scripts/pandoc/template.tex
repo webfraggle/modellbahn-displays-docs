@@ -45,20 +45,18 @@
 \definecolor{mbdcodebg}{HTML}{fafaf8}
 
 % --- Schriften ---------------------------------------------------
-\setmainfont{IBM Plex Sans}[
-  Ligatures=TeX,
-  Numbers={Lining,Proportional},
-  Scale=1.0
-]
+\setmainfont{IBM Plex Sans}[Ligatures=TeX]
 \setsansfont{IBM Plex Sans}[Ligatures=TeX]
-\setmonofont{JetBrains Mono}[
-  Scale=MatchLowercase,
-  Contextuals={Alternate}
-]
-\newfontfamily\headingfont{Newsreader}[
+\setmonofont{JetBrains Mono}[Scale=MatchLowercase]
+% TeX Gyre Pagella (Palatino-Variante) für Überschriften –
+% im texlive-fonts-extra Paket enthalten, sehr elegant, druckfest
+\newfontfamily\headingfont{TeX Gyre Pagella}[
   Ligatures=TeX,
-  Numbers=Lining
+  Numbers=OldStyle
 ]
+
+% pandoc erwartet diesen Befehl für kompakte Listen
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 % --- Überschriften ----------------------------------------------
 \titleformat{\section}
