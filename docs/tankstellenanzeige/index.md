@@ -8,4 +8,4 @@ permalink: /docs/tankstellenanzeige/
 
 # Tankstellenanzeige
 
-Anleitungen rund um die Tankstellenanzeige: Ersteinrichtung, Konfiguration und Schnittstellen.
+Anleitungen rund um die Tankstellenanzeige: Ersteinrichtung, Konfiguration und erweiterte Funktionen.

@@ -29,15 +29,15 @@ Das Flachbandkabel hat auf beiden Seiten einen flachen Stecker. An jedem Anschlu
 
 ### Am Controller (Schritt 1–3)
 
-1. **Klappe öffnen** — Klappe die kleine schwarze Verriegelung am FFC-Anschluss des Controllers vorsichtig nach oben (Schritt 1).
-2. **Kabel einstecken** — Schiebe das Flachbandkabel mit der blanken Kontaktseite nach unten in den Anschluss. Das Kabel sollte ohne Kraft hineingleiten (Schritt 2).
+1. **Klappe öffnen** — Klappe die kleine schwarze Verriegelung am Flachbandkabel-Anschluss des Controllers vorsichtig nach oben (Schritt 1).
+2. **Kabel einstecken** — Schiebe das Flachbandkabel mit der blanken Kontaktseite (die Seite mit den sichtbaren Metallstreifen) nach unten in den Anschluss. Das Kabel sollte ohne Kraft hineingleiten (Schritt 2).
 3. **Klappe schließen** — Drücke die Verriegelung vorsichtig wieder nach unten, bis sie einrastet. Das Kabel sitzt jetzt fest (Schritt 3).
 
 ### Am Display (Schritt 4–6)
 
 {:start="4"}
-4. **Klappe öffnen** — Klappe die Verriegelung am FFC-Anschluss des Displays vorsichtig nach oben (Schritt 4).
-5. **Kabel einstecken** — Schiebe das andere Ende des Flachbandkabels in den Anschluss (Schritt 5).
+4. **Klappe öffnen** — Klappe die Verriegelung am Flachbandkabel-Anschluss des Displays vorsichtig nach oben (Schritt 4).
+5. **Kabel einstecken** — Schiebe das andere Ende des Flachbandkabels mit der Kontaktseite nach unten in den Anschluss (Schritt 5).
 6. **Klappe schließen** — Drücke die Verriegelung wieder nach unten, bis sie einrastet (Schritt 6).
 
 > **Tipp:** Wende beim Öffnen und Schließen der Klappen keine Gewalt an. Die Verriegelungen sind klein und empfindlich. Wenn sich das Kabel nicht leicht einschieben lässt, prüfe ob die Klappe wirklich ganz offen ist.

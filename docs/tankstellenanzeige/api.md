@@ -9,6 +9,8 @@ nav_order: 2
 
 Diese Anleitung richtet sich an Nutzer, die eine eigene Datenquelle für die Preisanzeige verwenden möchten, anstatt die voreingestellte Live-Preisabfrage zu nutzen.
 
+> **Hinweis:** Diese Seite ist nur relevant, wenn du die Preise über einen eigenen Server steuern möchtest. Für den normalen Betrieb mit Live-Preisen brauchst du das nicht.
+
 ## Inhalt
 {: .no_toc .text-delta }
 
@@ -53,7 +55,7 @@ http://meinserver.de/preise.php?format=json&t=meine-id-123
 
 ## Erwartetes JSON-Format
 
-Dein Server muss ein JSON-Objekt mit den Kraftstoffpreisen zurückgeben. Die drei Schlüssel `e5`, `e10` und `diesel` werden erwartet:
+Dein Server muss ein JSON-Objekt (ein standardisiertes Textformat für Daten) mit den Kraftstoffpreisen zurückgeben. Die drei Schlüssel `e5`, `e10` und `diesel` werden erwartet:
 
 ```json
 {"e5": 2.15, "e10": 2.09, "diesel": 1.89}

@@ -5,7 +5,7 @@ parent: Tankstellenanzeige
 nav_order: 1
 ---
 
-# Tankstellenanzeige — Anleitung
+# Tankstellenanzeige — Einrichtung & Bedienung
 
 Diese Anleitung beschreibt die Ersteinrichtung und Konfiguration der Tankstellenanzeige.
 
@@ -19,7 +19,7 @@ Diese Anleitung beschreibt die Ersteinrichtung und Konfiguration der Tankstellen
 
 ## Anschluss und erster Start
 
-Prüfe, dass das Flachbandkabel zwischen Controller und Display richtig eingesteckt ist (siehe [Flachbandkabel anschließen](../allgemein/flachbandkabel-anschliessen.md)). Verbinde den Controller per USB-C-Kabel mit einer Stromquelle (USB-Netzteil, Modellbahn-Trafo mit USB-Ausgang oder Powerbank). Nach wenigen Sekunden erscheint das Boot-Logo auf dem Display und die LED am Controller leuchtet.
+Prüfe, dass das Flachbandkabel zwischen Controller und Display richtig eingesteckt ist (siehe [Flachbandkabel anschließen](../allgemein/flachbandkabel-anschliessen.md)). Verbinde den Controller per USB-C-Kabel mit einer Stromquelle (USB-Netzteil, Modellbahn-Trafo mit USB-Ausgang oder Powerbank). Nach wenigen Sekunden erscheint das Startbild auf dem Display und die LED am Controller leuchtet.
 
 ---
 
@@ -35,7 +35,7 @@ Auf der Startseite findest du drei Bereiche:
 
 - **Konfiguration** — Preise, Template und Einstellungen
 - **WLAN-Konfiguration** — WLAN-Zugangsdaten ändern
-- **Controller-Upgrade** — Firmware aktualisieren
+- **Controller-Upgrade** — Software des Controllers aktualisieren (Firmware-Update)
 
 Klicke auf **Konfiguration**, um zu den Einstellungen zu gelangen.
 
@@ -43,7 +43,7 @@ Klicke auf **Konfiguration**, um zu den Einstellungen zu gelangen.
 
 ## Template wählen
 
-Unter **Template** findest du eine Liste aller verfügbaren Anzeige-Designs (z.B. Aral, Shell, LED). Wähle das Template, das zu deiner Tankstelle passt.
+Unter **Template** (Vorlage) findest du eine Liste aller verfügbaren Anzeige-Designs (z.B. Aral, Shell, LED). Wähle das Template, das zu deiner Tankstelle passt.
 
 ---
 
@@ -67,10 +67,10 @@ Wenn du Live-Preise für eine bestimmte Tankstelle anzeigen möchtest, musst du 
 Im Bereich **Preise** siehst du alle Kraftstoffarten. Es gibt zwei Gruppen:
 
 **Absolute Preise** (oberer Bereich):
-- **e5, e10, diesel** — Hier stehen die tatsächlichen Preise (z.B. 1,85). Bei eingerichteter Tankstellen-ID werden diese drei Preise automatisch online aktualisiert.
+- **e5** (Super), **e10** (Super E10), **diesel** (Diesel) — Hier stehen die tatsächlichen Preise (z.B. 1,85). Bei eingerichteter Tankstellen-ID werden diese drei Preise automatisch online aktualisiert.
 
 **Relative Preise** (unterer Bereich, unterhalb der Trennlinie):
-- **superplus, lkwdiesel, lpg, erdgas, adblue** — Diese werden als Auf- oder Abschlag zu e10 berechnet. Beispiel: SuperPlus ist oft 10 Cent teurer als E10 — dann gibst du hier `+0,10` ein. Für LKW-Diesel, der 5 Cent günstiger ist, trägst du `-0,05` ein.
+- **superplus** (SuperPlus), **lkwdiesel** (LKW-Diesel), **lpg** (Autogas), **erdgas** (Erdgas/CNG), **adblue** (AdBlue) — Diese werden als Auf- oder Abschlag zu e10 berechnet. Beispiel: SuperPlus ist oft 10 Cent teurer als E10 — dann gibst du hier `+0,10` ein. Für LKW-Diesel, der 5 Cent günstiger ist, trägst du `-0,05` ein.
 
 Die relativen Preise musst du nur einmal einstellen — danach werden sie automatisch anhand des aktuellen E10-Preises berechnet.
 
@@ -78,7 +78,7 @@ Die relativen Preise musst du nur einmal einstellen — danach werden sie automa
 
 ## Zeilen zuordnen
 
-Im Bereich **Zeilen** legst du fest, welche Kraftstoffart in welcher Zeile auf dem Display angezeigt wird. Du hast bis zu 6 Zeilen zur Verfügung. Nicht benötigte Zeilen einfach leer lassen.
+Im Bereich **Zeilen** legst du fest, welche Kraftstoffart in welcher Zeile auf dem Display angezeigt wird. Für jede der bis zu 6 Zeilen gibt es ein Auswahlfeld — wähle dort die gewünschte Kraftstoffart aus. Zeilen, die du nicht benötigst, lässt du einfach leer.
 
 ---
 
@@ -88,9 +88,9 @@ Das **Intervall** legt fest, wie oft die Preise automatisch online abgerufen wer
 
 ---
 
-## API-URL (für Fortgeschrittene)
+## Eigene Datenquelle (für Fortgeschrittene)
 
-Das Feld **API-URL** kann normalerweise leer gelassen werden — die Tankstellenanzeige nutzt dann automatisch den richtigen Server. Nur wenn du einen eigenen Preisserver betreibst, trägst du hier dessen URL ein. Details siehe [Eigene API-URL](api.md).
+Das Feld **API-URL** (die Adresse eines eigenen Preisservers) kann normalerweise leer gelassen werden — die Tankstellenanzeige nutzt dann automatisch den richtigen Server. Nur wenn du einen eigenen Preisserver betreibst, trägst du hier dessen Adresse ein. Details siehe [Eigene Datenquelle](api.md).
 
 > **Wichtig:** Auch bei einer eigenen URL muss eine Tankstellen-ID eingetragen werden, damit die Preisabfrage funktioniert.
 

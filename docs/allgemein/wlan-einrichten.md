@@ -28,11 +28,11 @@ Beim ersten Einschalten (oder wenn keine WLAN-Daten gespeichert sind) erstellt d
 
 1. Verbinde dich mit deinem Smartphone oder Computer mit dem WLAN deines Displays (Name und Passwort stehen auf dem Display). Unter Windows findest du die WLAN-Auswahl in der Taskleiste:
    ![WLAN-Auswahl unter Windows — das Netzwerk des Displays erscheint in der Liste der verfügbaren Netzwerke](WLAN-Auswahl-Windows.png){: style="max-width: 50%;" }
-2. Öffne einen Browser und gib `192.168.4.1` ein. Du siehst die Startseite des Webinterfaces:
+2. Öffne einen Browser (z.B. Chrome, Safari oder Firefox) und gib oben in die Adressleiste `192.168.4.1` ein. Du siehst die Startseite des Webinterfaces (die Einstellungsseite deines Displays im Browser):
    ![Startseite des Webinterfaces mit den Bereichen Konfiguration, WLAN-Konfiguration und Controller-Upgrade](index-beispiel.png)
 3. Klicke auf **WLAN-Konfiguration**. Du siehst jetzt die WLAN-Einstellungen:
    ![WLAN-Konfigurationsseite — links die Eingabefelder für SSID und Passwort, rechts die Liste der gefundenen Netzwerke](Wifi-Configuration.png)
-4. Rechts unter **SSIDs found** werden die verfügbaren WLAN-Netzwerke angezeigt. Klicke auf dein Heim-WLAN — der Name wird automatisch in das Feld **SSID** übernommen.
+4. Rechts unter **SSIDs found** (gefundene WLAN-Netzwerke) werden die verfügbaren Netzwerke angezeigt. Klicke auf dein Heim-WLAN — der Name wird automatisch in das Feld **SSID** übernommen.
 5. Gib im Feld **Password** das Passwort deines WLANs ein.
 6. Klicke auf **Save WiFi Settings**.
 7. Das Display startet neu und verbindet sich mit deinem WLAN.
@@ -58,7 +58,7 @@ Es gibt drei Wege, um die WLAN-Einstellungen zu ändern:
 
 ### Über die Reset-Taste
 
-Drücke die **Reset**-Taste am Controller mehrfach kurz hintereinander (2–3 Mal). Dadurch werden die gespeicherten WLAN-Daten gelöscht und der Controller startet im Konfigurationsmodus.
+Drücke die **Reset**-Taste am Controller mehrfach kurz hintereinander (2–3 Mal). Dadurch werden die gespeicherten WLAN-Daten gelöscht und der Controller startet im Konfigurationsmodus — das heißt, er öffnet sein eigenes WLAN-Netzwerk, über das du die Einstellungen ändern kannst.
 
 > **Hinweis:** Zwischen den Tastendrücken musst du jeweils 1–2 Sekunden warten, damit der Controller zwischendurch hochfahren kann. Erst dann erkennt er den nächsten Reset als Teil der Sequenz.
 
@@ -74,7 +74,7 @@ Solange der Controller im Konfigurationsmodus ist und sein eigenes WLAN sendet, 
 
 ## IP-Adresse herausfinden
 
-Sobald das Display mit deinem WLAN verbunden ist, bekommt es eine IP-Adresse. Diese brauchst du, um das Webinterface zu öffnen.
+Sobald das Display mit deinem WLAN verbunden ist, bekommt es eine IP-Adresse (eine Art Hausnummer in deinem Netzwerk). Diese brauchst du, um das Webinterface zu öffnen.
 
 Drücke kurz die Taste **BTN 0** am Controller — auf dem Display wird die aktuelle IP-Adresse angezeigt (z.B. `192.168.178.41`).
 
@@ -87,4 +87,4 @@ Gib diese Adresse in einem Browser auf deinem Computer oder Smartphone ein.
 | Problem | Lösung |
 |---|---|
 | Kein WLAN-Netzwerk sichtbar | Tippe den Netzwerknamen (SSID) von Hand in das Eingabefeld ein |
-| Webinterface nicht erreichbar | Drücke die Taste BTN 0 am Controller, um die IP-Adresse auf dem Display anzuzeigen |
+| Webinterface nicht erreichbar | Drücke die Taste **BTN 0** am Controller, um die IP-Adresse auf dem Display anzuzeigen |
