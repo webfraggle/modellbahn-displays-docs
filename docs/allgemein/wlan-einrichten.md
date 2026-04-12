@@ -26,12 +26,16 @@ Beim ersten Einschalten (oder wenn keine WLAN-Daten gespeichert sind) erstellt d
 
 ## Schritt für Schritt
 
-1. Verbinde dich mit deinem Smartphone oder Computer mit dem WLAN deines Displays (Name und Passwort stehen auf dem Display).
-2. Normalerweise öffnet sich automatisch eine Konfigurationsseite. Falls nicht, öffne einen Browser und gib `192.168.4.1` ein.
-3. Klicke auf **WLAN-Konfiguration**.
-4. Wähle dein Heim-WLAN aus der Liste und gib das Passwort ein.
-5. Klicke auf **Speichern**.
-6. Das Display startet neu und verbindet sich mit deinem WLAN.
+1. Verbinde dich mit deinem Smartphone oder Computer mit dem WLAN deines Displays (Name und Passwort stehen auf dem Display). Unter Windows findest du die WLAN-Auswahl in der Taskleiste:
+   ![WLAN-Auswahl unter Windows — das Netzwerk des Displays erscheint in der Liste der verfügbaren Netzwerke](WLAN-Auswahl-Windows.png)
+2. Normalerweise öffnet sich automatisch eine Konfigurationsseite. Falls nicht, öffne einen Browser und gib `192.168.4.1` ein. Du siehst die Startseite des Webinterfaces:
+   ![Startseite des Webinterfaces mit den Bereichen Konfiguration, WLAN-Konfiguration und Controller-Upgrade](index-beispiel.png)
+3. Klicke auf **WLAN-Konfiguration**. Du siehst jetzt die WLAN-Einstellungen:
+   ![WLAN-Konfigurationsseite — links die Eingabefelder für SSID und Passwort, rechts die Liste der gefundenen Netzwerke](Wifi-Configuration.png)
+4. Rechts unter **SSIDs found** werden die verfügbaren WLAN-Netzwerke angezeigt. Klicke auf dein Heim-WLAN — der Name wird automatisch in das Feld **SSID** übernommen.
+5. Gib im Feld **Password** das Passwort deines WLANs ein.
+6. Klicke auf **Save WiFi Settings**.
+7. Das Display startet neu und verbindet sich mit deinem WLAN.
 
 > **Hinweis:** Falls dein WLAN nicht in der Liste auftaucht, kannst du den Netzwerknamen (SSID) auch von Hand in das Eingabefeld eintippen. Die Liste wird nicht automatisch aktualisiert.
 
@@ -41,15 +45,30 @@ Beim ersten Einschalten (oder wenn keine WLAN-Daten gespeichert sind) erstellt d
 
 Die LED am Controller zeigt dir den Verbindungsstatus an:
 
-- **Grün** — Mit WLAN verbunden
+- **Blau** — Controller startet
 - **Lila** — WLAN-Konfigurationsmodus (eigenes Netzwerk aktiv)
+- **Grün** — Mit WLAN verbunden
 - **Rot** — Keine Verbindung
 
 ---
 
 ## WLAN-Daten ändern
 
-Wenn du die WLAN-Daten ändern möchtest, drücke zweimal kurz hintereinander die **Reset**-Taste am Controller. Dann startet das Display wieder im Konfigurationsmodus und du kannst die Schritte oben wiederholen.
+Es gibt drei Wege, um die WLAN-Einstellungen zu ändern:
+
+### Über die Reset-Taste
+
+Drücke die **Reset**-Taste am Controller mehrfach kurz hintereinander (2–3 Mal). Dadurch werden die gespeicherten WLAN-Daten gelöscht und der Controller startet im Konfigurationsmodus.
+
+> **Hinweis:** Zwischen den Tastendrücken musst du jeweils 1–2 Sekunden warten, damit der Controller zwischendurch hochfahren kann. Erst dann erkennt er den nächsten Reset als Teil der Sequenz.
+
+### Automatisch bei fehlendem WLAN
+
+Wenn der Controller dein gespeichertes WLAN nicht findet (z.B. weil sich der Netzwerkname oder das Passwort geändert hat), wechselt er automatisch in den Konfigurationsmodus und öffnet sein eigenes Netzwerk.
+
+### Über das eigene Netzwerk des Controllers
+
+Solange der Controller im Konfigurationsmodus ist und sein eigenes WLAN sendet, kannst du dich damit verbinden und unter `192.168.4.1` die WLAN-Einstellungen direkt ändern — genau wie bei der Ersteinrichtung.
 
 ---
 
@@ -67,5 +86,5 @@ Gib diese Adresse in einem Browser auf deinem Computer oder Smartphone ein.
 
 | Problem | Lösung |
 |---|---|
-| Kein WLAN-Netzwerk sichtbar | Warte 30 Sekunden nach dem Einschalten. Drücke ggf. zweimal Reset für den Konfigurationsmodus |
+| Kein WLAN-Netzwerk sichtbar | Tippe den Netzwerknamen (SSID) von Hand in das Eingabefeld ein |
 | Webinterface nicht erreichbar | Drücke die Taste BTN 0 am Controller, um die IP-Adresse auf dem Display anzuzeigen |
