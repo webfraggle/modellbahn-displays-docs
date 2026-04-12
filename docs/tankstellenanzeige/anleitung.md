@@ -19,7 +19,7 @@ Diese Anleitung beschreibt die Ersteinrichtung und Konfiguration der Tankstellen
 
 ## Anschluss und erster Start
 
-Verbinde den Controller per USB-C-Kabel mit einer Stromquelle (USB-Netzteil, Modellbahn-Trafo mit USB-Ausgang oder Powerbank). Prüfe, dass das Flachbandkabel zwischen Controller und Display richtig eingesteckt ist. Nach wenigen Sekunden erscheint das Boot-Logo auf dem Display und die LED am Controller leuchtet.
+Prüfe, dass das Flachbandkabel zwischen Controller und Display richtig eingesteckt ist (siehe [Flachbandkabel anschließen](../allgemein/flachbandkabel-anschliessen.md)). Verbinde den Controller per USB-C-Kabel mit einer Stromquelle (USB-Netzteil, Modellbahn-Trafo mit USB-Ausgang oder Powerbank). Nach wenigen Sekunden erscheint das Boot-Logo auf dem Display und die LED am Controller leuchtet.
 
 ---
 

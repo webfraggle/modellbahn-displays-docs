@@ -21,6 +21,7 @@ Die Anleitungen sind in zwei Bereiche aufgeteilt: Unter **Allgemein** findest du
 ## Allgemein
 
 - [WLAN einrichten](docs/allgemein/wlan-einrichten.md) — Display mit dem Heim-WLAN verbinden, IP-Adresse herausfinden
+- [Flachbandkabel anschließen](docs/allgemein/flachbandkabel-anschliessen.md) — Controller und Display mit dem Flachbandkabel verbinden
 
 ## Display-Anleitungen
 
