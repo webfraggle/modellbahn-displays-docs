@@ -14,8 +14,14 @@ Willkommen in der Anleitungs-Sammlung für die Displays von [modellbahn-displays
 
 Hier findest du Schritt-für-Schritt-Anleitungen zur Einrichtung, Konfiguration und Bedienung meiner Modellbahn-Displays.
 
+Die Anleitungen sind in zwei Bereiche aufgeteilt: Unter **Allgemein** findest du alles, was für alle Displays gleich ist — zum Beispiel die WLAN-Einrichtung. Die **Display-Anleitungen** beschreiben die Einrichtung und Bedienung der einzelnen Displays.
+
 ---
 
-## Verfügbare Anleitungen
+## Allgemein
+
+- [WLAN einrichten](docs/allgemein/wlan-einrichten.md) — Display mit dem Heim-WLAN verbinden, IP-Adresse herausfinden
+
+## Display-Anleitungen
 
 - [Tankstellenanzeige](docs/tankstellenanzeige/) — Einrichtung, Konfiguration und API
