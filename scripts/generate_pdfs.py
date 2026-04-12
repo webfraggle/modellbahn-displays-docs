@@ -61,8 +61,10 @@ def clean_markdown(body: str) -> str:
         body,
         flags=re.MULTILINE,
     )
-    # Vereinzelte kramdown-Attributzeilen
-    body = re.sub(r"^\s*\{:\s*[^\}]*\}\s*$\n?", "", body, flags=re.MULTILINE)
+    # Inline kramdown-Attribute (z.B. am Ende von Bildzeilen)
+    body = re.sub(r"\{:\s*[^\}]*\}", "", body)
+    # Vereinzelte kramdown-Attributzeilen (nun leere Restzeilen)
+    body = re.sub(r"^\s*$\n", "\n", body, flags=re.MULTILINE)
     # Übriggebliebenes {:toc}
     body = re.sub(r"^\{:toc\}\s*$\n?", "", body, flags=re.MULTILINE)
     # Führende horizontale Linie nach Einleitung ist in der PDF überflüssig
@@ -91,7 +93,7 @@ def display_metadata(display_dir: Path) -> dict:
     return meta
 
 
-def build_combined_markdown(display_dir: Path) -> tuple[Path, str, str] | None:
+def build_combined_markdown(display_dir: Path) -> tuple[Path, str, str, Path] | None:
     pages = collect_pages(display_dir)
     if not pages:
         return None
@@ -109,7 +111,7 @@ def build_combined_markdown(display_dir: Path) -> tuple[Path, str, str] | None:
     TMP_DIR.mkdir(parents=True, exist_ok=True)
     combined = TMP_DIR / f"{slug}.md"
     combined.write_text("\n".join(chunks), encoding="utf-8")
-    return combined, title, slug
+    return combined, title, slug, display_dir
 
 
 def format_date_german() -> str:
@@ -117,7 +119,7 @@ def format_date_german() -> str:
     return f"{MONTHS_DE[today.month]} {today.year}"
 
 
-def run_pandoc(combined_md: Path, title: str, slug: str) -> Path:
+def run_pandoc(combined_md: Path, title: str, slug: str, source_dir: Path) -> Path:
     SITE_PDF_DIR.mkdir(parents=True, exist_ok=True)
     output = SITE_PDF_DIR / f"{slug}.pdf"
 
@@ -127,6 +129,7 @@ def run_pandoc(combined_md: Path, title: str, slug: str) -> Path:
         "-o", str(output),
         "--pdf-engine=xelatex",
         "--template", str(TEMPLATE),
+        "--resource-path", str(source_dir),
         "--toc",
         "--toc-depth=2",
         "--highlight-style=monochrome",
@@ -171,8 +174,8 @@ def main() -> int:
         if result is None:
             print("  übersprungen (keine Unterseiten)")
             continue
-        combined, title, slug = result
-        pdf = run_pandoc(combined, title, slug)
+        combined, title, slug, source_dir = result
+        pdf = run_pandoc(combined, title, slug, source_dir)
         generated.append(pdf)
 
     if not generated:
