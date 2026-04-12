@@ -27,8 +27,8 @@ Beim ersten Einschalten (oder wenn keine WLAN-Daten gespeichert sind) erstellt d
 ## Schritt für Schritt
 
 1. Verbinde dich mit deinem Smartphone oder Computer mit dem WLAN deines Displays (Name und Passwort stehen auf dem Display). Unter Windows findest du die WLAN-Auswahl in der Taskleiste:
-   ![WLAN-Auswahl unter Windows — das Netzwerk des Displays erscheint in der Liste der verfügbaren Netzwerke](WLAN-Auswahl-Windows.png)
-2. Normalerweise öffnet sich automatisch eine Konfigurationsseite. Falls nicht, öffne einen Browser und gib `192.168.4.1` ein. Du siehst die Startseite des Webinterfaces:
+   ![WLAN-Auswahl unter Windows — das Netzwerk des Displays erscheint in der Liste der verfügbaren Netzwerke](WLAN-Auswahl-Windows.png){: style="max-width: 50%;" }
+2. Öffne einen Browser und gib `192.168.4.1` ein. Du siehst die Startseite des Webinterfaces:
    ![Startseite des Webinterfaces mit den Bereichen Konfiguration, WLAN-Konfiguration und Controller-Upgrade](index-beispiel.png)
 3. Klicke auf **WLAN-Konfiguration**. Du siehst jetzt die WLAN-Einstellungen:
    ![WLAN-Konfigurationsseite — links die Eingabefelder für SSID und Passwort, rechts die Liste der gefundenen Netzwerke](Wifi-Configuration.png)
