@@ -61,10 +61,22 @@ def clean_markdown(body: str) -> str:
         body,
         flags=re.MULTILINE,
     )
-    # Inline kramdown-Attribute (z.B. am Ende von Bildzeilen)
+    # kramdown max-width auf Bildern → pandoc width-Attribut
+    def convert_image_width(m: re.Match) -> str:
+        img = m.group(1)
+        width_match = re.search(r'max-width:\s*(\d+)%', m.group(2))
+        if width_match:
+            return f"{img}{{ width={width_match.group(1)}% }}"
+        return img
+    body = re.sub(
+        r'(!\[[^\]]*\]\([^)]+\))\{:\s*([^\}]*)\}',
+        convert_image_width,
+        body,
+    )
+    # Verbleibende inline kramdown-Attribute entfernen
     body = re.sub(r"\{:\s*[^\}]*\}", "", body)
-    # Vereinzelte kramdown-Attributzeilen (nun leere Restzeilen)
-    body = re.sub(r"^\s*$\n", "\n", body, flags=re.MULTILINE)
+    # Eingerückte Bilder (in Listen) als eigene Absätze herausziehen
+    body = re.sub(r"^[ \t]+(!\[[^\]]*\]\([^)]+\)(?:\{[^}]*\})?)\s*$", r"\n\1\n", body, flags=re.MULTILINE)
     # Übriggebliebenes {:toc}
     body = re.sub(r"^\{:toc\}\s*$\n?", "", body, flags=re.MULTILINE)
     # Führende horizontale Linie nach Einleitung ist in der PDF überflüssig

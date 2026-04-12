@@ -22,7 +22,20 @@
 \usepackage{calc}
 % pandoc-Helpers, die das Default-Template bereitstellt
 \providecommand{\real}[1]{#1}
-\providecommand{\pandocbounded}[1]{#1}
+\providecommand{\pandocbounded}[1]{%
+  \begingroup
+  \setbox0=\hbox{#1}%
+  \ifdim\wd0>\linewidth
+    \resizebox{\linewidth}{!}{#1}%
+  \else
+    #1%
+  \fi
+  \endgroup
+}
+
+\makeatletter
+\def\maxwidth#1{\ifdim\Gin@nat@width>#1 #1\else\Gin@nat@width\fi}
+\makeatother
 \setlength\LTleft{0pt}
 \setlength\LTright{0pt}
 \usepackage{microtype}
