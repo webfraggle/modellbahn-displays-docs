@@ -33,15 +33,17 @@ Damit ein Wetterbild herauskommt, hängst du mindestens deine Postleitzahl an. D
 https://wetter.yuv.de/?plz=36145
 ```
 
-Kopiere so eine Adresse einfach in die Adressleiste deines Browsers (z.B. Chrome, Safari oder Firefox) und drücke Enter. Du solltest sofort ein Wetterbild für den angegebenen Ort sehen. Ersetze `36145` durch deine eigene PLZ.
+Ersetze `36145` durch deine eigene Postleitzahl, kopiere die Adresse in die Adressleiste deines Browsers (z.B. Chrome, Safari oder Firefox) und drücke Enter. Du solltest sofort das Wetterbild für deinen Ort sehen.
 
 > **Tipp:** Probiere die Adresse immer zuerst im Browser aus. Wenn dort das richtige Bild erscheint, funktioniert sie später auch auf deinem Display.
 
 Die Zusätze hinter der Basis-Adresse nennt man **Parameter**. Der erste Parameter beginnt mit einem Fragezeichen `?`, jeder weitere mit einem Und-Zeichen `&`. So lassen sich mehrere Angaben kombinieren, zum Beispiel die PLZ und ein bestimmtes Layout:
 
 ```
-https://wetter.yuv.de/?plz=36145&layout=now&size=135x240
+https://wetter.yuv.de/?plz=36145&layout=now
 ```
+
+(Was **layout** und **size** genau bedeuten, erfährst du in den nächsten beiden Abschnitten.)
 
 > **Hinweis:** Die Postleitzahl muss genau aus **5 Ziffern** bestehen (eine führende 0 ist erlaubt, z.B. `01067` für Dresden). Gibst du eine ungültige oder unbekannte PLZ an, oder ist der Wetterdienst gerade nicht erreichbar, bekommst du kein kaputtes Bild, sondern ein gestaltetes Fehler-Bild mit einem kurzen Hinweis.
 
@@ -95,7 +97,7 @@ https://wetter.yuv.de/?plz=36145&layout=minimal
 
 ## Bildgröße wählen
 
-Mit dem Parameter **size** legst du die Bildgröße in Pixeln fest (Breite × Höhe). Sie sollte zur Auflösung deines Displays passen, damit das Bild ohne Ränder und ohne Verzerrung anzeigt wird. Es gibt zwei Größen:
+Mit dem Parameter **size** legst du die Bildgröße in Pixeln fest (Breite × Höhe). Sie sollte zur Auflösung deines Displays passen, damit das Bild ohne Ränder und ohne Verzerrung angezeigt wird. Es gibt zwei Größen:
 
 | Größe | Display |
 |---|---|
@@ -152,7 +154,7 @@ Das ist genau dasselbe wie `https://wetter.yuv.de/?plz=36145&layout=now&size=135
 | Problem | Lösung |
 |---|---|
 | Bild zeigt eine Fehlermeldung („PLZ ungültig" / „PLZ unbekannt") | Prüfe die Postleitzahl — sie muss genau 5 Ziffern haben und zu einem deutschen Ort gehören. |
-| Bild zeigt „Wetter n. verfügbar" oder „Standort-Fehler" | Der Wetterdienst war kurz nicht erreichbar. Lade die Adresse nach ein paar Minuten erneut. |
+| Bild zeigt „Wetter n. verfügbar" (= Wetter nicht verfügbar) oder „Standort-Fehler" | Der Wetterdienst war kurz nicht erreichbar. Lade die Adresse nach ein paar Minuten erneut. |
 | Bild ist leer oder lädt nicht | Teste die komplette Adresse zuerst im Browser. Achte darauf, dass `https://wetter.yuv.de/` korrekt davor steht und keine Leerzeichen in der Adresse sind. |
 | Es wird immer das Standard-Layout angezeigt | Prüfe die Schreibweise bei **layout** (`now3day`, `now`, `week`, `minimal`) — bei einem Tippfehler wird auf `now3day` zurückgefallen. |
 | Bild passt nicht aufs Display (Ränder oder Verzerrung) | Wähle die Größe passend zum Display: **135x240** bzw. Code **114** für die Standardvariante, **120x240** bzw. Code **105** für die schmale Variante. |

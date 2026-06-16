@@ -7,14 +7,14 @@ nav_order: 2
 
 # Markt — Bild-Adresse erstellen
 
-Der Markt-Generator unter `markt.yuv.de` erzeugt aus einer Internet-Adresse (einer **URL**) ein fertiges Kursbild im Format deines Displays — entweder für eine **Kryptowährung** (z.B. Bitcoin) oder für eine **Aktie** (z.B. SAP). Du musst nichts installieren: Du stellst dir die passende Adresse zusammen, und der Generator liefert ein fertiges PNG-Bild zurück.
+Der Markt-Bildgenerator unter `markt.yuv.de` erzeugt aus einer Internet-Adresse (einer **URL**) ein fertiges Kursbild im Format deines Displays — entweder für eine **Kryptowährung** (z.B. Bitcoin) oder für eine **Aktie** (z.B. SAP). Du musst nichts installieren: Du stellst dir die passende Adresse zusammen, und der Generator liefert ein fertiges PNG-Bild zurück.
 
 Auf dieser Seite geht es nur darum, **wie du dir diese Adresse zusammenstellst und im Browser prüfst**. Wie du die fertige Adresse später in deinem Display hinterlegst, steht in der Anleitung zu deinem jeweiligen Display.
 
 Der wichtigste Unterschied vorab:
 
 - **Kryptowährung:** funktioniert sofort, ganz ohne Anmeldung.
-- **Aktie:** du brauchst einen eigenen, kostenlosen Zugangsschlüssel (einen **API-Schlüssel**, dazu unten mehr).
+- **Aktie:** du brauchst einen eigenen, kostenlosen **Schlüssel** (einen sogenannten API-Schlüssel — dazu unten mehr).
 
 ## Inhalt
 {: .no_toc .text-delta }
@@ -46,7 +46,7 @@ https://markt.yuv.de/?type=crypto&symbol=bitcoin&vs=eur&layout=quote
 
 ## Kryptowährung anzeigen
 
-Für Kryptowährungen brauchst du **keinen** Zugangsschlüssel. Du gibst nur an, welche Münze in welcher Währung angezeigt werden soll.
+Für Kryptowährungen brauchst du **keinen** Schlüssel. Du gibst nur an, welche Münze in welcher Währung angezeigt werden soll.
 
 Beispiel für Bitcoin in Euro:
 
@@ -101,7 +101,7 @@ Standardanbieter für Aktien ist **Alpha Vantage**. Dieser kann auch deutsche Ak
 
 Bei Aktien ist **symbol** der **Ticker** — das Börsenkürzel der Aktie.
 
-- **Deutsche Aktien** (gehandelt über **Xetra**, den elektronischen Handelsplatz der Deutschen Börse) bekommen das Suffix `.DEX`. Der Kurs erscheint dann in Euro. Beispiele: `SAP.DEX`, `BMW.DEX`.
+- **Deutsche Aktien** (gehandelt über **Xetra**, den elektronischen Handelsplatz der Deutschen Börse) bekommen die Endung (das sogenannte „Suffix") `.DEX` direkt an den Ticker angehängt. Der Kurs erscheint dann in Euro. Beispiele: `SAP.DEX`, `BMW.DEX`.
 - **US-Aktien** gibst du ohne Suffix an, z.B. `AAPL` für Apple.
 
 ### Schritt 3: Adresse zusammenbauen
@@ -118,15 +118,17 @@ Die wichtigen Parameter:
 - **symbol** = der Ticker, z.B. `SAP.DEX` oder `AAPL`.
 - **apikey** = dein persönlicher Schlüssel (Pflicht bei Aktien).
 
-### Alternative Quelle: Twelve Data
+### Alternative Quelle: Twelve Data (experimentell)
 
-Statt Alpha Vantage kannst du auch **Twelve Data** als Kursquelle nutzen — das eignet sich vor allem für US-Aktien. Du brauchst dafür einen eigenen Twelve-Data-Schlüssel und hängst zusätzlich den Parameter **src** an:
+Neben Alpha Vantage gibt es als zweite Kursquelle **Twelve Data** (vor allem für US-Aktien). Du hängst dafür den Parameter **src** an und nutzt einen eigenen Twelve-Data-Schlüssel — diesen bekommst du nach kostenloser Anmeldung auf [twelvedata.com](https://twelvedata.com/):
 
 ```
 https://markt.yuv.de/?type=stock&src=twelvedata&symbol=AAPL&apikey=DEIN_KEY
 ```
 
 Der Parameter **src** steuert die Aktien-Quelle: `alphavantage` (Voreinstellung) oder `twelvedata`.
+
+> **Hinweis:** Twelve Data ist noch **experimentell** und bislang nicht vollständig getestet. Für den zuverlässigen Betrieb nimm Alpha Vantage — das liefert sowohl deutsche Aktien (Xetra) als auch US-Aktien.
 
 ---
 
@@ -176,8 +178,8 @@ Der **code** am Anfang steht dabei für die Bildgröße und entspricht der Displ
 
 | Code | Bildgröße | Display |
 |---|---|---|
-| **114** | 135 × 240 px | 1,14" (z.B. Tankstellenanzeige) |
-| **105** | 120 × 240 px | 1,05" (Werbedisplay) |
+| **114** | 135 × 240 Pixel | 1,14" (z.B. Tankstellenanzeige) |
+| **105** | 120 × 240 Pixel | 1,05" (Werbedisplay) |
 
 Beispiele:
 
@@ -186,10 +188,14 @@ https://markt.yuv.de/114/crypto/chart/bitcoin
 ```
 
 ```
+https://markt.yuv.de/114/crypto/quote/bitcoin?vs=usd
+```
+
+```
 https://markt.yuv.de/114/stock/quote/SAP.DEX?apikey=DEIN_KEY
 ```
 
-Den Schlüssel (sowie bei Bedarf **src** oder **vs**) hängst du wie gewohnt mit einem `?` hinten an, z.B. `?apikey=DEIN_KEY`.
+Zusätzliche Angaben wie den Schlüssel, **src** oder **vs** hängst du wie gewohnt hinten an — die erste mit einem `?`, jede weitere mit einem `&`. Bei Krypto z.B. `?vs=usd`, bei Aktien `?apikey=DEIN_KEY`.
 
 ---
 
@@ -199,8 +205,8 @@ Den Schlüssel (sowie bei Bedarf **src** oder **vs**) hängst du wie gewohnt mit
 |---|---|---|
 | **type** | nein | `crypto` (Voreinstellung) oder `stock` (Aktie) |
 | **symbol** | ja | Krypto: CoinGecko-ID (`bitcoin`). Aktie: Ticker (`SAP.DEX`, `AAPL`) |
-| **apikey** | nur bei Aktien | Dein eigener, kostenloser Zugangsschlüssel |
-| **src** | nein | Aktien-Quelle: `alphavantage` (Voreinstellung) oder `twelvedata` |
+| **apikey** | nur bei Aktien | Dein eigener, kostenloser Schlüssel (API-Key) |
+| **src** | nein | Aktien-Quelle: `alphavantage` (Voreinstellung) oder `twelvedata` (experimentell) |
 | **vs** | nein | Zielwährung bei Krypto, Voreinstellung `eur` |
 | **layout** | nein | `quote` (Voreinstellung) oder `chart` |
 | **size** | nein | `135x240` (Voreinstellung) oder `120x240` |
