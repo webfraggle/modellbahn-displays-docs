@@ -7,7 +7,9 @@ nav_order: 1
 
 # Tankstellenanzeige — Einrichtung & Bedienung
 
-Diese Anleitung beschreibt die Ersteinrichtung und Konfiguration der Tankstellenanzeige.
+Diese Anleitung beschreibt die Ersteinrichtung und die Konfiguration der Preisanzeige.
+
+> **Hinweis:** Die Tankstellenanzeige kann inzwischen mehr als nur Tankstellenpreise zeigen — sie kann nacheinander mehrere Inhalte durchlaufen (z. B. Wetter, Börsenkurse, eigene Bilder). Diese Seite erklärt die **Preisanzeige**. Wie du weitere Inhalte ergänzt, steht unter [Anzeige-Reihenfolge](anzeige-reihenfolge.md).
 
 ## Inhalt
 {: .no_toc .text-delta }
@@ -29,36 +31,45 @@ Die WLAN-Einrichtung ist bei allen Displays gleich. Die vollständige Anleitung 
 
 ---
 
-## Webinterface
+## Das Webinterface und das Menü
 
-Auf der Startseite findest du drei Bereiche:
+Öffne im Browser die IP-Adresse deines Displays (z. B. `192.168.178.41`). Auf der Startseite findest du:
 
-- **Konfiguration** — Preise, Template und Einstellungen
+- **Konfiguration** — die Anzeige einrichten (Preise, Inhalte, Einstellungen)
 - **WLAN-Konfiguration** — WLAN-Zugangsdaten ändern
 - **Controller-Upgrade** — Software des Controllers aktualisieren (Firmware-Update)
 
-Klicke auf **Konfiguration**, um zu den Einstellungen zu gelangen.
+Auf allen Seiten gibt es unten links ein **Menü-Symbol** (drei Striche). Ein Klick darauf öffnet das Menü, über das du jederzeit zwischen **Startseite**, **Konfiguration**, **Backup & Restore**, **WLAN-Konfiguration** und **Controller-Upgrade** wechseln kannst.
+
+Klicke auf **Konfiguration**. Du siehst die **Anzeige-Reihenfolge** — die Liste der Inhalte, die das Display nacheinander zeigt. Direkt nach dem Kauf steht dort ein einziger Eintrag: **Tankstelle**. Das ist deine Preisanzeige.
+
+![Das Webinterface mit der Anzeige-Reihenfolge — oben die Liste der Inhalte, unten die Knöpfe zum Aktualisieren und Speichern](webinterface-anzeige-reihenfolge.png)
+
+---
+
+## Die Tankstellen-Einstellungen öffnen
+
+Alle Einstellungen der Preisanzeige (Design, Tankstelle, Preise, Zeilen) stecken im Eintrag **Tankstelle**. Klicke in dessen Zeile auf **Bearbeiten** — es öffnet sich ein Fenster mit allen folgenden Einstellungen. Wenn du fertig bist, klickst du im Fenster unten auf **Übernehmen** und anschließend auf der Hauptseite auf **Konfiguration speichern**.
 
 ---
 
 ## Template wählen
 
-Unter **Template** (Vorlage) findest du eine Liste aller verfügbaren Anzeige-Designs (z.B. Aral, Shell, LED). Wähle das Template, das zu deiner Tankstelle passt.
+Unter **Template** (Vorlage) findest du eine Liste aller verfügbaren Anzeige-Designs (z. B. Aral, Shell, LED). Wähle das Template, das zu deiner Tankstelle passt.
 
 ---
 
-## Tankstellen-ID eingeben
+## Tankstelle auswählen (Tankstellen-ID)
 
-Wenn du Live-Preise für eine bestimmte Tankstelle anzeigen möchtest, musst du die Tankstellen-ID eingeben. So findest du die ID:
+Damit Live-Preise einer bestimmten Tankstelle angezeigt werden, brauchst du deren **Tankstellen-ID**. Am einfachsten findest du sie über die eingebaute Suche:
 
-1. Klicke im Webinterface auf den Link **ID finden** unterhalb des Eingabefeldes (oder öffne [https://creativecommons.tankerkoenig.de/TankstellenFinder/index.html](https://creativecommons.tankerkoenig.de/TankstellenFinder/index.html)).
-2. Schiebe auf der Karte den blauen Marker in den Bereich deiner Tankstelle.
-3. Klicke die gewünschte Tankstelle an.
-4. Klicke auf **Tankstelle übernehmen** — jetzt wird die ID angezeigt.
-5. Markiere die ID (langer Text aus Buchstaben, Zahlen und Bindestrichen) und kopiere sie.
-6. Wechsle zurück zum Webinterface und füge die ID in das Feld **Tankstellen-ID** ein.
+1. Gib in das Feld **Tankstellen-ID** deine **Postleitzahl** ein (5 Ziffern).
+2. Es klappt eine Liste der Tankstellen in der Umgebung auf. Mit dem Schieberegler **Umkreis** stellst du den Suchradius ein (1 bis 25 km).
+3. Klicke deine Tankstelle in der Liste an — die ID und der Name werden automatisch übernommen.
 
-> **Hinweis:** Wird die Tankstellen-ID leer gelassen, werden die Preise nicht automatisch online aktualisiert. Du kannst die Preise dann nur manuell über das Webinterface eingeben.
+> **Tipp:** Du kannst statt der Postleitzahl auch eine bereits bekannte Tankstellen-ID (langer Text aus Buchstaben, Zahlen und Bindestrichen) direkt in das Feld einfügen.
+
+> **Hinweis:** Wird keine Tankstelle ausgewählt (Feld leer), werden die Preise nicht automatisch online aktualisiert. Du kannst sie dann nur von Hand eintragen.
 
 ---
 
@@ -67,10 +78,10 @@ Wenn du Live-Preise für eine bestimmte Tankstelle anzeigen möchtest, musst du 
 Im Bereich **Preise** siehst du alle Kraftstoffarten. Es gibt zwei Gruppen:
 
 **Absolute Preise** (oberer Bereich):
-- **e5** (Super), **e10** (Super E10), **diesel** (Diesel) — Hier stehen die tatsächlichen Preise (z.B. 1,85). Bei eingerichteter Tankstellen-ID werden diese drei Preise automatisch online aktualisiert.
+- **e10** (Super E10), **e5** (Super), **diesel** (Diesel) — Hier stehen die tatsächlichen Preise (z. B. 1,85). Bei ausgewählter Tankstelle werden diese drei Preise automatisch online aktualisiert.
 
 **Relative Preise** (unterer Bereich, unterhalb der Trennlinie):
-- **superplus** (SuperPlus), **lkwdiesel** (LKW-Diesel), **lpg** (Autogas), **erdgas** (Erdgas/CNG), **adblue** (AdBlue) — Diese werden als Auf- oder Abschlag zu e10 berechnet. Beispiel: SuperPlus ist oft 10 Cent teurer als E10 — dann gibst du hier `+0,10` ein. Für LKW-Diesel, der 5 Cent günstiger ist, trägst du `-0,05` ein.
+- **superplus** (SuperPlus), **lkwdiesel** (LKW-Diesel), **erdgas** (Erdgas/CNG), **lpg** (Autogas), **adblue** (AdBlue) — Diese werden als Auf- oder Abschlag zu e10 berechnet. Beispiel: SuperPlus ist oft 10 Cent teurer als E10 — dann gibst du hier `+0,10` ein. Für LKW-Diesel, der 5 Cent günstiger ist, trägst du `-0,05` ein.
 
 Die relativen Preise musst du nur einmal einstellen — danach werden sie automatisch anhand des aktuellen E10-Preises berechnet.
 
@@ -92,7 +103,7 @@ Das **Intervall** legt fest, wie oft die Preise automatisch online abgerufen wer
 
 Das Feld **API-URL** (die Adresse eines eigenen Preisservers) kann normalerweise leer gelassen werden — die Tankstellenanzeige nutzt dann automatisch den richtigen Server. Nur wenn du einen eigenen Preisserver betreibst, trägst du hier dessen Adresse ein. Details siehe [Eigene Datenquelle](api.md).
 
-> **Wichtig:** Auch bei einer eigenen URL muss eine Tankstellen-ID eingetragen werden, damit die Preisabfrage funktioniert.
+> **Wichtig:** Auch bei einer eigenen URL muss eine Tankstelle ausgewählt sein, damit die Preisabfrage funktioniert.
 
 ---
 
@@ -104,12 +115,20 @@ Mit dem Knopf **Live-Preise aktualisieren** kannst du jederzeit die neuesten Pre
 
 ---
 
+## Weitere Inhalte und Sicherung
+
+- Du möchtest neben den Preisen noch Wetter, Börsenkurse oder eigene Bilder anzeigen? Das richtest du über die [Anzeige-Reihenfolge](anzeige-reihenfolge.md) ein.
+- Bevor du viel einstellst, lohnt sich eine Sicherung: Mit [Backup & Wiederherstellung](backup-restore.md) sicherst du deine komplette Konfiguration in einer Datei.
+
+---
+
 ## Problembehebung
 
 | Problem | Lösung |
 |---|---|
 | Display bleibt dunkel | Prüfe die Stromversorgung (USB-C-Kabel und Netzteil) sowie das Flachbandkabel zum Display |
-| Preise werden nicht aktualisiert | Prüfe, ob eine Tankstellen-ID eingetragen ist und die WLAN-Verbindung steht (LED grün) |
-| Falsche Preise angezeigt | Prüfe die Tankstellen-ID — möglicherweise ist eine andere Tankstelle zugeordnet |
+| Preise werden nicht aktualisiert | Prüfe, ob eine Tankstelle ausgewählt ist und die WLAN-Verbindung steht (LED grün) |
+| Falsche Preise angezeigt | Prüfe die ausgewählte Tankstelle im **Tankstelle**-Eintrag unter **Bearbeiten** |
+| Ich finde die Einstellungen nicht mehr | Alle Preis-Einstellungen liegen im Eintrag **Tankstelle** → **Bearbeiten**. Zwischen den Seiten wechselst du über das **Menü** unten links |
 
 > **Tipp:** Bei Problemen mit dem WLAN oder dem Webinterface schau in die allgemeine Anleitung [WLAN einrichten](../allgemein/wlan-einrichten.md).

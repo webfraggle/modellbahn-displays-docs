@@ -2,7 +2,7 @@
 title: Eigene API-URL
 layout: anleitung
 parent: Tankstellenanzeige
-nav_order: 2
+nav_order: 4
 ---
 
 # Tankstellenanzeige — Eigene API-URL
@@ -65,7 +65,7 @@ Dein Server muss ein JSON-Objekt (ein standardisiertes Textformat für Daten) mi
 
 - **Content-Type** sollte `application/json` sein
 - Die Preise sind Dezimalzahlen mit **Punkt als Dezimaltrennzeichen** (kein Komma)
-- Die drei Schlüssel `e5`, `e10` und `diesel` müssen vorhanden sein — fehlt ein Schlüssel, behält die Anzeige den zuletzt bekannten Wert bei
+- Alle drei Schlüssel `e5`, `e10` und `diesel` sollten vorhanden sein. Fehlt `e5`, wird das Update komplett übersprungen (die bisherigen Preise bleiben erhalten). Fehlen nur `e10` oder `diesel`, werden diese als 0 übernommen — gib daher immer alle drei Werte aus
 - Zusätzliche Schlüssel werden ignoriert
 - Bei einem Fehler sollte der Server einen HTTP-Statuscode ungleich 200 zurückgeben (z.B. 400 oder 500) — die Tankstellenanzeige überspringt dann das Update
 
