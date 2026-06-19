@@ -51,6 +51,8 @@ Klicke auf **Konfiguration**. Du siehst die **Anzeige-Reihenfolge** — die List
 
 Alle Einstellungen der Preisanzeige (Design, Tankstelle, Preise, Zeilen) stecken im Eintrag **Tankstelle**. Klicke in dessen Zeile auf **Bearbeiten** — es öffnet sich ein Fenster mit allen folgenden Einstellungen. Wenn du fertig bist, klickst du im Fenster unten auf **Übernehmen** und anschließend auf der Hauptseite auf **Konfiguration speichern**.
 
+> **Tipp:** Du kannst auch **mehrere Tankstellen** nacheinander anzeigen — jede ist ein eigener Eintrag mit eigenen Einstellungen (Design, ID, Preise, Zeilen). Wie du weitere hinzufügst, steht unter [Mehrere Tankstellen](anzeige-reihenfolge.md#mehrere-tankstellen).
+
 ---
 
 ## Template wählen
@@ -95,13 +97,13 @@ Im Bereich **Zeilen** legst du fest, welche Kraftstoffart in welcher Zeile auf d
 
 ## Update-Intervall
 
-Das **Intervall** legt fest, wie oft die Preise automatisch online abgerufen werden (in Minuten). Der Mindestwert ist 5 Minuten, um den Preisserver nicht zu überlasten.
+Das **Intervall** legt fest, wie oft die Preise automatisch online abgerufen werden (in Minuten). Der Mindestwert ist 5 Minuten, um den Preisserver nicht zu überlasten. Das Intervall gilt geräteweit für **alle** Tankstellen gemeinsam — du findest das Feld zwar in jedem Tankstellen-Eintrag, der Wert wirkt aber überall gleich, egal wo du ihn änderst.
 
 ---
 
 ## Eigene Datenquelle (für Fortgeschrittene)
 
-Das Feld **API-URL** (die Adresse eines eigenen Preisservers) kann normalerweise leer gelassen werden — die Tankstellenanzeige nutzt dann automatisch den richtigen Server. Nur wenn du einen eigenen Preisserver betreibst, trägst du hier dessen Adresse ein. Details siehe [Eigene Datenquelle](api.md).
+Das Feld **API-URL** (die Adresse eines eigenen Preisservers) kann normalerweise leer gelassen werden — die Tankstellenanzeige nutzt dann automatisch den richtigen Server. Nur wenn du einen eigenen Preisserver betreibst, trägst du hier dessen Adresse ein. Wie das Intervall gilt auch die API-URL geräteweit für **alle** Tankstellen gemeinsam. Details siehe [Eigene Datenquelle](api.md).
 
 > **Wichtig:** Auch bei einer eigenen URL muss eine Tankstelle ausgewählt sein, damit die Preisabfrage funktioniert.
 
@@ -111,7 +113,7 @@ Das Feld **API-URL** (die Adresse eines eigenen Preisservers) kann normalerweise
 
 Wenn du alle Einstellungen vorgenommen hast, klicke auf **Konfiguration speichern**. In der Statusleiste am unteren Rand erscheint **Gespeichert** und die Anzeige auf dem Display aktualisiert sich.
 
-Mit dem Knopf **Live-Preise aktualisieren** kannst du jederzeit die neuesten Preise vom Server abrufen, ohne auf das nächste automatische Update zu warten.
+Mit dem Knopf **Live-Preise aktualisieren** kannst du jederzeit die neuesten Preise für **alle** Tankstellen-Einträge vom Server abrufen, ohne auf das nächste automatische Update zu warten.
 
 ---
 
