@@ -32,7 +32,7 @@ Alle vier Arten fügst du über die [Medien-Verwaltung](medien-verwalten.md) hin
 
 ## Die richtige Bildgröße
 
-Jedes Display hat eine feste Größe im Hochformat (zum Beispiel 120 Pixel breit und 240 Pixel hoch). Ein Bild wirkt am besten, wenn es genau in dieses Format passt.
+Jedes Display hat eine feste Größe im Hochformat (zum Beispiel 120 Pixel, also Bildpunkte, breit und 240 Pixel hoch). Ein Bild wirkt am besten, wenn es genau in dieses Format passt.
 
 Du musst die Zahlen aber nicht selbst ausrechnen: Nutze den Weg **Bild zuschneiden & hochladen** in der [Medien-Verwaltung](medien-verwalten.md). Dort ziehst du dein Bild passend zurecht, und es wird automatisch auf die richtige Größe deines Displays gebracht. Auch der [Video-Konverter](videos-konvertieren.md) zeigt dir oben die Zielauflösung an und schneidet das Video passend zu.
 

@@ -37,7 +37,7 @@ Damit du das Display bedienen kannst, verbindest du es mit deinem Heim-WLAN. Der
 
 Gib die Adresse deines Displays in die Adresszeile deines Browsers ein (zum Beispiel `192.168.178.41`) und drücke die Eingabetaste. Es öffnet sich die Startseite der Weboberfläche.
 
-![Die Startseite der Weboberflaeche mit dem grossen Knopf Medien verwalten und den beiden Knoepfen fuer WLAN und Firmware](startseite.png)
+![Die Startseite der Weboberfläche mit dem großen Knopf Medien verwalten und den beiden Knöpfen für WLAN und Firmware](startseite.png)
 
 Von hier aus erreichst du alles Wichtige:
 
@@ -61,7 +61,7 @@ Möchtest du ein Video anzeigen, muss es vorher in das passende Format umgewande
 
 ## Software aktualisieren
 
-Von Zeit zu Zeit gibt es neue Funktionen oder Verbesserungen. Wie du die Software (Firmware) deines Controllers aktualisierst, steht in der allgemeinen Anleitung [Controller aktualisieren](../allgemein/controller-aktualisieren.md).
+Von Zeit zu Zeit gibt es neue Funktionen oder Verbesserungen. Über den Knopf **Firmware aktualisieren** (im Menü heißt derselbe Punkt **Firmware-Update**) bringst du die Betriebssoftware — die **Firmware** — deines Controllers auf den neuesten Stand. Der genaue Ablauf ist bei allen Displays gleich und steht in der allgemeinen Anleitung [Controller aktualisieren](../allgemein/controller-aktualisieren.md).
 
 ---
 

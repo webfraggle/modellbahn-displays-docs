@@ -7,7 +7,7 @@ nav_order: 2
 
 # Medien verwalten
 
-Das Video-Display zeigt deine Inhalte nacheinander in einer Schleife — ein Bild, dann das nächste, dann ein Video und wieder von vorn. Diese Seite erklärt, wie du Inhalte hinzufügst, einstellst und in die richtige Reihenfolge bringst.
+Das Video-Display zeigt deine Inhalte nacheinander in einer Schleife — ein Bild, dann das nächste, dann ein Video und wieder von vorn. Diese Seite erklärt, wie du Inhalte hinzufügst, einstellst und für die Anzeige ein- oder ausschaltest.
 
 ## Inhalt
 {: .no_toc .text-delta }
@@ -43,7 +43,7 @@ Jeder Inhalt wird als Kachel dargestellt. Von oben nach unten enthält eine Kach
 
 ## Einen Inhalt sofort auf dem Display anzeigen
 
-Klicke auf die **Vorschau** einer Kachel, um diesen Inhalt sofort auf dem Display anzuzeigen. So prüfst du direkt, wie ein Bild oder Video in echt aussieht, ohne die Schleife abzuwarten.
+Klicke auf die **Vorschau** einer Kachel, um diesen Inhalt sofort auf dem Display anzuzeigen. So prüfst du direkt, wie ein Bild oder Video in echt aussieht, ohne die Schleife abzuwarten. Danach läuft die normale Schleife automatisch weiter.
 
 > **Hinweis:** Nur aktive Inhalte lassen sich anzeigen. Ist ein Inhalt ausgeblendet (Augen-Symbol durchgestrichen), passiert beim Klick auf die Vorschau nichts.
 
@@ -67,7 +67,7 @@ Welche Einstellungen eine Kachel zeigt, hängt vom Dateityp ab.
 **Bei Bildern (PNG) und Web-Bildern (URL):**
 
 - **Dauer** — wie lange das Bild angezeigt wird, in Sekunden.
-- **Einblenden** — der Übergang, mit dem das Bild erscheint (**Kein**, **Einblenden**, **Hochschieben**, **Runterschieben**, **Links**, **Rechts**).
+- **Einblenden** — hier wählst du, wie das Bild erscheint: **Kein** (ohne Effekt), **Einblenden** (sanftes Erscheinen), **Hochschieben**, **Runterschieben**, **Links** oder **Rechts**.
 
 **Bei bewegten Inhalten (GIF und MJPEG):**
 
@@ -92,7 +92,7 @@ Im Bereich **Neu erstellen** gibt es vier Wege, einen Inhalt hinzuzufügen.
 
 Für fertige Bilder und Videodateien im richtigen Format (**PNG**, **GIF** oder **MJPEG**). Ein Klick auf **Datei hochladen** öffnet ein Fenster mit einer gestrichelten Fläche.
 
-![Das Hochladen-Fenster mit der gestrichelten Flaeche zum Hineinziehen einer Datei](upload-popup.png)
+![Das Hochladen-Fenster mit der gestrichelten Fläche zum Hineinziehen einer Datei](upload-popup.png)
 
 Ziehe deine Datei in die Fläche oder klicke sie an, um eine Datei auszuwählen. Anschließend klickst du auf **Hochladen**. Ein Fortschrittsbalken zeigt, wie weit der Vorgang ist.
 
@@ -102,7 +102,7 @@ Ziehe deine Datei in die Fläche oder klicke sie an, um eine Datei auszuwählen.
 
 Wenn ein Bild nicht genau ins Hochformat des Displays passt, hilft dieser Weg. Ein Klick auf **Bild zuschneiden & hochladen** öffnet einen kleinen Bild-Editor.
 
-![Das Fenster Bild zuschneiden mit Namensfeld, Ablageflaeche und Zuschnitt-Vorschau](bild-zuschneiden.png)
+![Das Fenster Bild zuschneiden mit Namensfeld, Ablagefläche und Zuschnitt-Vorschau](bild-zuschneiden.png)
 
 Gib oben einen **Dateinamen** ein, ziehe dann ein Bild in die Fläche (oder klicke sie an). Im Vorschaurahmen verschiebst du das Bild mit der Maus und zoomst mit dem Schieberegler **Zoom** oder dem Mausrad, bis der gewünschte Ausschnitt passt. Der Rahmen zeigt genau das, was später auf dem Display landet. Mit **Hochladen** wird der Ausschnitt passend zugeschnitten und als Bild gespeichert.
 
@@ -123,7 +123,7 @@ Ein Klick auf **Video konvertieren** öffnet den [Video-Konverter](videos-konver
 Lädst du einen Inhalt hoch, dessen Name schon vorhanden ist, fragt das Display sicherheitshalber nach. Du hast zwei Möglichkeiten:
 
 - **Überschreiben** — die alte Datei wird durch die neue ersetzt.
-- **Abbrechen** — es wird nichts geändert; du kannst der Datei erst einen anderen Namen geben.
+- **Abbrechen** — es wird nichts geändert. Möchtest du die alte Datei behalten, benenne die neue Datei zuerst auf deinem Computer um (zum Beispiel `plakat-2.png`) und lade sie dann erneut hoch.
 
 ---
 
