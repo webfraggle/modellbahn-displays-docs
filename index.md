@@ -25,4 +25,5 @@ Die Anleitungen sind in zwei Bereiche aufgeteilt: Unter **Allgemein** findest du
 
 ## Display-Anleitungen
 
+- [Video-Display](docs/video-display/) — Bilder und Videos anzeigen, eigene Videos konvertieren
 - [Tankstellenanzeige](docs/tankstellenanzeige/) — Einrichtung, Konfiguration und API
