@@ -1,6 +1,6 @@
 ---
 title: Video-Display
-layout: default
+layout: anleitung
 nav_order: 5
 has_children: true
 permalink: /docs/video-display/

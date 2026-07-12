@@ -1,6 +1,6 @@
 ---
 title: Allgemein
-layout: default
+layout: anleitung
 nav_order: 2
 has_children: true
 permalink: /docs/allgemein/

@@ -4,14 +4,22 @@ layout: default
 
 {%- assign dir_parts = page.dir | split: "/" -%}
 {%- assign display_slug = dir_parts[2] -%}
+{%- if page.parent -%}
+  {%- assign kapitel = page.parent -%}
+{%- else -%}
+  {%- comment -%} Kapitel-Übersichtsseite: Button nur, wenn Unterseiten existieren (sonst gibt es kein PDF) {%- endcomment -%}
+  {%- assign unterseiten = site.pages | where: "parent", page.title -%}
+  {%- if unterseiten.size > 0 -%}
+    {%- assign kapitel = page.title -%}
+  {%- endif -%}
+{%- endif -%}
 
-{%- if display_slug and page.parent -%}
+{%- if display_slug and kapitel -%}
 <div class="pdf-download" role="complementary">
   <a href="{{ '/assets/pdf/' | append: display_slug | append: '.pdf' | relative_url }}"
-     download
-     aria-label="Gesamte Anleitung zu {{ page.parent }} als PDF herunterladen">
+     download>
     <span class="pdf-download-icon" aria-hidden="true"></span>
-    <span class="pdf-download-label">Gesamte Anleitung als PDF</span>
+    <span class="pdf-download-label">{{ kapitel }}-Anleitung als PDF herunterladen</span>
   </a>
 </div>
 {%- endif -%}
