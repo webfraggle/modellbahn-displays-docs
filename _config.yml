@@ -26,7 +26,7 @@ aux_links:
   "modellbahn-displays.de":
     - "https://www.modellbahn-displays.de"
 
-footer_content: "© Modellbahn Displays · <a href=\"https://www.modellbahn-displays.de/impressum/\">Impressum</a> · <a href=\"https://www.modellbahn-displays.de/datenschutz/\">Datenschutz</a>"
+footer_content: "© Modellbahn Displays · <a href=\"https://www.modellbahn-displays.de/impressum/\">Impressum</a> · <a href=\"https://www.modellbahn-displays.de/datenschutz/\">Datenschutz</a><br>Diese Anleitungen entstehen mit Unterstützung von KI — Inhalte und Prüfung kommen vom Menschen."
 
 back_to_top: true
 back_to_top_text: "Nach oben"
