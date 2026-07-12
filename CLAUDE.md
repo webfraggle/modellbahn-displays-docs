@@ -38,4 +38,8 @@ Konsequenz für Texte und Anleitungen:
 
 Push auf `main` → GitHub Action `Deploy Jekyll site to Pages` baut und deployed automatisch. Custom Domain via `CNAME`-Datei (`docs.modellbahn-displays.de`), DNS bei Hosteurope.
 
+**Staging:** Push auf `develop` → GitHub Action `Deploy staging to preview` baut die Site (inkl. PDFs) mit `_config_staging.yml`-Override und lädt sie per FTP auf den Hosteurope-Webspace (<https://preview.modellbahn-displays.de>). Staging-Builds bekommen noindex, `Disallow` in `robots.txt` und einen Vorschau-Banner. Secrets: `STAGING_FTP_SERVER`, `STAGING_FTP_USERNAME`, `STAGING_FTP_PASSWORD`.
+
+**Branch-Workflow:** Doku-Branches anderer Projekte → PR auf `develop` (Gegenlesen auf preview) → Merge `develop` → `main` (Produktion).
+
 Lokal: `bundle install && bundle exec jekyll serve --livereload` → <http://localhost:4000/>
