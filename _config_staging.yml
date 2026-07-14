@@ -1,0 +1,4 @@
+# Überschreibt _config.yml für Staging-Builds (develop-Branch).
+# Wird im Workflow per `jekyll build --config _config.yml,_config_staging.yml` geladen.
+url: https://preview.modellbahn-displays.de
+staging: true

@@ -1,6 +1,6 @@
 ---
 title: Bildgeneratoren
-layout: default
+layout: anleitung
 nav_order: 7
 has_children: true
 permalink: /docs/bildgeneratoren/

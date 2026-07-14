@@ -1,0 +1,61 @@
+name: Deploy staging to preview
+
+on:
+  push:
+    branches: ["develop"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "staging"
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+          bundler-cache: true
+
+      - name: Build with Jekyll (Staging-Konfiguration)
+        run: bundle exec jekyll build --config _config.yml,_config_staging.yml
+        env:
+          JEKYLL_ENV: production
+
+      - name: Install PDF toolchain (pandoc + texlive + fonts)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            pandoc \
+            texlive-xetex \
+            texlive-lang-german \
+            texlive-fonts-recommended \
+            texlive-latex-extra \
+            texlive-fonts-extra \
+            texlive-plain-generic \
+            fonts-ibm-plex \
+            fonts-jetbrains-mono \
+            python3-yaml \
+            wget
+
+      - name: Generate PDFs
+        run: python3 scripts/generate_pdfs.py
+
+      - name: Deploy via FTP zu Hosteurope
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.STAGING_FTP_SERVER }}
+          username: ${{ secrets.STAGING_FTP_USERNAME }}
+          password: ${{ secrets.STAGING_FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./_site/
+          exclude: |
+            CNAME

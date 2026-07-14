@@ -1,6 +1,6 @@
 ---
 title: Zugzielanzeiger
-layout: default
+layout: anleitung
 nav_order: 4
 has_children: true
 permalink: /docs/zugzielanzeiger/
