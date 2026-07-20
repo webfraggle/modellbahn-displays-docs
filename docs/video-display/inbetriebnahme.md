@@ -63,7 +63,7 @@ Möchtest du ein Video anzeigen, muss es vorher in das passende Format umgewande
 
 ## Software aktualisieren
 
-Von Zeit zu Zeit gibt es neue Funktionen oder Verbesserungen. Über den Knopf **Firmware aktualisieren** (im Menü heißt derselbe Punkt **Firmware-Update**) bringst du die Betriebssoftware — die **Firmware** — deines Controllers auf den neuesten Stand. Der genaue Ablauf ist bei allen Displays gleich und steht in der allgemeinen Anleitung [Controller aktualisieren](../allgemein/controller-aktualisieren.md).
+Von Zeit zu Zeit gibt es neue Funktionen oder Verbesserungen. Über den Knopf **Firmware aktualisieren** (im Menü heißt derselbe Punkt **Firmware-Update**) bringst du die Betriebssoftware — die **Firmware** — deines Controllers auf den neuesten Stand. Der genaue Ablauf ist bei allen Displays gleich und steht in der allgemeinen Anleitung [Controller aktualisieren (über WLAN)](../allgemein/controller-aktualisieren-wlan.md). Falls das über WLAN nicht klappt, gibt es den Weg [per USB am Windows-PC](../allgemein/controller-aktualisieren-usb.md).
 
 ---
 
