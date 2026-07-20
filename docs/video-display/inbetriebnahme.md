@@ -21,7 +21,9 @@ Diese Anleitung bringt dein Video-Display zum ersten Mal ans Laufen: anschließe
 
 Prüfe zuerst, dass das flache Kabel (Flachbandkabel) zwischen Controller und Display richtig eingesteckt ist. Wie das geht, steht in der allgemeinen Anleitung [Flachbandkabel anschließen](../allgemein/flachbandkabel-anschliessen.md).
 
-Verbinde den Controller anschließend über ein **USB-C-Kabel** mit einer Stromquelle — zum Beispiel einem USB-Netzteil vom Handy, einem Modellbahn-Trafo mit USB-Ausgang oder einer Powerbank. Nach ein paar Sekunden erscheint ein Startbild auf dem Display, und die kleine Leuchte (LED) am Controller leuchtet.
+Verbinde den Controller anschließend über ein **USB-C-Kabel** mit einer Stromquelle — zum Beispiel einem USB-Netzteil vom Handy oder einer Powerbank. Nach ein paar Sekunden erscheint ein Startbild auf dem Display, und die kleine Leuchte (LED) am Controller leuchtet.
+
+> **Tipp:** Willst du den Controller stattdessen mit einem Modellbahn-Trafo oder einem 12V-DC-Netzteil betreiben, benötigst du den als Zubehör erhältlichen Spannungswandler, der an den 2-Pin-Stromeingang des Controllers angeschlossen wird.
 
 > **Hinweis:** Das Display braucht keinen eigenen Computer. Für die Einrichtung genügt ein Smartphone, Tablet oder Notebook, mit dem du ins WLAN kommst.
 

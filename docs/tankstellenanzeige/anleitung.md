@@ -21,7 +21,9 @@ Diese Anleitung beschreibt die Ersteinrichtung und die Konfiguration der Preisan
 
 ## Anschluss und erster Start
 
-Prüfe, dass das Flachbandkabel zwischen Controller und Display richtig eingesteckt ist (siehe [Flachbandkabel anschließen](../allgemein/flachbandkabel-anschliessen.md)). Verbinde den Controller per USB-C-Kabel mit einer Stromquelle (USB-Netzteil, Modellbahn-Trafo mit USB-Ausgang oder Powerbank). Nach wenigen Sekunden erscheint das Startbild auf dem Display und die LED am Controller leuchtet.
+Prüfe, dass das Flachbandkabel zwischen Controller und Display richtig eingesteckt ist (siehe [Flachbandkabel anschließen](../allgemein/flachbandkabel-anschliessen.md)). Verbinde den Controller per USB-C-Kabel mit einer Stromquelle (USB-Netzteil oder Powerbank). Nach wenigen Sekunden erscheint das Startbild auf dem Display und die LED am Controller leuchtet.
+
+> **Tipp:** Willst du den Controller stattdessen mit einem Modellbahn-Trafo oder einem 12V-DC-Netzteil betreiben, benötigst du den als Zubehör erhältlichen Spannungswandler, der an den 2-Pin-Stromeingang des Controllers angeschlossen wird.
 
 ---
 
