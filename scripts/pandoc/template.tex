@@ -123,6 +123,26 @@
 % Innerhalb der Tip-Box: Links weiß
 \newcommand{\tipboxlinks}{\hypersetup{urlcolor=white, linkcolor=white}}
 
+% --- Warn-Box (Orange) -------------------------------------------
+% Gegenstück zur Warn-Karte im Web. Wird von generate_pdfs.py aus
+% einem Blockquote mit {: .warnung } erzeugt.
+\newtcolorbox{warnbox}{
+  enhanced,
+  colback=mbdorange,
+  colframe=mbdorange,
+  coltext=white,
+  sharp corners,
+  boxrule=0pt,
+  left=18pt,
+  right=18pt,
+  top=13pt,
+  bottom=13pt,
+  before skip=16pt,
+  after skip=16pt,
+  breakable,
+  fontupper=\normalsize
+}
+
 % --- Listen ------------------------------------------------------
 \setlist[itemize]{
   leftmargin=1.6em,

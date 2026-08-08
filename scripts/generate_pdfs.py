@@ -73,6 +73,21 @@ def clean_markdown(body: str) -> str:
         convert_image_width,
         body,
     )
+    # Blockquote mit {: .warnung } → orange Warn-Box (siehe template.tex).
+    # Muss vor dem generischen Entfernen der kramdown-Attribute laufen.
+    def convert_warnung(m: re.Match) -> str:
+        inner = re.sub(r"^>[ \t]?", "", m.group(1), flags=re.MULTILINE).strip()
+        return (
+            "```{=latex}\n\\begin{warnbox}\n```\n\n"
+            f"{inner}\n\n"
+            "```{=latex}\n\\end{warnbox}\n```\n"
+        )
+    body = re.sub(
+        r"^((?:>.*(?:\n|$))+)\{:\s*\.warnung\s*\}[ \t]*(?:\n|$)",
+        convert_warnung,
+        body,
+        flags=re.MULTILINE,
+    )
     # Verbleibende inline kramdown-Attribute entfernen
     body = re.sub(r"\{:\s*[^\}]*\}", "", body)
     # Eingerückte Bilder (in Listen) als eigene Absätze herausziehen
@@ -115,7 +130,21 @@ def build_combined_markdown(display_dir: Path) -> tuple[Path, str, str, Path] | 
     title = meta.get("title", slug)
 
     chunks: list[str] = []
+    warnbox_seen = False
     for i, (_, _, body) in enumerate(pages):
+        # Der Warnhinweis steht auf jeder Web-Seite, im zusammengefassten
+        # PDF reicht er einmal ganz vorne.
+        if "\\begin{warnbox}" in body:
+            if warnbox_seen:
+                body = re.sub(
+                    r"```\{=latex\}\n\\begin\{warnbox\}\n```\n\n"
+                    r".*?"
+                    r"```\{=latex\}\n\\end\{warnbox\}\n```\n+",
+                    "",
+                    body,
+                    flags=re.DOTALL,
+                )
+            warnbox_seen = True
         if i > 0:
             chunks.append("\n\n```{=latex}\n\\clearpage\n```\n\n")
         chunks.append(body)

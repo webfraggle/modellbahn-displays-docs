@@ -281,6 +281,22 @@ body::before {
   }
 }
 
+// --- Warn-Karte (Orange) --------------------------------------
+// Nur für Vorab-/Statushinweise zum Dokument selbst, nicht für
+// inhaltliche Tipps. Erbt alles von der Tip-Karte, tauscht Farbe
+// und Symbol. Beim Einsatz einer Warn-Karte gehört auf dieselbe
+// Seite bewusst kein türkiser Tipp direkt daneben.
+
+.main-content blockquote.warnung {
+  background: #FD7014;
+
+  &::before {
+    background: #ffffff;
+    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><path d='M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z'/><line x1='12' y1='9' x2='12' y2='13'/><line x1='12' y1='17' x2='12.01' y2='17'/></svg>") center/contain no-repeat;
+    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><path d='M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z'/><line x1='12' y1='9' x2='12' y2='13'/><line x1='12' y1='17' x2='12.01' y2='17'/></svg>") center/contain no-repeat;
+  }
+}
+
 // --- Code -----------------------------------------------------
 
 .main-content code {
@@ -494,12 +510,17 @@ body::before {
 
     &::before { display: none; }
 
+    // Rollover: türkis, weiß, bewusst NICHT fett. Ein Wechsel der
+    // Schriftstärke ändert die Textbreite und lässt lange Einträge
+    // beim Überfahren umbrechen.
     &:hover {
       background-image: none !important;
-      background-color: #FD7014 !important;
+      background-color: #037F8C !important;
       color: #ffffff !important;
+      font-weight: 400;
     }
 
+    // Aktive Seite: orange und fett — als einziger Eintrag
     &.active {
       background-image: none !important;
       background-color: #FD7014 !important;
@@ -509,6 +530,7 @@ body::before {
       &:hover {
         background-color: #FD7014 !important;
         color: #ffffff !important;
+        font-weight: 600;
       }
     }
   }
@@ -520,7 +542,7 @@ body::before {
 
     &:hover {
       background-image: none !important;
-      background-color: #FD7014 !important;
+      background-color: #037F8C !important;
       color: #ffffff !important;
     }
 
@@ -537,16 +559,24 @@ body::before {
         padding-left: 2.25rem;
         color: #555;
 
-        &:hover,
+        &:hover {
+          background-image: none !important;
+          background-color: #037F8C !important;
+          color: #ffffff !important;
+          font-weight: 400;
+        }
+
         &.active {
           background-image: none !important;
           background-color: #FD7014 !important;
           color: #ffffff !important;
-          font-weight: 500;
-        }
-
-        &.active {
           font-weight: 600;
+
+          &:hover {
+            background-color: #FD7014 !important;
+            color: #ffffff !important;
+            font-weight: 600;
+          }
         }
       }
     }
