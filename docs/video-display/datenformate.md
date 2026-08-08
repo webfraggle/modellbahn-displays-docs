@@ -7,6 +7,9 @@ nav_order: 4
 
 # Datenformate und eigene Dateien
 
+> **Vorabversion:** Diese Anleitung beschreibt eine Firmware, die noch nicht veröffentlicht ist. Beschriftungen, Menüpunkte und Abläufe können sich noch ändern, und einzelne Angaben können falsch sein. Sobald die Version fertig ist, verschwindet dieser Hinweis.
+{: .warnung }
+
 Das Video-Display kann verschiedene Arten von Inhalten anzeigen. Diese Seite erklärt, welche Formate es gibt, wofür sich welches eignet und wie du eigene Dateien vorbereitest.
 
 ## Inhalt

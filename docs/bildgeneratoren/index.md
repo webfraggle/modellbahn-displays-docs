@@ -3,6 +3,7 @@ title: Bildgeneratoren
 layout: anleitung
 nav_order: 7
 has_children: true
+has_toc: false
 permalink: /docs/bildgeneratoren/
 ---
 
@@ -12,7 +13,7 @@ Die Bildgeneratoren sind kleine Online-Dienste, die fertige Bilder genau im Form
 
 In diesem Bereich findest du Anleitungen, **wie du dir die passende Adresse (URL) für ein solches Bild zusammenstellst**:
 
-- **[Wetter](wetter.md)** — Wettervorhersage für einen deutschen Ort (über die Postleitzahl)
-- **[Markt](markt.md)** — aktueller Kurs einer Kryptowährung oder Aktie
+- [Wetter](wetter.md) — Wettervorhersage für einen deutschen Ort (über die Postleitzahl)
+- [Markt](markt.md) — aktueller Kurs einer Kryptowährung oder Aktie
 
 > **Hinweis:** Hier geht es nur darum, die richtige Adresse zu erzeugen und im Browser zu prüfen. Wie du diese Adresse anschließend in deinem Display hinterlegst, steht in der Anleitung zu deinem jeweiligen Display.

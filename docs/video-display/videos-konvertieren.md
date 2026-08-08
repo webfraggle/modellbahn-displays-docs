@@ -7,6 +7,9 @@ nav_order: 3
 
 # Videos konvertieren
 
+> **Vorabversion:** Diese Anleitung beschreibt eine Firmware, die noch nicht veröffentlicht ist. Beschriftungen, Menüpunkte und Abläufe können sich noch ändern, und einzelne Angaben können falsch sein. Sobald die Version fertig ist, verschwindet dieser Hinweis.
+{: .warnung }
+
 Das Display kann bewegte Videos zeigen — allerdings nur in einem besonderen Format namens **MJPEG**. Ein normales Handy- oder Kamera-Video (zum Beispiel eine **.mp4**-Datei) musst du deshalb einmal umwandeln. Das erledigt der eingebaute Video-Konverter direkt in deinem Browser.
 
 ## Inhalt

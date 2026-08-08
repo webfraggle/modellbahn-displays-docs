@@ -9,7 +9,7 @@ nav_order: 1
 
 Diese Anleitung beschreibt die Ersteinrichtung und die Konfiguration der Preisanzeige.
 
-> **Hinweis:** Die Tankstellenanzeige kann inzwischen mehr als nur Tankstellenpreise zeigen — sie kann nacheinander mehrere Inhalte durchlaufen (z. B. Wetter, Börsenkurse, eigene Bilder). Diese Seite erklärt die **Preisanzeige**. Wie du weitere Inhalte ergänzt, steht unter [Anzeige-Reihenfolge](anzeige-reihenfolge.md).
+> **Hinweis:** Die Tankstellenanzeige kann ab Version 3.0.14 mehr als nur Tankstellenpreise zeigen — sie kann nacheinander mehrere Inhalte durchlaufen (z. B. Wetter, Börsenkurse, eigene Bilder oder Preise verschiedener Tankstellen). Diese Seite erklärt die **Preisanzeige**. Wie du weitere Inhalte ergänzt, steht unter [Weitere Inhalte anzeigen](anzeige-reihenfolge.md).
 
 ## Inhalt
 {: .no_toc .text-delta }
@@ -59,7 +59,7 @@ Alle Einstellungen der Preisanzeige (Design, Tankstelle, Preise, Zeilen) stecken
 
 ## Template wählen
 
-Unter **Template** (Vorlage) findest du eine Liste aller verfügbaren Anzeige-Designs (z. B. Aral, Shell, LED). Wähle das Template, das zu deiner Tankstelle passt.
+Unter **Template** (Vorlage) findest du eine Liste aller verfügbaren Anzeige-Designs. Wähle das Template, das zu deiner Tankstelle passt.
 
 ---
 
@@ -85,7 +85,7 @@ Im Bereich **Preise** siehst du alle Kraftstoffarten. Es gibt zwei Gruppen:
 - **e10** (Super E10), **e5** (Super), **diesel** (Diesel) — Hier stehen die tatsächlichen Preise (z. B. 1,85). Bei ausgewählter Tankstelle werden diese drei Preise automatisch online aktualisiert.
 
 **Relative Preise** (unterer Bereich, unterhalb der Trennlinie):
-- **superplus** (SuperPlus), **lkwdiesel** (LKW-Diesel), **erdgas** (Erdgas/CNG), **lpg** (Autogas), **adblue** (AdBlue) — Diese werden als Auf- oder Abschlag zu e10 berechnet. Beispiel: SuperPlus ist oft 10 Cent teurer als E10 — dann gibst du hier `+0,10` ein. Für LKW-Diesel, der 5 Cent günstiger ist, trägst du `-0,05` ein.
+- **superplus** (SuperPlus), **lkwdiesel** (LKW-Diesel), **erdgas** (Erdgas/CNG), **lpg** (Autogas), **adblue** (AdBlue) — Diese werden als Auf- oder Abschlag zu e10 berechnet. Beispiel: SuperPlus ist oft 10 Cent teurer als E10 — dann gibst du hier `0,10` ein. Für LKW-Diesel, der 5 Cent günstiger ist, trägst du `-0,05` ein.
 
 Die relativen Preise musst du nur einmal einstellen — danach werden sie automatisch anhand des aktuellen E10-Preises berechnet.
 
@@ -99,13 +99,13 @@ Im Bereich **Zeilen** legst du fest, welche Kraftstoffart in welcher Zeile auf d
 
 ## Update-Intervall
 
-Das **Intervall** legt fest, wie oft die Preise automatisch online abgerufen werden (in Minuten). Der Mindestwert ist 5 Minuten, um den Preisserver nicht zu überlasten. Das Intervall gilt geräteweit für **alle** Tankstellen gemeinsam — du findest das Feld zwar in jedem Tankstellen-Eintrag, der Wert wirkt aber überall gleich, egal wo du ihn änderst.
+Das **Intervall** legt fest, wie oft die Preise automatisch online abgerufen werden (in Minuten). Der Mindestwert ist 5 Minuten, um den Preisserver nicht zu überlasten. Auch die Server speichern die Preise bis zu 10 Minuten zwischen, so dass es 15 bis 20 Minuten dauern kann, bis Preise aktuell sind. Das Intervall gilt geräteweit für **alle** Tankstellen gemeinsam — du findest das Feld zwar in jedem Tankstellen-Eintrag, der Wert wirkt aber überall gleich, egal wo du ihn änderst.
 
 ---
 
 ## Eigene Datenquelle (für Fortgeschrittene)
 
-Das Feld **API-URL** (die Adresse eines eigenen Preisservers) kann normalerweise leer gelassen werden — die Tankstellenanzeige nutzt dann automatisch den richtigen Server. Nur wenn du einen eigenen Preisserver betreibst, trägst du hier dessen Adresse ein. Wie das Intervall gilt auch die API-URL geräteweit für **alle** Tankstellen gemeinsam. Details siehe [Eigene Datenquelle](api.md).
+Das Feld **API-URL** (die Adresse eines eigenen Preisservers) kann normalerweise leer gelassen werden — die Tankstellenanzeige nutzt dann automatisch den Server von Modellbahn Displays. Nur wenn du einen eigenen Preisserver betreibst, trägst du hier dessen Adresse ein. Wie das Intervall gilt auch die API-URL geräteweit für **alle** Tankstellen gemeinsam. Details siehe [Eigene Datenquelle](api.md).
 
 > **Wichtig:** Auch bei einer eigenen URL muss eine Tankstelle ausgewählt sein, damit die Preisabfrage funktioniert.
 
@@ -115,13 +115,13 @@ Das Feld **API-URL** (die Adresse eines eigenen Preisservers) kann normalerweise
 
 Wenn du alle Einstellungen vorgenommen hast, klicke auf **Konfiguration speichern**. In der Statusleiste am unteren Rand erscheint **Gespeichert** und die Anzeige auf dem Display aktualisiert sich.
 
-Mit dem Knopf **Live-Preise aktualisieren** kannst du jederzeit die neuesten Preise für **alle** Tankstellen-Einträge vom Server abrufen, ohne auf das nächste automatische Update zu warten.
+Mit dem Knopf **Live-Preise aktualisieren** kannst du jederzeit die neuesten Preise für **alle** Tankstellen-Einträge vom Server abrufen, ohne auf das nächste automatische Update zu warten. Auch hier gilt, dass der Server selbst Preise zwischenspeichert und es ein paar Minuten dauern kann, bis die Preise aktuell sind.
 
 ---
 
 ## Weitere Inhalte und Sicherung
 
-- Du möchtest neben den Preisen noch Wetter, Börsenkurse oder eigene Bilder anzeigen? Das richtest du über die [Anzeige-Reihenfolge](anzeige-reihenfolge.md) ein.
+- Du möchtest neben den Preisen noch Wetter, Börsenkurse oder eigene Bilder anzeigen? Das richtest du unter [Weitere Inhalte anzeigen](anzeige-reihenfolge.md) ein.
 - Bevor du viel einstellst, lohnt sich eine Sicherung: Mit [Backup & Wiederherstellung](backup-restore.md) sicherst du deine komplette Konfiguration in einer Datei.
 
 ---

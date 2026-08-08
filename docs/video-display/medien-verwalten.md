@@ -7,6 +7,9 @@ nav_order: 2
 
 # Medien verwalten
 
+> **Vorabversion:** Diese Anleitung beschreibt eine Firmware, die noch nicht veröffentlicht ist. Beschriftungen, Menüpunkte und Abläufe können sich noch ändern, und einzelne Angaben können falsch sein. Sobald die Version fertig ist, verschwindet dieser Hinweis.
+{: .warnung }
+
 Das Video-Display zeigt deine Inhalte nacheinander in einer Schleife — ein Bild, dann das nächste, dann ein Video und wieder von vorn. Diese Seite erklärt, wie du Inhalte hinzufügst, einstellst und für die Anzeige ein- oder ausschaltest.
 
 ## Inhalt

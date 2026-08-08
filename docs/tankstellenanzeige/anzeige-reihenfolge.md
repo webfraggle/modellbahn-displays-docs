@@ -1,11 +1,11 @@
 ---
-title: Anzeige-Reihenfolge (Inhalte)
+title: Weitere Inhalte anzeigen
 layout: anleitung
 parent: Tankstellenanzeige
 nav_order: 2
 ---
 
-# Anzeige-Reihenfolge — mehrere Inhalte anzeigen
+# Weitere Inhalte anzeigen
 
 Deine Tankstellenanzeige kann mehr als nur Spritpreise zeigen. Sie durchläuft eine
 Liste von Inhalten (genannt **Views**) immer wieder der Reihe nach — zum Beispiel:
@@ -63,7 +63,7 @@ Jede Zeile steht für einen Inhalt und zeigt:
 
 Du kannst beliebig viele **Tankstellen** anlegen — jede zeigt eine eigene Tankstelle, völlig unabhängig voneinander:
 
-- eigenes **Template** (Design, z. B. Aral, Shell, LED),
+- eigenes **Template** (Design),
 - eigene **Tankstelle** (über die **Tankstellen-ID**),
 - eigene **Preise** und **Zeilen-Zuordnung**.
 

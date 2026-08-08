@@ -52,26 +52,6 @@ Die LED am Controller zeigt dir den Verbindungsstatus an:
 
 ---
 
-## WLAN-Daten ändern
-
-Es gibt drei Wege, um die WLAN-Einstellungen zu ändern:
-
-### Über die Reset-Taste
-
-Drücke die **Reset**-Taste am Controller mehrfach kurz hintereinander (2–3 Mal). Dadurch werden die gespeicherten WLAN-Daten gelöscht und der Controller startet im Konfigurationsmodus — das heißt, er öffnet sein eigenes WLAN-Netzwerk, über das du die Einstellungen ändern kannst.
-
-> **Hinweis:** Zwischen den Tastendrücken musst du jeweils 1–2 Sekunden warten, damit der Controller zwischendurch hochfahren kann. Erst dann erkennt er den nächsten Reset als Teil der Sequenz.
-
-### Automatisch bei fehlendem WLAN
-
-Wenn der Controller dein gespeichertes WLAN nicht findet (z.B. weil sich der Netzwerkname oder das Passwort geändert hat), wechselt er automatisch in den Konfigurationsmodus und öffnet sein eigenes Netzwerk.
-
-### Über das eigene Netzwerk des Controllers
-
-Solange der Controller im Konfigurationsmodus ist und sein eigenes WLAN sendet, kannst du dich damit verbinden und unter `192.168.4.1` die WLAN-Einstellungen direkt ändern — genau wie bei der Ersteinrichtung.
-
----
-
 ## IP-Adresse herausfinden
 
 Sobald das Display mit deinem WLAN verbunden ist, bekommt es eine IP-Adresse (eine Art Hausnummer in deinem Netzwerk). Diese brauchst du, um das Webinterface zu öffnen.
@@ -79,6 +59,30 @@ Sobald das Display mit deinem WLAN verbunden ist, bekommt es eine IP-Adresse (ei
 Drücke kurz die Taste **BTN 0** am Controller — auf dem Display wird die aktuelle IP-Adresse angezeigt (z.B. `192.168.178.41`).
 
 Gib diese Adresse in einem Browser auf deinem Computer oder Smartphone ein.
+
+---
+
+## WLAN-Daten resetten oder ändern
+
+Es gibt drei Wege, um die WLAN-Einstellungen zu ändern:
+
+### Über die Reset-Taste
+
+Tippe die **Reset**-Taste am Controller kurz an, sobald er hochgefahren ist — insgesamt zwei- bis dreimal. Dadurch werden die gespeicherten WLAN-Daten gelöscht und der Controller startet im Konfigurationsmodus — das heißt, er öffnet sein eigenes WLAN-Netzwerk, über das du die Einstellungen ändern kannst. Danach gehst du vor wie bei der Ersteinrichtung: [Schritt für Schritt](#schritt-für-schritt).
+
+> **Hinweis:** Zwischen den Tastendrücken musst du jeweils 1–2 Sekunden warten, damit der Controller zwischendurch hochfahren kann. Erst dann erkennt er den nächsten Reset als Teil der Sequenz. Wartest du zu kurz oder zu lang, zählt der Controller den Tastendruck nicht mit — dann passiert nichts und du versuchst es einfach noch einmal.
+
+### Automatisch bei fehlendem WLAN
+
+Wenn der Controller dein gespeichertes WLAN nicht findet (z.B. weil sich der Netzwerkname oder das Passwort geändert hat), wechselt er automatisch in den Konfigurationsmodus und öffnet sein eigenes Netzwerk. Dann kannst du das WLAN wie oben beschrieben einrichten.
+
+### Über das Webinterface
+
+Ist der Controller mit deinem Heim-WLAN verbunden, kommst du weiterhin über die Startseite des Webinterfaces an die WLAN-Einstellungen. Gib dazu die IP-Adresse des Controllers im Browser ein und klicke auf **WLAN-Konfiguration**.
+
+Das folgende Beispiel zeigt die Startseite der Tankstellenanzeige — bei den anderen Displays steht dort der jeweilige Name, die Knöpfe sind dieselben.
+
+![Startseite des Webinterfaces der Tankstellenanzeige mit den Knöpfen Konfiguration, WLAN-Konfiguration und Firmware-Update](Tankstelle-Home.png)
 
 ---
 

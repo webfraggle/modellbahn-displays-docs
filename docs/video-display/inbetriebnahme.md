@@ -7,6 +7,9 @@ nav_order: 1
 
 # Video-Controller in Betrieb nehmen
 
+> **Vorabversion:** Diese Anleitung beschreibt eine Firmware, die noch nicht veröffentlicht ist. Beschriftungen, Menüpunkte und Abläufe können sich noch ändern, und einzelne Angaben können falsch sein. Sobald die Version fertig ist, verschwindet dieser Hinweis.
+{: .warnung }
+
 Diese Anleitung bringt dein Video-Display zum ersten Mal ans Laufen: anschließen, mit dem WLAN verbinden und die Weboberfläche öffnen, über die du später deine Inhalte verwaltest.
 
 ## Inhalt
@@ -74,4 +77,4 @@ Von Zeit zu Zeit gibt es neue Funktionen oder Verbesserungen. Über den Knopf **
 | Display bleibt dunkel | Prüfe die Stromversorgung (USB-C-Kabel und Netzteil) und ob das Flachbandkabel zum Display fest sitzt |
 | Ich finde die Adresse des Displays nicht | Folge der Anleitung [WLAN einrichten](../allgemein/wlan-einrichten.md) — dort steht, wo du die Adresse abliest |
 | Die Weboberfläche lädt nicht | Prüfe, ob dein Smartphone oder Computer im selben WLAN ist wie das Display, und tippe die Adresse ohne Tippfehler ein |
-| WLAN-Verbindung klappt nicht mehr | Setze das WLAN zurück und richte es neu ein — siehe [WLAN zurücksetzen](../allgemein/wlan-resetten.md) |
+| WLAN-Verbindung klappt nicht mehr | Setze das WLAN zurück und richte es neu ein — siehe [WLAN-Daten resetten oder ändern](../allgemein/wlan-einrichten.md#wlan-daten-resetten-oder-ändern) |
