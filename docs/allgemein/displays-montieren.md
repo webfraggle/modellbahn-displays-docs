@@ -44,12 +44,12 @@ Der Controller-Halter lässt sich außerdem ohne Anlage als **Ständer** aufbaue
 
 ## Was du sonst noch brauchst
 
-![Die drei benötigten Werkzeuge — ein 5-mm-Holzbohrer, ein Schraubendreher mit Kreuzschlitz-Bit und eine Flachfeile](montagekit/01.2-benötigte-Werkzeuge.jpg)
+![Ein 5-mm-Holzbohrer, ein Schraubendreher mit Kreuzschlitz-Bit und eine Flachfeile nebeneinander](montagekit/01.2-benötigte-Werkzeuge.jpg)
 
 - Einen **5-mm-Holzbohrer** und eine Bohrmaschine oder einen Akkuschrauber
 - Einen **Schraubendreher** mit Kreuzschlitz
 - Eine **Flachfeile** zum Nacharbeiten des Langlochs
-- Einen **Bleistift** zum Anzeichnen (optional: Die Positionen der Löcher lassen sich auch mit dem Holzbohrer anreißen)
+- Einen **Bleistift** zum Anzeichnen — die Bohrpunkte lassen sich auch direkt mit der Bohrerspitze anreißen
 
 Mehr Werkzeug brauchst du nicht: Alle Bohrungen werden mit dem 5-mm-Bohrer gemacht, und alle Schrauben im Kit haben einen Kreuzschlitz.
 
@@ -75,7 +75,7 @@ Lege die Muttern in die Vertiefungen. Sie sitzen dort verdrehsicher und müssen 
 
 ### Abstandshalter einschrauben
 
-Die vier Abstandshalter haben an einem Ende ein Gewinde. Dieses Gewinde wird von der anderen Seite in die Muttern geschraubt.
+Die vier Abstandshalter haben an einem Ende ein Gewinde. Dieses Gewinde schraubst du von der anderen Seite in die Muttern.
 
 ![Controller-Halter mit eingesetzten Muttern, daneben die vier Messing-Abstandshalter](montagekit/02.3-Controller-Halter-als-Staender.jpg)
 
@@ -97,7 +97,7 @@ Dreh den Halter um: Die Abstandshalter sind jetzt die Füße. In das Langloch in
 
 ### Display anschließen und aufstecken
 
-Schließe das Flachbandkabel am Display an und steck das Display oben in die Schiene. Durch die Schiene fädeln musst du das Kabel dabei nicht — es läuft einfach nach vorne weg.
+Schließe das Flachbandkabel am Display an und schiebe das Display oben in die Schiene. Durch die Schiene fädeln musst du das Kabel dabei nicht — es läuft einfach nach vorne weg.
 
 ![Das Display steckt oben in der Schiene, das Flachbandkabel läuft an der Vorderseite nach unten zum daneben liegenden Controller](montagekit/02.7-Controller-Halter-als-Staender.jpg)
 
@@ -117,7 +117,9 @@ Jetzt geht es an die Anlage. Die Schiene braucht ein Langloch in der Grundplatte
 
 Lege die Anzeichenhilfe an die Stelle, an der das Display später stehen soll.
 
-![Die orange Anzeichenhilfe liegt neben einer Straße auf der Grundplatte, daneben ein Lineal](montagekit/03.01-Langloch-fuer-Schiene.jpg)
+> **Tipp:** Schau vor dem Anzeichnen einmal unter die Platte. Unter der Stelle brauchst du eine handbreit freie Fläche für die Schienenfixierung und den Controller-Halter. Sitzt dort genau ein Rahmenholz oder ein Querträger, such dir lieber gleich eine andere Position.
+
+![Die orange Anzeichenhilfe liegt auf der Grundplatte neben einer Straße mit gepflastertem Gehweg und Bordstein](montagekit/03.01-Langloch-fuer-Schiene.jpg)
 
 Ihre wichtigste Aufgabe: Durch die kleinen Löcher zeichnest du die Mittelpunkte für die Bohrungen an. Halte die Schablone dabei gut fest.
 
@@ -168,7 +170,7 @@ Von unten siehst du das fertige Langloch:
 
 ![Blick auf das fertige Langloch von der Unterseite der Grundplatte](montagekit/04.01-Befestigung-Schiene.jpg)
 
-Schieb die Schiene von oben durch, sodass sie unten herausschaut.
+Schiebe die Schiene von oben durch, sodass sie unten herausschaut.
 
 ![Die Schiene schaut auf der Unterseite der Platte aus dem Langloch heraus](montagekit/04.02-Befestigung-Schiene.jpg)
 
@@ -184,7 +186,7 @@ Zieh sie mit dem Schraubendreher fest.
 
 ![Eine der Holzschrauben wird mit dem Schraubendreher festgezogen](montagekit/04.05-Befestigung-Schiene.jpg)
 
-Die Schienenfixierung sitzt jetzt fest an der Platte. Die Schiene selbst lässt sich darin noch verschieben — das brauchst du gleich, um die Höhe des Displays einzustellen.
+Die Schienenfixierung sitzt jetzt fest an der Platte. Die Schiene selbst lässt sich darin noch verschieben — das brauchst du gleich, um die Höhe des Displays einzustellen. Falls sie klemmt, dreh die seitliche Schraube an der Schienenfixierung ein Stück heraus.
 
 ![Die fest angeschraubte Schienenfixierung an der Plattenunterseite](montagekit/04.06-Befestigung-Schiene.jpg)
 
@@ -195,6 +197,8 @@ Die Schienenfixierung sitzt jetzt fest an der Platte. Die Schiene selbst lässt 
 Der Controller-Halter kommt unter die Grundplatte, in der Nähe der Schiene — nah genug, dass das Flachbandkabel bequem hinreicht.
 
 Halte den Halter an die gewünschte Stelle. Die Abstandshalter zeigen dabei von der Platte weg.
+
+> **Hinweis:** Falls du den Ständer nicht gebaut hast, setz jetzt zuerst die vier Muttern in den Controller-Halter und dreh die Abstandshalter hinein. Wie das geht, steht oben unter [Muttern einsetzen](#muttern-einsetzen) und [Abstandshalter einschrauben](#abstandshalter-einschrauben).
 
 ![Der Controller-Halter mit vier Abstandshaltern wird unter der Platte neben der Schienenfixierung positioniert](montagekit/05.01-Befestigung-Controller.jpg)
 
@@ -226,9 +230,9 @@ Schiebe das Display in die Schiene.
 
 Schiebe jetzt Display und Schiene gemeinsam so weit nach oben oder unten, bis das Display in der richtigen Höhe steht.
 
-![Das Display steht in der gewünschten Höhe direkt auf der Anlagenoberfläche](montagekit/06.03-Installation-Display.jpg)
+![Das Display steht in der gewünschten Höhe direkt auf der Grundplatte](montagekit/06.03-Installation-Display.jpg)
 
-> **Tipp:** Die Schiene lässt sich beliebig weit hoch- und runterschieben. Damit kannst du auch Aufbauten überbrücken: Steht an der Stelle ein Bahnsteig oder eine Geländeerhöhung, schiebst du die Schiene einfach so weit nach oben, dass das Display sauber auf dem Aufbau steht.
+> **Tipp:** Die Schiene lässt sich so weit hoch- und runterschieben, wie ihre Länge es zulässt. Damit kannst du auch Aufbauten überbrücken: Steht an der Stelle ein Bahnsteig oder eine Geländeerhöhung, schiebst du die Schiene einfach so weit nach oben, dass das Display sauber auf dem Aufbau steht.
 
 Unter der Platte ziehst du das Flachbandkabel weiter durch …
 
@@ -246,7 +250,7 @@ Wenn das Display in der richtigen Höhe steht, fixierst du die Schiene mit der s
 
 ---
 
-## Fertig
+## Strom anschließen
 
 Zum Schluss bekommt der Controller noch Strom — dann startet das Display.
 
@@ -284,4 +288,13 @@ OFFENE FRAGEN (vor Veröffentlichung klären, siehe CLAUDE.md — nichts erfinde
    unterschiedliche Löcher vor, oder wählt man aus denselben Punkten aus?
    Der Text lässt das aktuell offen.
 5. Länge der Schiene / bis zu welcher Plattendicke reicht sie?
+6. Ist die seitliche Schraube an der Schienenfixierung bei Auslieferung
+   angezogen? Im Text steht jetzt "Falls sie klemmt, dreh sie ein Stück
+   heraus" — falls sie immer locker ist, kann der Satz weg.
+7. Was tun, wenn das Langloch zu groß gefeilt wurde? Hält die
+   Schienenfixierung die Schiene dann trotzdem sicher? Fehlt in der
+   Problembehebung.
+
+TODO Christoph: Zeichnung für die Drei-/Vier-Loch-Variante beim Bohren
+(dafür gibt es kein Foto).
 {%- endcomment -%}
