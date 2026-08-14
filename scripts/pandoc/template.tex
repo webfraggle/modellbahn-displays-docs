@@ -10,6 +10,7 @@
 \setmainlanguage[spelling=new,babelshorthands=true]{german}
 \usepackage{xcolor}
 \usepackage{graphicx}
+\usepackage{float}
 \usepackage[most]{tcolorbox}
 \usepackage{hyperref}
 \usepackage{fancyhdr}
@@ -24,11 +25,26 @@
 \providecommand{\real}[1]{#1}
 \providecommand{\pandocbounded}[1]{#1}
 
-% Bilder: max. Seitenbreite, Seitenverhältnis immer beibehalten
+% Bilder: höchstens 80 % der Textbreite, Seitenverhältnis immer
+% beibehalten. Über die volle Breite werden die Fotos im PDF erschlagend
+% groß — ein 3:2-Foto füllt dann fast die halbe Seitenhöhe. Bilder, die
+% von Haus aus schmaler sind (z.B. die Display-Vorschauen der
+% Bildgeneratoren), bleiben in Originalgröße und werden nicht kleiner.
+% Die Höhenschranke bleibt bei der vollen Texthöhe — sie ist nur der
+% Schutz davor, dass ein sehr hochformatiges Bild über die Seite
+% hinausläuft, und soll Screenshots nicht zusätzlich verkleinern.
 \makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxwidth{\ifdim\Gin@nat@width>0.8\linewidth 0.8\linewidth\else\Gin@nat@width\fi}
 \makeatother
 \setkeys{Gin}{width=\maxwidth,height=\textheight,keepaspectratio}
+
+% Bilder stehen exakt da, wo sie im Text auftauchen. Ohne feste
+% Platzierung behandelt LaTeX sie als Gleitobjekte: Passt ein Bild nicht
+% mehr auf die Seite, wandert es weiter, der Text rückt nach — und
+% irgendwann landen die aufgestauten Bilder auf eigenen, fast leeren
+% Bildseiten. In einer Schritt-für-Schritt-Anleitung gehört das Bild aber
+% zwingend zu seinem Schritt.
+\floatplacement{figure}{H}
 \setlength\LTleft{0pt}
 \setlength\LTright{0pt}
 \usepackage{microtype}
