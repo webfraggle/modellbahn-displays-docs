@@ -54,6 +54,16 @@ def parse_front_matter(text: str) -> tuple[dict, str]:
 
 def clean_markdown(body: str) -> str:
     """Entfernt kramdown-Spezifika, die pandoc nicht kennt."""
+    # Liquid-Kommentare raus. Jekyll wertet die beim Bauen der Website aus,
+    # pandoc liest die Markdown-Quelle aber direkt — ohne diesen Schritt
+    # landen interne Notizen im PDF. Muss als Erstes laufen, damit der
+    # Inhalt der Kommentare die folgenden Regeln nicht durcheinanderbringt.
+    body = re.sub(
+        r"\{%-?\s*comment\s*-?%\}.*?\{%-?\s*endcomment\s*-?%\}[ \t]*\n?",
+        "",
+        body,
+        flags=re.DOTALL,
+    )
     # Kompletten Inhaltsblock (Überschrift + Attribut + TOC-Platzhalter) raus
     body = re.sub(
         r"^##\s+Inhalt\s*\n\{:\s*\.no_toc[^\}]*\}\s*\n\s*\n-\s*TOC\s*\n\{:toc\}\s*\n?",
