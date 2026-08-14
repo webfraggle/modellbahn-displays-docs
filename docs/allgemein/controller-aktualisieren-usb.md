@@ -2,7 +2,7 @@
 title: Controller aktualisieren (per USB)
 layout: anleitung
 parent: Allgemein
-nav_order: 4
+nav_order: 5
 ---
 
 # Controller aktualisieren (per USB)

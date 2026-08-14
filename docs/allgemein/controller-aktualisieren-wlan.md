@@ -2,7 +2,7 @@
 title: Controller aktualisieren (über WLAN)
 layout: anleitung
 parent: Allgemein
-nav_order: 3
+nav_order: 4
 ---
 
 # Controller aktualisieren (über WLAN)
