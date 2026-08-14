@@ -22,6 +22,9 @@ Die Anleitungen sind in mehrere Bereiche aufgeteilt: Unter **Allgemein** findest
 
 - [WLAN einrichten](docs/allgemein/wlan-einrichten.md) — Display mit dem Heim-WLAN verbinden, IP-Adresse herausfinden
 - [Flachbandkabel anschließen](docs/allgemein/flachbandkabel-anschliessen.md) — Controller und Display mit dem Flachbandkabel verbinden
+- [Displays montieren mit dem Montagekit](docs/allgemein/displays-montieren.md) — Display mit Schiene und Controller-Halter auf der Anlage befestigen
+- [Controller aktualisieren (über WLAN)](docs/allgemein/controller-aktualisieren-wlan.md) — neue Firmware über dein Heim-WLAN einspielen
+- [Controller aktualisieren (per USB)](docs/allgemein/controller-aktualisieren-usb.md) — der Weg über ein USB-C-Kabel am Windows-PC
 
 ## Display-Anleitungen
 
