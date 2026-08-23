@@ -8,6 +8,12 @@ Konventionen:
   werden nach nav_order sortiert zusammengeführt.
 - Der Titel stammt aus docs/<display>/index.md.
 - Das PDF landet unter _site/assets/pdf/<slug>.pdf.
+
+Zusätzlich bekommt jede Unterseite ein eigenes PDF unter
+_site/assets/pdf/<slug>/<seitenname>.pdf — allerdings nur in den
+Bereichen, die in _config.yml unter `pdf_single_pages` stehen.
+So lässt sich eine einzelne Anleitung weitergeben, ohne den
+ganzen Bereich mitzuschicken.
 """
 
 from __future__ import annotations
@@ -28,6 +34,7 @@ except ImportError:
 
 
 ROOT = Path(__file__).resolve().parent.parent
+CONFIG = ROOT / "_config.yml"
 DOCS = ROOT / "docs"
 SITE_PDF_DIR = ROOT / "_site" / "assets" / "pdf"
 TMP_DIR = ROOT / "tmp" / "pdfgen"
@@ -50,6 +57,32 @@ def parse_front_matter(text: str) -> tuple[dict, str]:
     except yaml.YAMLError:
         meta = {}
     return meta, m.group(2)
+
+
+def single_page_slugs() -> set[str]:
+    """Bereiche, die zusätzlich Einzelseiten-PDFs bekommen.
+
+    Steht in _config.yml, damit Skript und Jekyll-Layout dieselbe
+    Liste lesen und die Bereichsnamen nicht doppelt gepflegt werden.
+    """
+    try:
+        cfg = yaml.safe_load(CONFIG.read_text(encoding="utf-8")) or {}
+    except (OSError, yaml.YAMLError) as exc:
+        print(f"WARNUNG: _config.yml nicht lesbar ({exc})", file=sys.stderr)
+        return set()
+    return set(cfg.get("pdf_single_pages") or [])
+
+
+def split_heading(body: str) -> tuple[str | None, str]:
+    """Trennt die erste H1 vom übrigen Text.
+
+    Im Einzelseiten-PDF steht die Überschrift schon auf dem Deckblatt —
+    im Fließtext wäre sie doppelt.
+    """
+    m = re.search(r"^#\s+(.+?)\s*$", body, flags=re.MULTILINE)
+    if not m:
+        return None, body
+    return m.group(1), (body[: m.start()] + body[m.end():]).lstrip("\n")
 
 
 def clean_markdown(body: str) -> str:
@@ -109,15 +142,15 @@ def clean_markdown(body: str) -> str:
     return body.strip() + "\n"
 
 
-def collect_pages(display_dir: Path) -> list[tuple[int, dict, str]]:
-    pages: list[tuple[int, dict, str]] = []
+def collect_pages(display_dir: Path) -> list[tuple[int, dict, str, str]]:
+    pages: list[tuple[int, dict, str, str]] = []
     for md in display_dir.glob("*.md"):
         if md.name == "index.md":
             continue
         meta, body = parse_front_matter(md.read_text(encoding="utf-8"))
         if not meta.get("parent"):
             continue
-        pages.append((int(meta.get("nav_order", 999)), meta, clean_markdown(body)))
+        pages.append((int(meta.get("nav_order", 999)), meta, clean_markdown(body), md.stem))
     pages.sort(key=lambda p: p[0])
     return pages
 
@@ -130,18 +163,12 @@ def display_metadata(display_dir: Path) -> dict:
     return meta
 
 
-def build_combined_markdown(display_dir: Path) -> tuple[Path, str, str, Path] | None:
-    pages = collect_pages(display_dir)
-    if not pages:
-        return None
-
+def build_combined_markdown(display_dir: Path, pages: list) -> Path:
     slug = display_dir.name
-    meta = display_metadata(display_dir)
-    title = meta.get("title", slug)
 
     chunks: list[str] = []
     warnbox_seen = False
-    for i, (_, _, body) in enumerate(pages):
+    for i, (_, _, body, _) in enumerate(pages):
         # Der Warnhinweis steht auf jeder Web-Seite, im zusammengefassten
         # PDF reicht er einmal ganz vorne.
         if "\\begin{warnbox}" in body:
@@ -162,7 +189,7 @@ def build_combined_markdown(display_dir: Path) -> tuple[Path, str, str, Path] | 
     TMP_DIR.mkdir(parents=True, exist_ok=True)
     combined = TMP_DIR / f"{slug}.md"
     combined.write_text("\n".join(chunks), encoding="utf-8")
-    return combined, title, slug, display_dir
+    return combined
 
 
 def format_date_german() -> str:
@@ -170,13 +197,19 @@ def format_date_german() -> str:
     return f"{MONTHS_DE[today.month]} {today.year}"
 
 
-def run_pandoc(combined_md: Path, title: str, slug: str, source_dir: Path) -> Path:
-    SITE_PDF_DIR.mkdir(parents=True, exist_ok=True)
-    output = SITE_PDF_DIR / f"{slug}.pdf"
+def run_pandoc(
+    source_md: Path,
+    output: Path,
+    title: str,
+    subtitle: str,
+    source_dir: Path,
+    extra_args: tuple[str, ...] = (),
+) -> Path:
+    output.parent.mkdir(parents=True, exist_ok=True)
 
     cmd = [
         "pandoc",
-        str(combined_md),
+        str(source_md),
         "-o", str(output),
         "--pdf-engine=xelatex",
         "--template", str(TEMPLATE),
@@ -186,19 +219,53 @@ def run_pandoc(combined_md: Path, title: str, slug: str, source_dir: Path) -> Pa
         "--highlight-style=monochrome",
         "--from", "markdown+raw_tex+pipe_tables+backtick_code_blocks+fenced_code_attributes",
         "-V", f"title={title}",
-        "-V", "subtitle=Anleitung",
+        "-V", f"subtitle={subtitle}",
         "-V", f"date={format_date_german()}",
         "-V", f"logo={LOGO}",
         "-V", "lang=de-DE",
         "-V", "documentclass=article",
         "-V", "fontsize=11pt",
         "-V", "papersize=a4",
+        *extra_args,
     ]
     print(f"  pandoc → {output.relative_to(ROOT)}", flush=True)
     result = subprocess.run(cmd, cwd=ROOT)
     if result.returncode != 0:
-        raise SystemExit(f"pandoc fehlgeschlagen für {slug}")
+        raise SystemExit(f"pandoc fehlgeschlagen für {output.name}")
     return output
+
+
+def build_single_page_pdfs(display_dir: Path, pages: list, bereich: str) -> list[Path]:
+    """Ein eigenständiges PDF pro Unterseite.
+
+    Die Überschriften rücken über --shift-heading-level-by eine Ebene
+    hoch: Was im Bereichs-PDF ein Unterkapitel ist, wird hier zum
+    Kapitel — die Seite liest sich dann als eigene Anleitung.
+    """
+    slug = display_dir.name
+    out_dir = SITE_PDF_DIR / slug
+    generated: list[Path] = []
+    for _, meta, body, stem in pages:
+        heading, rest = split_heading(body)
+        title = heading or meta.get("title", stem)
+        # Eine zweite H1 würde beim Hochrücken zur Ebene 0 und damit von
+        # pandoc still verschluckt. Kommt in den Anleitungen nicht vor,
+        # soll aber auffallen, falls doch mal eine hineinrutscht.
+        if re.search(r"^#\s+", rest, flags=re.MULTILINE):
+            print(f"  WARNUNG: {stem}.md hat mehr als eine H1", file=sys.stderr)
+        single = TMP_DIR / f"{slug}--{stem}.md"
+        single.write_text(rest, encoding="utf-8")
+        generated.append(
+            run_pandoc(
+                single,
+                out_dir / f"{stem}.pdf",
+                title,
+                bereich,
+                display_dir,
+                extra_args=("--shift-heading-level-by=-1",),
+            )
+        )
+    return generated
 
 
 def main() -> int:
@@ -216,18 +283,25 @@ def main() -> int:
         shutil.rmtree(TMP_DIR)
     TMP_DIR.mkdir(parents=True)
 
+    single_slugs = single_page_slugs()
+
     generated: list[Path] = []
     for display_dir in sorted(DOCS.iterdir()):
         if not display_dir.is_dir():
             continue
-        print(f"[{display_dir.name}]")
-        result = build_combined_markdown(display_dir)
-        if result is None:
+        slug = display_dir.name
+        print(f"[{slug}]")
+        pages = collect_pages(display_dir)
+        if not pages:
             print("  übersprungen (keine Unterseiten)")
             continue
-        combined, title, slug, source_dir = result
-        pdf = run_pandoc(combined, title, slug, source_dir)
-        generated.append(pdf)
+        bereich = display_metadata(display_dir).get("title", slug)
+        combined = build_combined_markdown(display_dir, pages)
+        generated.append(
+            run_pandoc(combined, SITE_PDF_DIR / f"{slug}.pdf", bereich, "Anleitung", display_dir)
+        )
+        if slug in single_slugs:
+            generated.extend(build_single_page_pdfs(display_dir, pages, bereich))
 
     if not generated:
         print("Keine PDFs erzeugt.")

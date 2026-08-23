@@ -22,6 +22,12 @@ search:
 
 heading_anchors: true
 
+# Bereiche, in denen jede Unterseite zusätzlich als eigenes PDF
+# angeboten wird (Ordnername unter docs/). Wird von
+# scripts/generate_pdfs.py und _layouts/anleitung.html gelesen.
+pdf_single_pages:
+  - allgemein
+
 aux_links:
   "modellbahn-displays.de":
     - "https://www.modellbahn-displays.de"

@@ -14,12 +14,31 @@ layout: default
   {%- endif -%}
 {%- endif -%}
 
+{%- comment -%}
+  Einzelseiten-PDF nur auf Unterseiten und nur in den Bereichen, die in
+  _config.yml unter pdf_single_pages stehen — dieselbe Liste wertet
+  scripts/generate_pdfs.py aus, das die PDFs erzeugt.
+{%- endcomment -%}
+{%- assign seiten_pdf = false -%}
+{%- if page.parent and site.pdf_single_pages contains display_slug -%}
+  {%- assign seiten_slug = page.name | remove: ".md" -%}
+  {%- assign seiten_pdf = true -%}
+{%- endif -%}
+
 {%- if display_slug and kapitel -%}
 <div class="pdf-download" role="complementary">
+  {%- if seiten_pdf -%}
+  <a href="{{ '/assets/pdf/' | append: display_slug | append: '/' | append: seiten_slug | append: '.pdf' | relative_url }}"
+     download>
+    <span class="pdf-download-icon" aria-hidden="true"></span>
+    <span class="pdf-download-label">Diese Seite als PDF</span>
+  </a>
+  {%- endif -%}
   <a href="{{ '/assets/pdf/' | append: display_slug | append: '.pdf' | relative_url }}"
      download>
     <span class="pdf-download-icon" aria-hidden="true"></span>
-    <span class="pdf-download-label">{{ kapitel }}-Anleitung als PDF herunterladen</span>
+    {%- comment -%} Die Kurzform ergibt nur neben dem Seiten-Button Sinn — allein stehend bleibt der ausführliche Text. {%- endcomment -%}
+    <span class="pdf-download-label">{% if seiten_pdf %}Ganzer Bereich als PDF{% else %}{{ kapitel }}-Anleitung als PDF herunterladen{% endif %}</span>
   </a>
 </div>
 {%- endif -%}
