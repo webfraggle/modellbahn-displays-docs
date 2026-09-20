@@ -9,3 +9,6 @@ Gemfile.lock
 .DS_Store
 node_modules/
 .claude/
+
+# Arbeitsmaterial zur Zugzielanzeiger-Anleitung (Recherche, Screenshots, Notizen)
+ZZA-RECHERCHE/

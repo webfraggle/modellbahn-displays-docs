@@ -26,7 +26,9 @@ Prüfe zuerst, dass das flache Kabel (Flachbandkabel) zwischen Controller und Di
 
 Verbinde den Controller anschließend über ein **USB-C-Kabel** mit einer Stromquelle — zum Beispiel einem USB-Netzteil vom Handy oder einer Powerbank. Nach ein paar Sekunden erscheint ein Startbild auf dem Display, und die kleine Leuchte (LED) am Controller leuchtet.
 
-> **Tipp:** Willst du den Controller stattdessen mit einem Modellbahn-Trafo oder einem 12V-DC-Netzteil betreiben, benötigst du den als Zubehör erhältlichen Spannungswandler, der an den 2-Pin-Stromeingang des Controllers angeschlossen wird.
+> **Tipp:** Willst du den Controller stattdessen über die Anlage versorgen — aus einem Modellbahn-Trafo, dem digitalen Gleisstrom oder einem Gleichstrom-Netzteil —, brauchst du den als Zubehör erhältlichen Spannungswandler. Er wird an den 2-Pin-Stromeingang des Controllers angeschlossen und nimmt **Gleichstrom von 8 bis 27 Volt** oder **Wechselstrom von 8 bis 19 Volt** an.
+
+> **Wichtig:** Ältere Spannungswandler vertragen **nur Gleichstrom**. Wechselstrom nimmt erst der aktuelle an. Bist du dir nicht sicher, welchen du hast, bleib beim Gleichstrom.
 
 > **Hinweis:** Das Display braucht keinen eigenen Computer. Für die Einrichtung genügt ein Smartphone, Tablet oder Notebook, mit dem du ins WLAN kommst.
 
