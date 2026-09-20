@@ -104,37 +104,60 @@ Soll auf beiden Seiten dasselbe stehen, setzt du denselben Inhalt einfach zweima
 
 ## Bilder aus dem Web
 
-Statt Bilder hochzuladen, kannst du dem Anzeiger auch eine Web-Adresse nennen, von der er sich das Bild selbst holt. Das Bild wird dann **jede Minute** neu geladen — ideal für Inhalte, die sich ändern.
+Unter [zza.yuv.de/i/](http://zza.yuv.de/i/) gibt es einen Generator, der Anzeigen im Stil anderer Bahnen zeichnet — ÖBB, SBB, Rhätische Bahn, U-Bahn München und weitere.
 
-Trage die Adresse in den Einstellungen bei **Image-URL** ein und speichere. Löschst du den Feldinhalt wieder, kommt die normale Anzeige zurück.
+Es gibt **zwei Wege**, seine Anzeigen auf den Anzeiger zu bekommen. Sie unterscheiden sich in dem, was am Ende auf der Tafel steht — und sie brauchen **unterschiedliche Anzeigearten**:
+
+| | Weg 1: Bild herunterladen | Weg 2: Image-URL |
+|---|---|---|
+| **Was auf der Tafel steht** | ein Standbild mit den Zügen, die du im Generator eingetippt hast | deine echten Züge vom Anzeiger, gezeichnet im Design des Generators |
+| **Wann es sich ändert** | nie — bis du ein anderes Bild hochlädst | jede Minute, automatisch |
+| **Nötige Anzeigeart** | **Bilder Manuell** oder **Bilder Intervall** | **Manuell**, **Intervall** oder **Live** |
+| **Zugliste** | wird nicht benutzt | ist die Quelle der Anzeige |
+
+Weg 1 ist der einfachere: Du erzeugst ein Bild, lädst es herunter und spielst es wie jedes andere Bild auf den Anzeiger. Weg 2 nimmt dir die Arbeit ab — du pflegst deine Züge ganz normal in der Zugliste, und das Aussehen kommt vom Generator.
 
 ---
 
-## Der Bildgenerator
-
-Unter [zza.yuv.de/i/](http://zza.yuv.de/i/) gibt es einen Generator, der Anzeigen im Stil anderer Bahnen erzeugt. Du kannst ihn auf zwei Arten nutzen.
-
-### Ein festes Bild erzeugen
+## Weg 1: Ein Bild erzeugen und hochladen
 
 Wähle oben unter **Theme** ein Design, trage **Gleis** ein und fülle bis zu drei Züge mit **Zeit**, **Abweich.**, **Nr.**, **Von/Nach**, **Über** und **Hinweis**. Ein Klick auf **Generate Image** erzeugt das Bild.
 
 ![Der Bildgenerator mit der Theme-Auswahl links, den Infos zum gewählten Design rechts und den Eingabefeldern für die Zugdaten darunter](bildgenerator.png)
 
-Rechts neben der Theme-Auswahl stehen die Besonderheiten des gewählten Designs — etwa welche Zuglogos es kennt — und darunter die **URL**, die du für den zweiten Weg brauchst. Lade es herunter und spiele es wie jedes andere Bild auf den Anzeiger — siehe [Ein Bild hochladen](#ein-bild-hochladen).
+Rechts neben der Theme-Auswahl stehen die Besonderheiten des gewählten Designs — etwa welche Zuglogos es kennt — und darunter die **URL**, die du für Weg 2 brauchst.
 
-Das Ergebnis ist ein Standbild: Es zeigt immer die Züge, die du im Formular eingetragen hast.
+So kommt das fertige Bild auf den Anzeiger:
 
-### Immer aktuelle Anzeigen
+1. Klicke mit der **rechten Maustaste** auf das erzeugte Bild und wähle **Bild speichern unter…** (am Smartphone: lange auf das Bild tippen, dann **Bild sichern**)
+2. Lade die gespeicherte PNG-Datei wie jedes andere Bild hoch — siehe [Ein Bild hochladen](#ein-bild-hochladen)
+3. Stell die Anzeigeart auf **Bilder Manuell** oder **Bilder Intervall**
 
-Interessanter ist der zweite Weg. Trägst du die Adresse des Generators bei **Image-URL** ein, schickt der Anzeiger jede Minute **seine eigenen Zugdaten** dorthin und bekommt ein frisch gezeichnetes Bild zurück. Auf der Tafel stehen dann deine echten Züge — aber im Design einer anderen Bahn.
+Das Ergebnis ist ein Standbild: Es zeigt immer die Züge, die du im Formular eingetragen hast. Ändert sich etwas an deinem Fahrplan, erzeugst du ein neues Bild.
 
-Du pflegst deine Züge also ganz normal in der Zugliste, und das Aussehen kommt vom Generator.
+---
 
-![Kreislauf: Der Anzeiger schickt seine Zugdaten an den Server, der daraus ein Bild im gewählten Design erzeugt und zurückschickt](bildgenerator-schema.png)
+## Weg 2: Der Generator zeichnet deine echten Züge
 
-Die passende Adresse steht auf der Generator-Seite rechts in der Infospalte unter **URL**, sobald du ein Theme gewählt hast.
+Trägst du die Adresse des Generators in den Einstellungen bei **Image-URL** ein, schickt der Anzeiger **jede Minute seine eigenen Zugdaten** dorthin — die drei Züge, die sonst auf der Tafel stünden — und bekommt ein frisch gezeichnetes Bild zurück. Auf der Tafel stehen dann deine echten Züge, aber im Design einer anderen Bahn.
+
+Du pflegst deine Züge also ganz normal in der Zugliste, und das Aussehen kommt vom Generator. In der Anzeigeart **Live** sind es sogar die echten Fahrplandaten.
+
+> **Wichtig:** Dieser Weg läuft **nicht** in den Bild-Anzeigearten. Steht die Anzeigeart auf **Bilder Manuell** oder **Bilder Intervall**, fragt der Anzeiger die Adresse gar nicht erst ab — dort zeigt er nur Bilder, die auf ihm liegen. Für den Generator brauchst du **Manuell**, **Intervall** oder **Live**; nur dort hat der Anzeiger Zugdaten, die er verschicken kann.
+
+So richtest du ihn ein:
+
+1. Wähle auf der Generator-Seite ein **Theme** und kopiere rechts in der Infospalte die **URL**
+2. Öffne am Anzeiger mit dem Zahnrad **⚙** die Einstellungen
+3. Trage die Adresse bei **Image-URL** ein
+4. Stell die Anzeigeart auf **Manuell**, **Intervall** oder **Live**
+5. **Speichern**
 
 > **Wichtig:** Die Generator-Seite zeigt die Adresse mit `https://` an. Der Anzeiger kann **nur unverschlüsselte** Adressen abrufen — trage sie deshalb mit `http://` ein, also ohne das `s`.
+
+Löschst du den Inhalt des Feldes **Image-URL** wieder und speicherst, kommt die eingebaute Zugtafel zurück.
+
+![Kreislauf: Der Anzeiger schickt seine Zugdaten an den Server, der daraus ein Bild im gewählten Design erzeugt und zurückschickt](bildgenerator-schema.png)
 
 ### Die Designs
 
@@ -163,5 +186,7 @@ Der Generator bietet dieselben Designs auch für ältere Displaygrößen an. Nim
 | Das Bild erscheint nicht auf dem Display | Prüfe die Anzeigeart — sie muss auf **Bilder Manuell** oder **Bilder Intervall** stehen |
 | Die Bilder laufen in falscher Reihenfolge | Sortiert wird alphabetisch. Stell den Dateinamen Zahlen voran |
 | Nur die Hälfte meines Bildes ist zu sehen | Das ist so gewollt — die andere Hälfte steht auf der Rückseite |
-| Das Bild von der **Image-URL** kommt nicht | Prüfe, ob die Adresse mit `http://` beginnt und ob der Anzeiger ins Internet kommt |
+| Das Bild von der **Image-URL** kommt nicht | Prüfe zuerst die Anzeigeart: In **Bilder Manuell** und **Bilder Intervall** wird die Adresse nicht abgefragt. Sie muss auf **Manuell**, **Intervall** oder **Live** stehen |
+| Die **Image-URL** stimmt, es kommt trotzdem kein Bild | Prüfe, ob die Adresse mit `http://` beginnt und ob der Anzeiger ins Internet kommt |
+| Der Generator zeigt andere Züge als meine Zugliste | Das Bild ist ein heruntergeladenes Standbild (Weg 1). Für die echten Züge brauchst du die **Image-URL** (Weg 2) |
 | Ich will ein Bild umbenennen | Das geht auf dem Controller nicht. Umbenennen, neu hochladen, altes löschen |

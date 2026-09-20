@@ -62,30 +62,37 @@ Datum im Format `JJJJ-MM-TT`, bezogen auf die Freigabe bzw. die letzte Prüfung.
 
 Zum Abhaken beim Gegenlesen, in der Reihenfolge der Navigation.
 
-- [ ] **Zugzielanzeiger** (Kapitelübersicht) — `index.md`
-      · Einleitung nach Rückmeldung neu gefasst, noch nicht bestätigt · Frage 03
+- [x] **Zugzielanzeiger** (Kapitelübersicht) — `index.md`
+      · gegengelesen 2026-09-20 · neu gefasste Einleitung bestätigt · Frage 03 beantwortet, keine offenen Fragen mehr
 - [x] **Zugzielanzeiger in Betrieb nehmen** — `inbetriebnahme.md`
       · gegengelesen 2026-09-13 · Frage 11 eingearbeitet (Spannungen ergaenzt!) · offen 03, 19
 - [x] **Züge anlegen und anzeigen** — `zuege-verwalten.md`
       · gegengelesen 2026-09-13 · offen bleiben Fragen 02, 27
 - [x] **Anzeigeart und Einstellungen** — `anzeigearten.md`
       · gegengelesen 2026-09-13 · Fragen 04 und 06 eingearbeitet, offen bleiben 18, 24
-- [ ] **Wagenreihung darstellen** — `wagenreihung.md`
-      · Symbolbild, Klassenzuordnung und Ebenenregel eingearbeitet · keine offenen Fragen mehr
-- [ ] **Echte Fahrplandaten anzeigen** — `live-daten.md`
-      · Bahnhofsnummern und Serverhinweis eingearbeitet · keine offenen Fragen mehr
-- [ ] **Bilder statt Züge anzeigen** — `bilder-anzeigen.md`
-      · Zweck, Bildgenerator und Bildaufbau eingearbeitet · keine offenen Fragen mehr
-- [ ] **Über die Modellbahnzentrale steuern (DCC)** — `dcc-steuern.md`
-      · Fragen 15, 16, 19, 24
-- [ ] **Anbindung an TrainController, iTrain und Rocrail** — `steuerungsprogramme.md`
-      · neu geschrieben auf mbd-cli v2.0.0 · Rest von Frage 10: PDF-Verweis
-- [ ] **Fernsteuerung über MQTT** — `mqtt.md`
-      · Frage 20
-- [ ] **Zugdaten sichern und wiederherstellen** — `backup.md`
-      · Abschnitt zu Konfiguration und Bildern ergänzt · keine offenen Fragen mehr
+- [x] **Wagenreihung darstellen** — `wagenreihung.md`
+      · gegengelesen 2026-09-20 · Einleitung um Hinweis-Codierung ergänzt, Strg/Cmd+C und +V bei **Kopieren** nachgetragen
+      · Befund: Knopf **Kopieren** ist defekt (Befund 12 in `70-befunde-firmware-ui.md`) · keine offenen Fragen mehr
+- [x] **Echte Fahrplandaten anzeigen** — `live-daten.md`
+      · gegengelesen 2026-09-20 · Bahnhofsnummern und Serverhinweis eingearbeitet · keine offenen Fragen mehr
+- [x] **Bilder statt Züge anzeigen** — `bilder-anzeigen.md`
+      · gegengelesen 2026-09-20 · Abschnitt „Bilder aus dem Web" in zwei Wege getrennt (Standbild herunterladen vs. Image-URL)
+      · Anzeigeart-Bedingung für die Image-URL ergänzt (nur Manuell/Intervall/Live, nicht in den Bild-Modi) · keine offenen Fragen mehr
+- [x] **Über die Modellbahnzentrale steuern (DCC)** — `dcc-steuern.md`
+      · gegengelesen 2026-09-20 · sieben Fotos von der alten Website ergänzt (Reihenschaltung, mobile-station-Keyboard und Fahrpult,
+        neuer Abschnitt „Beispiel: die virtuelle Lok in der Märklin mobile station")
+      · offen bleibt Frage 15 (Hinweis zu F0 auf Gleis A fliegt nach dem Firmware-Fix raus)
+- [x] **Anbindung an TrainController, iTrain und Rocrail** — `steuerungsprogramme.md`
+      · gegengelesen 2026-09-20 · Frage 10 vollständig erledigt: PDF von Andri Müller wieder verlinkt, mit Warnkarte zum Namenswechsel
+        (`mbd-tc.exe`/`mbd-tc-hidden.exe` → `mbd-cli.exe`, Flags unverändert, `-hidden` fällt ersatzlos weg)
+      · drei TrainController-Screenshots von der alten Website ergänzt · keine offenen Fragen mehr
+- [x] **Fernsteuerung über MQTT** — `mqtt.md`
+      · gegengelesen 2026-09-20 · Frage 20 entschieden: dokumentieren ja, aber Beta-Warnkarte oben auf der Seite
+      · neuer Abschnitt „Win-Digipet" (Anlass für die MQTT-Anbindung, noch ungetestet) · offen: eigener oder externer Broker bei Win-Digipet
+- [x] **Zugdaten sichern und wiederherstellen** — `backup.md`
+      · gegengelesen 2026-09-20 · Abschnitt zu Konfiguration und Bildern ergänzt · keine offenen Fragen mehr
 
-**Stand: 3 von 11 gegengelesen.**
+**Stand: 11 von 11 gegengelesen — Kapitel vollständig durchgesehen.**
 
 > Die nummerierten Fragen stehen in `ZZA-RECHERCHE/50-offene-fragen.md`.
 > Im Text sind sie als `{% raw %}{% comment %} OFFEN-NN: … {% endcomment %}{% endraw %}` markiert

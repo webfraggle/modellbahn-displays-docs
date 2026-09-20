@@ -148,16 +148,25 @@ In TrainController™ legst du den Aufruf als **System-Operation** an:
 4. Über **Suchen** und **Ändern** den Pfad zu `mbd-cli.exe` auswählen
 5. Dahinter den Befehl eintragen, zum Beispiel `--setTime "12:30"`
 
+Die System-Operation **Programm** steht in der Liste links. Mit **Hinzufügen** wandert sie nach rechts zu den Operationen:
+
+![TrainController: das Fenster Makro mit dem Reiter Operationen, links die Liste der System-Operationen mit markiertem Eintrag Programm](traincontroller-system-operation.png)
+
+Im Fenster **Systemoperation** ist **Programm** als Operationstyp gewählt. Über **Suchen …** wählst du die Datei auf deiner Festplatte aus:
+
+![TrainController: das Fenster Systemoperation mit dem Operationstyp Programm und dem noch leeren Feld Programmaufruf](traincontroller-programmaufruf.png)
+
+Dahinter, in dasselbe Feld **Programmaufruf**, kommt der Befehl:
+
+![TrainController: das Feld Programmaufruf mit dem vollständigen Aufruf aus Pfad und dem Befehl setTime 15:30](traincontroller-befehl.png)
+
+> **Hinweis:** Die Screenshots stammen von 2023, deshalb steht im Programmaufruf noch der alte Dateiname `mbd-tc.exe`. Heute heißt die Datei `mbd-cli.exe`. An den Fenstern in TrainController hat sich nichts geändert.
+
 Diese Operation weist du dann einem Taster oder Auslöser in deinem Fahrplan zu. Als auslösender Zustand wird üblicherweise **Ein** verwendet.
 
 > **Wichtig:** Achte darauf, dass alle **Leerzeichen** und **Anführungszeichen** im Befehl stimmen. Das ist die häufigste Fehlerquelle.
 
 > **Tipp:** Demselben Taster kannst du im Zustand **Aus** einen zweiten Befehl geben — zum Beispiel `--setTrain1 "|||||"`, um die obere Zeile wieder zu leeren.
-
-{% comment %} OFFEN-10 (Rest): Auf der alten Website ist ein PDF von Andri Müller verlinkt
-(ZZA-in-TC-und-iTrain-korrekt-verknuepfen.pdf, 07/2025). Es beschreibt mit hoher
-Wahrscheinlichkeit noch mbd-tc.exe, also die Version vor dem Go-Rewrite. Soll es weiter
-verlinkt werden? Falls ja, mit Jahreszahl einordnen. Aktuell nicht verlinkt. {% endcomment %}
 
 ---
 
@@ -169,6 +178,18 @@ Beide Programme können ebenfalls externe Programme mit Parametern aufrufen — 
 - **Rocrail** — ebenfalls über den Aufruf eines externen Programms mit Übergabe der Parameter
 
 > **Hinweis:** Der Schwerpunkt liegt bei TrainController. Für iTrain und Rocrail liegen Rückmeldungen von Nutzern vor, dass es funktioniert — eine eigene bebilderte Anleitung gibt es dafür bisher nicht.
+
+---
+
+## Ausführliche Anleitung von Andri Müller
+
+Andri Müller hat aufgeschrieben, wie er seine Anzeiger in **TrainController** und in **iTrain** eingebunden hat — mit Variablen, Makros und Bahnwärtern auf der einen, mit Aktionen und Bedingungen auf der anderen Seite. Dazu gehört auch, wie die Tafel automatisch wieder leer wird, sobald der Zug den Block verlässt.
+
+[ZZA in TC und iTrain korrekt verknüpfen (PDF, Juni 2025)](https://www.modellbahn-displays.de/wp-content/uploads/2025/07/ZZA-in-TC-und-iTrain-korrekt-verknuepfen.pdf)
+
+> **Wichtig:** Die Anleitung stammt von Juni 2025 und nennt das Hilfsprogramm noch bei seinen alten Namen. Ersetze in allen Befehlen `mbd-tc.exe` und `mbd-tc-hidden.exe` durch **`mbd-cli.exe`**. Die Variante mit dem Zusatz `-hidden` gibt es nicht mehr — sie war nur nötig, damit kein Fenster aufging und das Steuerungsprogramm nicht wartete. Beides erledigt mbd-cli seit Version 2.0.0 von selbst.
+
+Die Befehle in der Anleitung — `--gleis`, `--setTime`, `--setTrain1` — sind unverändert gültig. Am Aufbau der Makros, Bahnwärter und Aktionen ändert sich nichts.
 
 ---
 

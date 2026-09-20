@@ -7,13 +7,17 @@ nav_order: 9
 
 # Fernsteuerung über MQTT
 
-Betreibst du zu Hause eine Hausautomation wie Home Assistant, ioBroker oder Node-RED, kannst du deine Zugzielanzeiger von dort aus schalten. Diese Seite richtet sich an Fortgeschrittene mit einem eigenen MQTT-Broker im Netzwerk.
+Betreibst du zu Hause eine Hausautomation wie Home Assistant, ioBroker oder Node-RED, kannst du deine Zugzielanzeiger von dort aus schalten. Auch Steuerungsprogramme wie Win-Digipet beherrschen MQTT. Diese Seite richtet sich an Fortgeschrittene mit einem eigenen MQTT-Broker im Netzwerk.
 
 ## Inhalt
 {: .no_toc .text-delta }
 
 - TOC
 {:toc}
+
+---
+
+> **Wichtig:** Die MQTT-Steuerung ist **neu und noch in Erprobung**. Sie funktioniert, ist aber bisher wenig im Einsatz. Die Topics und die Nachrichtenformate auf dieser Seite können sich in einer späteren Firmware deshalb noch ändern. Für den Alltagsbetrieb sind die Weboberfläche, [DCC](dcc-steuern.md) und die [Steuerungsprogramme](steuerungsprogramme.md) der erprobte Weg.
 
 ---
 
@@ -46,8 +50,6 @@ Bleibt das Feld **MQTT-Broker** leer, ist MQTT ausgeschaltet.
 
 ## Die Topics
 
-{% comment %} OFFEN-20: Sind diese Topics stabil und darf man sie als Schnittstelle dokumentieren? Wenn ja, wäre eine Home-Assistant-MQTT-Discovery (steht als Idee in PRODUCT_REVIEW.md Abschnitt 7) der nächste logische Schritt — dann würde sich dieser Abschnitt stark vereinfachen. {% endcomment %}
-
 `<id>` steht überall für deine **Geräte-ID**.
 
 | Topic | Nachricht | Wirkung |
@@ -68,6 +70,14 @@ Die beiden `all`-Topics sind praktisch, wenn du mehrere Anzeiger auf der Anlage 
 ## Ausprobieren ohne Hausautomation
 
 Der Controller bringt eine Testseite mit. Du erreichst sie über das **Menü** unten links, Eintrag **MQTT Test**. Dort kannst du dich mit deinem Broker verbinden und Nachrichten von Hand abschicken, um zu sehen, ob alles ankommt.
+
+---
+
+## Win-Digipet
+
+Die MQTT-Steuerung ist vor allem deshalb entstanden, weil **Win-Digipet** MQTT unterstützt. Damit könnte das Steuerungsprogramm die Anzeiger direkt schalten — ohne das Hilfsprogramm, das [TrainController, iTrain und Rocrail](steuerungsprogramme.md) brauchen.
+
+Erprobt ist das bisher nicht. Offen ist unter anderem, ob Win-Digipet einen eigenen Broker mitbringt oder ob zusätzlich ein Broker im Netzwerk laufen muss, und wie die Anzeiger-Topics dort einzutragen sind. Sobald das geklärt ist, steht an dieser Stelle eine Schritt-für-Schritt-Anleitung.
 
 ---
 

@@ -38,6 +38,8 @@ Für **jeden Controller** brauchst du einen eigenen Adapter.
 
 > **Tipp:** Am Ausgang des Adapters kannst du über ein 2-poliges SH1.0-Kabel weitere Adapter anschließen.
 
+![Zwei DCC-Adapter in Reihe: Der Gleisstrom geht in den Eingang des ersten Adapters, dessen Ausgang führt zum Eingang des zweiten](dcc-adapter-reihenschaltung.jpg)
+
 
 > **Wichtig:** Taster am Controller und DCC-Steuerung schließen sich gegenseitig aus — beide nutzen denselben Anschluss. Entscheide dich für eines von beidem.
 
@@ -83,6 +85,8 @@ Jede Zubehöradresse hat im DCC-Protokoll **zwei Schalter**. Welcher davon gemei
 
 `a2:0` heißt also: Magnetartikel 2, obere Taste. `a2:1` heißt: Magnetartikel 2, untere Taste.
 
+![Das Keyboard der Märklin mobile station: oben die Adresse, daneben die rote Taste als Schalter 0 und die grüne als Schalter 1](mobile-station-keyboard.jpg)
+
 > **Hinweis:** Du kannst dieselbe Taste beliebig oft drücken. Die Markierung im Display der Zentrale zeigt nur an, welche Taste zuletzt gedrückt wurde — für den Anzeiger spielt sie keine Rolle.
 
 > **Tipp:** Mit `a12:0` und `a12:1` kannst du **dieselbe** Adresse für zwei verschiedene Aktionen nutzen — zum Beispiel vorwärts und rückwärts blättern.
@@ -97,6 +101,8 @@ f12:1
 
 `f` steht für Funktion, dann die **Lokadresse**, ein Doppelpunkt und die **Funktionsnummer**.
 
+![Das Fahrpult der mobile station mit der virtuellen Lok „GLEIS 5" und den Funktionstasten F1 bis F7; ein Finger drückt F6](mobile-station-funktionstaste.jpg)
+
 {% comment %} OFFEN-15 (2026-09-13, Autor): F0 auf Gleis A ist ein Versehen und soll
 gefixt werden (DccFunctions.hpp:180 startet bei i=1 statt 0). Bis der Fix ausgeliefert
 ist, beschreibt der Hinweis unten das tatsaechliche Verhalten von 3.1.8 — deshalb bleibt
@@ -108,6 +114,32 @@ ersatzlos streichen. {% endcomment %}
 > **Wichtig:** Stell die Funktionstaste in deiner Zentrale von **Dauer** auf **Moment** um. Der Anzeiger reagiert immer auf den Wechsel von *aus* nach *ein*. Steht die Taste auf **Dauer** und die Funktion ist gerade eingeschaltet, musst du zweimal drücken — einmal zum Ausschalten, einmal zum erneuten Einschalten.
 
 > **Tipp:** Eine bewährte Einrichtung ist eine **virtuelle Lok** in der Zentrale, die du zum Beispiel `Gleis 5` nennst. Jeder Funktionstaste dieser Lok weist du dann ein Zugziel zu.
+
+### Beispiel: die virtuelle Lok in der Märklin mobile station
+
+So sieht das in der mobile station aus. Bei anderen Zentralen heißen die Menüs anders, der Weg ist aber derselbe.
+
+**Die Lok anlegen und ihre Adresse setzen**
+
+Leg eine neue Lok an und gib ihr einen Namen, der dir etwas sagt — hier `GLEIS 5`. Öffne dann ihr Fahrpult und halte **SHIFT** zusammen mit der **Lok-Werkzeug-Taste** gedrückt.
+
+![Das Fahrpult der Lok GLEIS 5; markiert sind die Taste SHIFT und die Lok-Werkzeug-Taste rechts unten](mobile-station-lok-konfigurieren.jpg)
+
+Im Menü **Lok konfigurieren** wählst du **Lok bearbeiten**, dort **Adresse**. Trag die Adresse ein, die du später in den Feldern des Anzeigers verwendest — im Beispiel die **7**, passend zu `f7:6`.
+
+![Der Dialog „Lok-Adresse ändern" der mobile station mit der eingestellten DCC-Adresse 7](mobile-station-lok-adresse.jpg)
+
+**Die Funktionstasten auf Moment stellen**
+
+Zurück in **Lok bearbeiten** gehst du auf **Lok-Funktionen** und wählst die Position der Taste, die du benutzen willst — hier **F6**.
+
+![Die Auswahl „Funktionsicons ändern" mit markierter Taste F6](mobile-station-funktionsicon.jpg)
+
+Nach dem Funktionsicon fragt die mobile station, ob die Taste eine **Moment**- oder eine **Dauerfunktion** sein soll. Wähle **Moment**.
+
+![Der Dialog „Moment- oder Dauerfunktion" mit ausgewähltem Moment](mobile-station-moment.jpg)
+
+Wiederhol das für jede Funktionstaste, der du ein Zugziel zuweisen willst.
 
 ---
 

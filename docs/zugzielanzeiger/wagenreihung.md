@@ -7,7 +7,9 @@ nav_order: 4
 
 # Wagenreihung darstellen
 
-Der Zugzielanzeiger kann unter dem Zielbahnhof eine Wagenreihung darstellen. Zusammengestellt wird sie im Wagenstand-Editor der Weboberfläche.
+Der Zugzielanzeiger kann unter dem Zielbahnhof eine Wagenreihung darstellen.
+
+Gespeichert wird sie als codierter Text am Ende des Feldes **Hinweis** — eine Folge aus Buchstaben, Ziffern und Trennzeichen in geschweiften Klammern, zum Beispiel `{1abc|ABC|  1|123}`. Diesen Text musst du nicht selbst schreiben: Im **Wagenstand-Editor** der Weboberfläche stellst du den Zug mit der Maus zusammen, und der Editor trägt den fertigen Text in den Hinweis ein.
 
 ## Inhalt
 {: .no_toc .text-delta }
@@ -57,6 +59,8 @@ Ein Wagen kann alle vier Angaben haben, muss aber nicht. Ein Symbol ohne Nummer 
 
 Unter **Ergebnis** siehst du laufend mit, was dabei herauskommt. Mit **Kopieren** legst du diesen Text in die Zwischenablage.
 
+> **Hinweis:** Je nach Browser bleibt der Knopf **Kopieren** ohne Wirkung. Markiere den Text im Feld **Ergebnis** dann mit der Maus und kopiere ihn mit **Strg + C** (am Mac **Cmd + C**).
+
 Zum Schluss klickst du auf **Übernehmen**. Der Editor schließt sich, und die Wagenreihung steht im Feld **Hinweis**. Danach noch auf **Speichern** im Zug-Fenster — fertig.
 
 > **Tipp:** Dein Hinweistext geht dabei nicht verloren. **Übernehmen** ersetzt nur eine eventuell vorhandene alte Wagenreihung und lässt den normalen Text stehen.
@@ -91,9 +95,9 @@ Sieht nach einem Fehler aus, betrifft die Firmware und nicht die Anleitung.
 Hast du eine Wagenreihung, die dir gefällt, kannst du sie auf andere Züge übertragen:
 
 1. Öffne den Zug, dessen Reihung du übernehmen willst, und den Wagenstand-Editor
-2. Klicke unter **Ergebnis** auf **Kopieren**
+2. Klicke unter **Ergebnis** auf **Kopieren** — oder markiere den Text im Feld und kopiere ihn mit **Strg + C** (am Mac **Cmd + C**)
 3. Öffne den anderen Zug und dessen Wagenstand-Editor
-4. Füge den Text unten bei **String laden** ein und klicke auf **Laden**
+4. Füge den Text unten bei **String laden** ein — mit **Strg + V** (am Mac **Cmd + V**) — und klicke auf **Laden**
 5. **Übernehmen**, dann **Speichern**
 
 > **Hinweis:** Passt der eingefügte Text nicht ins erwartete Muster, blinkt das Eingabefeld kurz rot auf und es passiert nichts weiter. Prüfe dann, ob du den kompletten Text von `{` bis `}` erwischt hast.
@@ -131,6 +135,7 @@ Die `1` direkt hinter der Klammer gehört dazu und darf nicht verändert werden.
 | Neben **Hinweis** gibt es keinen **☰**-Knopf | Du bist im Fenster *Zug hinzufügen*. Speichere den Zug zuerst und öffne ihn dann mit dem Stift **✎** |
 | Die Wagenreihung erscheint nicht auf dem Display | Prüfe, ob die Anzeigeart auf **Live** steht — dort gibt es keine Wagenreihung |
 | Der Hinweistext ist nach dem Übernehmen verschwunden | **Übernehmen** lässt den normalen Text stehen. Prüfe im Feld **Hinweis**, ob der Text vor der `{`-Klammer noch da ist |
+| **Kopieren** legt nichts in die Zwischenablage | Markiere den Text im Feld **Ergebnis** mit der Maus und kopiere ihn mit **Strg + C** (am Mac **Cmd + C**) |
 | **Laden** tut nichts, das Feld blinkt rot | Der eingefügte Text passt nicht ins Muster. Er muss mit `{1` beginnen und mit `}` enden |
 | Ich brauche mehr als 14 Wagen | Mehr passen nicht auf die Tafel |
 | Der Zug steht auf der Tafel zu weit links oder rechts | Verschiebe ihn mit **←** und **→** im Editor |
