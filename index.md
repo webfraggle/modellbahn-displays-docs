@@ -28,6 +28,7 @@ Die Anleitungen sind in mehrere Bereiche aufgeteilt: Unter **Allgemein** findest
 
 ## Display-Anleitungen
 
+- [Zugzielanzeiger](docs/zugzielanzeiger/) — Züge eintragen, echte Fahrplandaten anzeigen, über DCC und MQTT steuern
 - [Video-Display](docs/video-display/) — Bilder und Videos anzeigen, eigene Videos konvertieren
 - [Tankstellenanzeige](docs/tankstellenanzeige/) — Einrichtung, Konfiguration und API
 
