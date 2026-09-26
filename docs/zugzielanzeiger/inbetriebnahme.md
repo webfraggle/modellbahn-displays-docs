@@ -29,7 +29,7 @@ Verbinde den Controller anschließend über ein **USB-C-Kabel** mit einer Stromq
 
 > **Hinweis:** Zum Einrichten brauchst du ein Smartphone, Tablet oder einen Computer, der im selben WLAN ist.
 
-An der Seite des Controllers sitzen drei Taster. Der mittlere ist der **Reset**-Taster; er liegt etwas nach innen versetzt, damit man ihn nicht versehentlich drückt. Den Taster **BTN 0** brauchst du gleich, um die Adresse des Anzeigers abzulesen.
+An der Seite des Controllers sitzen drei Taster. Der mittlere ist der **Reset**-Taster; er liegt etwas nach innen versetzt, damit man ihn nicht versehentlich drückt. Daneben sitzen **BTN 0** und **BTN 3** — beide sind auf der Platine beschriftet. Den Taster **BTN 0** brauchst du gleich, um die Adresse des Anzeigers abzulesen.
 
 ![Die drei Taster an der Seite des Controllers, darunter BTN 0](controller-buttons.png){: style="max-width: 70%;" }
 
@@ -49,11 +49,33 @@ Das Ergebnis wird dauerhaft gespeichert, die Abfrage kommt nicht wieder — auch
 
 Hast du im falschen Moment gedrückt — also während das Display dunkel war — merkt sich der Controller die verkehrte Variante. Die Beleuchtung verhält sich dann genau umgekehrt: Das Display bleibt im Betrieb dunkel, obwohl der Anzeiger läuft.
 
-Das lässt sich nachholen — allerdings nur über die **Reset**-Taste am Controller. Tippe sie nach dem Hochfahren zwei- bis dreimal kurz an, so wie unter [Über die Reset-Taste](../allgemein/wlan-einrichten.md#über-die-reset-taste) beschrieben. Dabei wird neben den WLAN-Daten auch die Beleuchtungs-Erkennung gelöscht. Beim nächsten Start erscheint **Jetzt BTN0 druecken** wieder, und du kannst es richtig bestätigen.
+Das lässt sich nachholen. Welcher Weg bei dir gilt, hängt von der Version der Betriebssoftware (Firmware) ab: Drücke kurz **BTN 0** — unten rechts in der Info-Anzeige steht die Versionsnummer. Eine allgemeine Beschreibung findest du unter [Hintergrundbeleuchtung](../allgemein/hintergrundbeleuchtung.md).
+
+> **Hinweis:** Bleibt das Display dunkel, siehst du auch die Info-Anzeige nicht. Probiere die Wege dann einfach der Reihe nach aus: zuerst den für 3.1.10. Tut sich nichts, nimm den für 3.1.9. Erscheint auch dabei kein **Jetzt BTN0 druecken**, bleibt der Weg über die Reset-Taste.
+
+**Ab Firmware 3.1.10 — BTN 3 lange drücken**
+
+Warte, bis der Anzeiger hochgefahren ist, und halte dann **BTN 3** etwa **zwei Sekunden** gedrückt. Die Beleuchtung schaltet auf die andere Variante um, das Display wird hell. Die Einstellung wird sofort gespeichert, die Helligkeit bleibt unverändert.
+
+> **Tipp:** Ist das Display danach dunkel, hast du aus Versehen umgeschaltet — halte **BTN 3** einfach noch einmal zwei Sekunden gedrückt.
+
+Der Weg über das Einschalten mit gedrückter **BTN 3** (siehe nächster Absatz) funktioniert ab 3.1.10 weiterhin.
+
+**Ab Firmware 3.1.9 — BTN 3 beim Einschalten**
+
+Trenne den Anzeiger vom Strom. Halte **BTN 3** gedrückt und schließe den Strom wieder an. Sobald **Jetzt BTN0 druecken** auf dem Display steht und die Beleuchtung wieder im Zwei-Sekunden-Takt wechselt, kannst du **BTN 3** loslassen. Bestätige dann wie beim ersten Mal mit **BTN 0** in dem Moment, in dem das Display **hell** ist.
+
+> **Hinweis:** Dabei wird auch die Helligkeit der Beleuchtung wieder auf 100 % gestellt. WLAN-Zugangsdaten, Züge, Bilder und alle übrigen Einstellungen bleiben erhalten.
+
+**Bis Firmware 3.1.8 — über die Reset-Taste**
+
+Tippe die **Reset**-Taste nach dem Hochfahren zwei- bis dreimal kurz an, so wie unter [Über die Reset-Taste](../allgemein/wlan-einrichten.md#über-die-reset-taste) beschrieben. Dabei wird neben den WLAN-Daten auch die Beleuchtungs-Erkennung gelöscht. Beim nächsten Start erscheint **Jetzt BTN0 druecken** wieder, und du kannst es richtig bestätigen.
 
 > **Wichtig:** Nur dieser Weg löscht die Erkennung. Änderst du die WLAN-Daten über das Webinterface, oder wechselt der Controller von selbst in den Konfigurationsmodus, weil er dein WLAN nicht findet, bleibt die falsch gespeicherte Beleuchtungsvariante erhalten.
 
 > **Hinweis:** Mit der **Reset**-Taste gehen auch die WLAN-Zugangsdaten verloren — du musst das WLAN anschließend neu einrichten. Deine Züge, Bilder und Einstellungen bleiben erhalten.
+
+> **Nach einem Update auf 3.1.9:** Die **Reset**-Taste löscht die Beleuchtungs-Erkennung dann nicht mehr — sie ist nur noch für die WLAN-Daten zuständig. Zum Wiederholen nimmst du ab dann **BTN 3**.
 
 ---
 
@@ -172,7 +194,7 @@ Von Zeit zu Zeit gibt es neue Funktionen oder Verbesserungen. Über **Controller
 |---|---|
 | Die Anzeige bleibt komplett dunkel | Prüfe die Stromversorgung (USB-C-Kabel und Netzteil) und ob die Flachbandkabel fest sitzen |
 | Auf dem Display steht **Jetzt BTN0 druecken** | Das ist die einmalige Erkennung der Beleuchtung. Drücke **BTN 0**, während das Display hell ist |
-| Das Display bleibt dunkel, obwohl der Anzeiger läuft | Bei der Erkennung wurde im dunklen Moment gedrückt. Nur die **Reset**-Taste startet sie erneut — siehe [Danebengedrückt?](#danebengedrückt) |
+| Das Display bleibt dunkel, obwohl der Anzeiger läuft | Bei der Erkennung wurde im dunklen Moment gedrückt. Wie du sie wiederholst, steht unter [Danebengedrückt?](#danebengedrückt) |
 | Ich finde die Adresse des Anzeigers nicht | Drücke kurz **BTN 0** am Controller — die Adresse erscheint auf dem Display |
 | Die angezeigte Adresse stimmt nicht mehr | Schalte die Info-Anzeige mit **BTN 0** aus und wieder ein; sie aktualisiert sich nicht von selbst |
 | Die Weboberfläche lädt nicht | Prüfe, ob dein Smartphone oder Computer im selben WLAN ist wie der Anzeiger, und tippe die Adresse ohne Tippfehler ein |

@@ -70,7 +70,7 @@ Es gibt drei Wege, um die WLAN-Einstellungen zu ändern:
 
 Tippe die **Reset**-Taste am Controller kurz an, sobald er hochgefahren ist — insgesamt zwei- bis dreimal. Dadurch werden die gespeicherten WLAN-Daten gelöscht und der Controller startet im Konfigurationsmodus — das heißt, er öffnet sein eigenes WLAN-Netzwerk, über das du die Einstellungen ändern kannst. Danach gehst du vor wie bei der Ersteinrichtung: [Schritt für Schritt](#schritt-für-schritt).
 
-> **Hinweis:** Zwischen den Tastendrücken musst du jeweils 1–2 Sekunden warten, damit der Controller zwischendurch hochfahren kann. Erst dann erkennt er den nächsten Reset als Teil der Sequenz. Wartest du zu kurz oder zu lang, zählt der Controller den Tastendruck nicht mit — dann passiert nichts und du versuchst es einfach noch einmal.
+> **Hinweis:** Warte zwischen den Tastendrücken jeweils 1–2 Sekunden, damit der Controller zwischendurch hochfahren kann. Lässt du zu viel Zeit verstreichen, vergisst er die angefangene Sequenz wieder und fängt bei null an — dann passiert nichts und du versuchst es einfach noch einmal.
 
 ### Automatisch bei fehlendem WLAN
 
