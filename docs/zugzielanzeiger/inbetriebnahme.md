@@ -49,9 +49,19 @@ Das Ergebnis wird dauerhaft gespeichert, die Abfrage kommt nicht wieder — auch
 
 Hast du im falschen Moment gedrückt — also während das Display dunkel war — merkt sich der Controller die verkehrte Variante. Die Beleuchtung verhält sich dann genau umgekehrt: Das Display bleibt im Betrieb dunkel, obwohl der Anzeiger läuft.
 
-Das lässt sich nachholen. Welcher Weg bei dir gilt, hängt von der Version der Betriebssoftware (Firmware) ab: Drücke kurz **BTN 0** — unten rechts in der Info-Anzeige steht die Versionsnummer.
+Das lässt sich nachholen. Welcher Weg bei dir gilt, hängt von der Version der Betriebssoftware (Firmware) ab: Drücke kurz **BTN 0** — unten rechts in der Info-Anzeige steht die Versionsnummer. Eine allgemeine Beschreibung findest du unter [Hintergrundbeleuchtung](../allgemein/hintergrundbeleuchtung.md).
 
-**Ab Firmware 3.1.9 — mit BTN 3**
+> **Hinweis:** Bleibt das Display dunkel, siehst du auch die Info-Anzeige nicht. Probiere die Wege dann einfach der Reihe nach aus: zuerst den für 3.1.10. Tut sich nichts, nimm den für 3.1.9. Erscheint auch dabei kein **Jetzt BTN0 druecken**, bleibt der Weg über die Reset-Taste.
+
+**Ab Firmware 3.1.10 — BTN 3 lange drücken**
+
+Warte, bis der Anzeiger hochgefahren ist, und halte dann **BTN 3** etwa **zwei Sekunden** gedrückt. Die Beleuchtung schaltet auf die andere Variante um, das Display wird hell. Die Einstellung wird sofort gespeichert, die Helligkeit bleibt unverändert.
+
+> **Tipp:** Ist das Display danach dunkel, hast du aus Versehen umgeschaltet — halte **BTN 3** einfach noch einmal zwei Sekunden gedrückt.
+
+Der Weg über das Einschalten mit gedrückter **BTN 3** (siehe nächster Absatz) funktioniert ab 3.1.10 weiterhin.
+
+**Ab Firmware 3.1.9 — BTN 3 beim Einschalten**
 
 Trenne den Anzeiger vom Strom. Halte **BTN 3** gedrückt und schließe den Strom wieder an. Sobald **Jetzt BTN0 druecken** auf dem Display steht und die Beleuchtung wieder im Zwei-Sekunden-Takt wechselt, kannst du **BTN 3** loslassen. Bestätige dann wie beim ersten Mal mit **BTN 0** in dem Moment, in dem das Display **hell** ist.
 

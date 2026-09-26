@@ -18,3 +18,4 @@ Diese Schritte funktionieren bei jedem Display gleich:
 - [Displays montieren mit dem Montagekit](displays-montieren.md) — Langloch bohren, Schiene und Controller-Halter befestigen, Display auf die richtige Höhe bringen
 - [Controller aktualisieren (über WLAN)](controller-aktualisieren-wlan.md) — neue Firmware bequem über dein Heim-WLAN einspielen
 - [Controller aktualisieren (per USB)](controller-aktualisieren-usb.md) — der Weg über ein USB-C-Kabel am Windows-PC, wenn das Update über WLAN nicht klappt
+- [Hintergrundbeleuchtung](hintergrundbeleuchtung.md) — Beleuchtung beim ersten Start bestätigen und umschalten, wenn das Display dunkel bleibt

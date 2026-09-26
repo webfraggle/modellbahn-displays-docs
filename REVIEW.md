@@ -24,11 +24,12 @@ Datum im Format `JJJJ-MM-TT`, bezogen auf die Freigabe bzw. die letzte Prüfung.
 
 | Seite | Titel | Status | Datum | Notizen |
 |---|---|---|---|---|
-| `docs/allgemein/index.md` | Allgemein | offen | — | |
+| `docs/allgemein/index.md` | Allgemein | offen | — | 2026-09-26: Link auf Hintergrundbeleuchtung ergänzt |
 | `docs/allgemein/flachbandkabel-anschliessen.md` | Flachbandkabel anschließen | freigegeben | 2026-08-08 | |
 | `docs/allgemein/wlan-einrichten.md` | WLAN einrichten | freigegeben | 2026-08-08 | |
 | `docs/allgemein/controller-aktualisieren-wlan.md` | Controller aktualisieren (über WLAN) | offen | — | |
 | `docs/allgemein/controller-aktualisieren-usb.md` | Controller aktualisieren (per USB) | offen | — | |
+| `docs/allgemein/hintergrundbeleuchtung.md` | Hintergrundbeleuchtung | offen | — | 2026-09-26 neu: Erkennung beim ersten Start, Umschalten per BTN 3 lang (im Betrieb) und BTN 3 beim Einschalten — bewusst ohne Produktnamen und Versionsnummern |
 
 ## Bildgeneratoren
 
@@ -64,7 +65,8 @@ Zum Abhaken beim Gegenlesen, in der Reihenfolge der Navigation.
 
 - [x] **Zugzielanzeiger** (Kapitelübersicht) — `index.md`
       · gegengelesen 2026-09-20 · neu gefasste Einleitung bestätigt · Frage 03 beantwortet, keine offenen Fragen mehr
-- [x] **Zugzielanzeiger in Betrieb nehmen** — `inbetriebnahme.md`
+- [ ] **Zugzielanzeiger in Betrieb nehmen** — `inbetriebnahme.md`
+      · **2026-09-26 geändert, neu gegenlesen:** „Danebengedrückt?“ um BTN 3 lang drücken (ab 3.1.10) ergänzt, Link auf `allgemein/hintergrundbeleuchtung.md`, Hinweis zum Ausprobieren bei dunklem Display
       · gegengelesen 2026-09-13 · Frage 11 eingearbeitet (Spannungen ergaenzt!) · offen 03, 19
 - [x] **Züge anlegen und anzeigen** — `zuege-verwalten.md`
       · gegengelesen 2026-09-13 · offen bleiben Fragen 02, 27
@@ -92,7 +94,7 @@ Zum Abhaken beim Gegenlesen, in der Reihenfolge der Navigation.
 - [x] **Zugdaten sichern und wiederherstellen** — `backup.md`
       · gegengelesen 2026-09-20 · Abschnitt zu Konfiguration und Bildern ergänzt · keine offenen Fragen mehr
 
-**Stand: 11 von 11 gegengelesen — Kapitel vollständig durchgesehen.**
+**Stand: 10 von 11 gegengelesen — `inbetriebnahme.md` nach Änderung vom 2026-09-26 erneut offen.**
 
 > Die nummerierten Fragen stehen in `ZZA-RECHERCHE/50-offene-fragen.md`.
 > Im Text sind sie als `{% raw %}{% comment %} OFFEN-NN: … {% endcomment %}{% endraw %}` markiert
