@@ -53,12 +53,12 @@ Die neue Einstellung wird sofort gespeichert und gilt auch nach dem nächsten Ei
 
 > **Tipp:** Hast du aus Versehen umgeschaltet und das Display ist jetzt dunkel, halte **BTN 3** einfach noch einmal zwei Sekunden gedrückt — dann ist wieder die vorherige Variante aktiv.
 
-### Beim Einschalten: Erkennung wiederholen
+### Beim Neustart: Erkennung wiederholen
 
 Mit diesem Weg läuft die Erkennung vom ersten Start noch einmal ab.
 
-1. Trenne das Display vom Strom.
-2. Halte **BTN 3** gedrückt und schließe den Strom wieder an.
+1. Halte **BTN 3** gedrückt.
+2. Drücke währenddessen kurz die **Reset**-Taste (die mittlere) und halte **BTN 3** weiter gedrückt.
 3. Sobald **Jetzt BTN0 druecken** auf dem Display steht und die Beleuchtung im Zwei-Sekunden-Takt wechselt, kannst du **BTN 3** loslassen.
 4. Bestätige wie beim ersten Mal mit **BTN 0** in dem Moment, in dem das Display **hell** ist.
 
@@ -72,5 +72,5 @@ Mit diesem Weg läuft die Erkennung vom ersten Start noch einmal ab.
 |---|---|
 | Das Display bleibt dunkel, obwohl es läuft | Die Beleuchtung ist auf die falsche Variante eingestellt. Halte **BTN 3** im laufenden Betrieb zwei Sekunden gedrückt, siehe [Im laufenden Betrieb](#im-laufenden-betrieb-btn-3-lange-drücken). |
 | Langes Drücken auf **BTN 3** bewirkt nichts | Die Firmware deines Displays kennt diese Funktion noch nicht. Schau in der Anleitung zu deinem Display nach, welcher Weg für deine Version gilt. |
-| **Jetzt BTN0 druecken** erscheint beim Einschalten, obwohl du das nicht wolltest | **BTN 3** war beim Einschalten gedrückt. Bestätige einfach mit **BTN 0**, wenn das Display hell ist. |
+| **Jetzt BTN0 druecken** erscheint beim Start, obwohl du das nicht wolltest | **BTN 3** war beim Start gedrückt. Bestätige einfach mit **BTN 0**, wenn das Display hell ist. |
 | Das Display blinkt nach dem Bestätigen, bleibt danach aber dunkel | Du hast bei dunklem Display gedrückt. Halte **BTN 3** im laufenden Betrieb zwei Sekunden gedrückt. |

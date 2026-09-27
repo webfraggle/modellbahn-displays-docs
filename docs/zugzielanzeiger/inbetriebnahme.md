@@ -59,17 +59,17 @@ Warte, bis der Anzeiger hochgefahren ist, und halte dann **BTN 3** etwa **zwei S
 
 > **Tipp:** Ist das Display danach dunkel, hast du aus Versehen umgeschaltet — halte **BTN 3** einfach noch einmal zwei Sekunden gedrückt.
 
-Der Weg über das Einschalten mit gedrückter **BTN 3** (siehe nächster Absatz) funktioniert ab 3.1.10 weiterhin.
+Der Weg über einen Neustart mit gedrückter **BTN 3** (siehe nächster Absatz) funktioniert ab 3.1.10 weiterhin.
 
-**Ab Firmware 3.1.9 — BTN 3 beim Einschalten**
+**Ab Firmware 3.1.9 — BTN 3 beim Neustart**
 
-Trenne den Anzeiger vom Strom. Halte **BTN 3** gedrückt und schließe den Strom wieder an. Sobald **Jetzt BTN0 druecken** auf dem Display steht und die Beleuchtung wieder im Zwei-Sekunden-Takt wechselt, kannst du **BTN 3** loslassen. Bestätige dann wie beim ersten Mal mit **BTN 0** in dem Moment, in dem das Display **hell** ist.
+Halte **BTN 3** gedrückt und drücke währenddessen kurz die **Reset**-Taste (die mittlere). Halte **BTN 3** dabei weiter gedrückt. Sobald **Jetzt BTN0 druecken** auf dem Display steht und die Beleuchtung wieder im Zwei-Sekunden-Takt wechselt, kannst du **BTN 3** loslassen. Bestätige dann wie beim ersten Mal mit **BTN 0** in dem Moment, in dem das Display **hell** ist.
 
 > **Hinweis:** Dabei wird auch die Helligkeit der Beleuchtung wieder auf 100 % gestellt. WLAN-Zugangsdaten, Züge, Bilder und alle übrigen Einstellungen bleiben erhalten.
 
 **Bis Firmware 3.1.8 — über die Reset-Taste**
 
-Tippe die **Reset**-Taste nach dem Hochfahren zwei- bis dreimal kurz an, so wie unter [Über die Reset-Taste](../allgemein/wlan-einrichten.md#über-die-reset-taste) beschrieben. Dabei wird neben den WLAN-Daten auch die Beleuchtungs-Erkennung gelöscht. Beim nächsten Start erscheint **Jetzt BTN0 druecken** wieder, und du kannst es richtig bestätigen.
+Drücke die **Reset**-Taste dreimal, mit einer kurzen Pause dazwischen, so wie unter [Über die Reset-Taste](../allgemein/wlan-einrichten.md#über-die-reset-taste) beschrieben. Dabei wird neben den WLAN-Daten auch die Beleuchtungs-Erkennung gelöscht. Beim nächsten Start erscheint **Jetzt BTN0 druecken** wieder, und du kannst es richtig bestätigen.
 
 > **Wichtig:** Nur dieser Weg löscht die Erkennung. Änderst du die WLAN-Daten über das Webinterface, oder wechselt der Controller von selbst in den Konfigurationsmodus, weil er dein WLAN nicht findet, bleibt die falsch gespeicherte Beleuchtungsvariante erhalten.
 

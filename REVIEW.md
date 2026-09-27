@@ -26,7 +26,7 @@ Datum im Format `JJJJ-MM-TT`, bezogen auf die Freigabe bzw. die letzte Prüfung.
 |---|---|---|---|---|
 | `docs/allgemein/index.md` | Allgemein | offen | — | 2026-09-26: Link auf Hintergrundbeleuchtung ergänzt |
 | `docs/allgemein/flachbandkabel-anschliessen.md` | Flachbandkabel anschließen | freigegeben | 2026-08-08 | |
-| `docs/allgemein/wlan-einrichten.md` | WLAN einrichten | freigegeben | 2026-08-08 | |
+| `docs/allgemein/wlan-einrichten.md` | WLAN einrichten | offen | — | 2026-09-27 geändert, neu gegenlesen: Reset-Taste dreimal, nach jedem Druck warten, bis das Bild wieder da ist (vorher „zwei- bis dreimal“, „1–2 Sekunden“) |
 | `docs/allgemein/controller-aktualisieren-wlan.md` | Controller aktualisieren (über WLAN) | offen | — | |
 | `docs/allgemein/controller-aktualisieren-usb.md` | Controller aktualisieren (per USB) | offen | — | |
 | `docs/allgemein/hintergrundbeleuchtung.md` | Hintergrundbeleuchtung | offen | — | 2026-09-26 neu: Erkennung beim ersten Start, Umschalten per BTN 3 lang (im Betrieb) und BTN 3 beim Einschalten — bewusst ohne Produktnamen und Versionsnummern |
