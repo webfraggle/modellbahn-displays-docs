@@ -35,13 +35,14 @@ Beim ersten Einschalten (oder wenn keine WLAN-Daten gespeichert sind) erstellt d
 1. Verbinde dich mit deinem Smartphone oder Computer mit dem WLAN deines Displays (Name und Passwort stehen auf dem Display). Unter Windows findest du die WLAN-Auswahl in der Taskleiste:
    ![WLAN-Auswahl unter Windows — das Netzwerk des Displays erscheint in der Liste der verfügbaren Netzwerke](WLAN-Auswahl-Windows.png){: style="max-width: 50%;" }
 2. Öffne einen Browser (z.B. Chrome, Safari oder Firefox) und gib oben in die Adressleiste `192.168.4.1` ein. Du siehst die Startseite des Webinterfaces (die Einstellungsseite deines Displays im Browser).
-3. Klicke auf **WLAN-Konfiguration**. Die Seite heißt **WiFi Configuration** und hat zwei Bereiche: **WiFi 1** und **WiFi 2**. Für dein Heim-WLAN nimmst du **WiFi 1**.
-   {% comment %} Screenshot der neuen WLAN-Seite (WiFi 1 / WiFi 2) fehlt noch. {% endcomment %}
+3. Klicke auf **WLAN-Konfiguration**. Die Seite heißt **WiFi Configuration** und hat zwei Bereiche: **WiFi 1** und **WiFi 2**. Für dein Heim-WLAN nimmst du **WiFi 1**:
+   ![WLAN-Konfigurationsseite ab Firmware 3.2 — links die Bereiche WiFi 1 und WiFi 2 mit je einem Feld für SSID und Passwort, rechts die Liste der gefundenen Netzwerke](wifi-configuration-32.png)
 4. Rechts unter **SSIDs found** (gefundene WLAN-Netzwerke) werden die verfügbaren Netzwerke angezeigt. Klicke auf dein Heim-WLAN — der Name wird automatisch in das Feld **SSID** übernommen.
 5. Gib im Feld **Password** das Passwort deines WLANs ein.
 6. Klicke auf **Save WiFi 1**.
 7. Unter den Eingabefeldern steht jetzt **Saved. Connecting to …** — das Display versucht, sich mit deinem WLAN zu verbinden. Das dauert einige Sekunden. Das Display startet dabei nicht neu, und sein eigenes WLAN bleibt währenddessen an.
 8. Hat es geklappt, steht dort **Connected to …** und darunter die neue Adresse des Displays in deinem Heim-WLAN, zum Beispiel `http://192.168.178.41/`. Notiere sie dir.
+   ![Unter den Eingabefeldern steht in Türkis: Connected to „MeinHeimnetz“, darunter die neue Adresse http://192.168.178.41/](wifi-configuration-32-verbunden.png)
 9. Verbinde dein Smartphone oder deinen Computer wieder mit deinem Heim-WLAN. Danach erreichst du das Display unter der neuen Adresse. Sein eigenes WLAN schaltet es nach etwa einer halben Minute ab.
 
 > **Tipp:** Steht dort **Could not connect to …**, stimmt meist das Passwort nicht. Prüfe Name und Passwort und klicke noch einmal auf **Save WiFi 1**.
