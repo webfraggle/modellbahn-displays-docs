@@ -51,7 +51,21 @@ Hast du im falschen Moment gedrückt — also während das Display dunkel war �
 
 Das lässt sich nachholen. Welcher Weg bei dir gilt, hängt von der Version der Betriebssoftware (Firmware) ab: Drücke kurz **BTN 0** — unten rechts in der Info-Anzeige steht die Versionsnummer. Eine allgemeine Beschreibung findest du unter [Hintergrundbeleuchtung](../allgemein/hintergrundbeleuchtung.md).
 
-> **Hinweis:** Bleibt das Display dunkel, siehst du auch die Info-Anzeige nicht. Probiere die Wege dann einfach der Reihe nach aus: zuerst den für 3.1.10. Tut sich nichts, nimm den für 3.1.9. Erscheint auch dabei kein **Jetzt BTN0 druecken**, bleibt der Weg über die Reset-Taste.
+> **Hinweis:** Bleibt das Display dunkel, siehst du auch die Info-Anzeige nicht. Probiere die Wege dann einfach der Reihe nach aus: zuerst den für 3.2, dann den für 3.1.10. Tut sich nichts, nimm den für 3.1.9. Erscheint auch dabei kein **Jetzt BTN0 druecken**, bleibt der Weg über die Reset-Taste.
+
+#### Ab Firmware 3.2
+
+**BTN 0 lange drücken**
+
+Warte, bis der Anzeiger hochgefahren ist, und halte dann **BTN 0** etwa **zwei Sekunden** gedrückt. Die Beleuchtung schaltet auf die andere Variante um, das Display wird hell. Die Einstellung wird sofort gespeichert, die Helligkeit wird dabei auf 100 % gestellt.
+
+> **Tipp:** Ist das Display danach dunkel, hast du aus Versehen umgeschaltet — halte **BTN 0** einfach noch einmal zwei Sekunden gedrückt.
+
+> **Wichtig:** Lass **BTN 0** nach zwei bis drei Sekunden wieder los. Hattest du vorher schon kurz auf **BTN 0** gedrückt, ist die Info-Anzeige offen, auch wenn du sie im Dunkeln nicht siehst. Ein langer Druck startet dann einen Countdown, der nach acht Sekunden die WLAN-Daten löscht. Schaltet die Beleuchtung nicht um, warte eine Minute, bis sich die Info-Anzeige von selbst schließt, und versuche es noch einmal.
+
+Der Weg über einen Neustart mit gedrückter **BTN 3** (siehe unten, „Ab Firmware 3.1.9“) funktioniert auch ab 3.2. Ein langer Druck auf **BTN 3** im laufenden Betrieb hat ab 3.2 dagegen keine Funktion mehr.
+
+#### Bis Firmware 3.1
 
 **Ab Firmware 3.1.10 — BTN 3 lange drücken**
 
@@ -75,7 +89,7 @@ Drücke die **Reset**-Taste dreimal, mit einer kurzen Pause dazwischen, so wie u
 
 > **Hinweis:** Mit der **Reset**-Taste gehen auch die WLAN-Zugangsdaten verloren — du musst das WLAN anschließend neu einrichten. Deine Züge, Bilder und Einstellungen bleiben erhalten.
 
-> **Nach einem Update auf 3.1.9:** Die **Reset**-Taste löscht die Beleuchtungs-Erkennung dann nicht mehr — sie ist nur noch für die WLAN-Daten zuständig. Zum Wiederholen nimmst du ab dann **BTN 3**.
+> **Nach einem Update auf 3.1.9 oder neuer:** Die **Reset**-Taste löscht die Beleuchtungs-Erkennung dann nicht mehr — sie ist nur noch für die WLAN-Daten zuständig. Zum Umschalten nimmst du ab dann **BTN 3**, ab 3.2 **BTN 0**.
 
 ---
 
@@ -91,7 +105,9 @@ Sobald der Anzeiger im WLAN ist, bekommt er eine **IP-Adresse** — eine Zahlenf
 
 Drücke dazu kurz die Taste **BTN 0** am Controller. Auf dem Display erscheint eine Info-Anzeige mit dem Logo, der Überschrift **IP-Adresse:** und darunter der Adresse. Unten rechts steht klein die Version der Betriebssoftware (Firmware), zum Beispiel `3.1.8`.
 
-Ein zweiter Druck auf **BTN 0** schaltet die Info-Anzeige wieder aus, und die normale Zuganzeige kommt zurück.
+Ein zweiter Druck auf **BTN 0** schaltet die Info-Anzeige wieder aus, und die normale Zuganzeige kommt zurück. Ab Firmware 3.2 schließt sie sich nach einer Minute auch von selbst.
+
+> **Hinweis:** Ab Firmware 3.2 hat **BTN 0** zwei weitere Aufgaben: Bei normaler Anzeige zwei Sekunden halten schaltet die Hintergrundbeleuchtung um, bei offener Info-Anzeige lange halten löscht die WLAN-Daten. Beides steht unter [Hintergrundbeleuchtung](../allgemein/hintergrundbeleuchtung.md) und [WLAN einrichten](../allgemein/wlan-einrichten.md#mit-btn-0).
 
 {% comment %} OFFEN-23: Die Info-Anzeige wird nur beim Einschalten gezeichnet und danach nicht aktualisiert (check_status() wird nie aufgerufen, main.cpp:180-192). Verbindet sich das Gerät, während die Anzeige sichtbar ist, steht dort weiter die alte Information. Als Einschränkung nennen oder vorher fixen? Der Satz unten ist die vorsichtige Formulierung. {% endcomment %}
 
