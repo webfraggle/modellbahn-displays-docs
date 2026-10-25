@@ -23,3 +23,62 @@
   }
 </style>
 {% endif %}
+<script>
+  // Lightbox: Bilder im Inhalt per Klick groß zeigen. Ändert die Seite selbst
+  // nicht (nur Mauszeiger), Druck blendet das Overlay aus, die PDFs entstehen
+  // ohnehin aus dem Markdown.
+  document.addEventListener('DOMContentLoaded', function () {
+    var imgs = document.querySelectorAll('.main-content img');
+    if (!imgs.length) return;
+
+    var box = document.createElement('figure');
+    box.className = 'mbd-lightbox';
+    box.hidden = true;
+    box.setAttribute('role', 'dialog');
+    box.setAttribute('aria-modal', 'true');
+    box.setAttribute('aria-label', 'Bild vergrößert');
+    var big = document.createElement('img');
+    var caption = document.createElement('figcaption');
+    var close = document.createElement('button');
+    close.type = 'button';
+    close.className = 'mbd-lightbox-close';
+    close.setAttribute('aria-label', 'Schließen');
+    close.textContent = '×';
+    box.append(close, big, caption);
+    document.body.appendChild(box);
+
+    var lastFocus = null;
+    function open(img) {
+      lastFocus = document.activeElement;
+      big.src = img.currentSrc || img.src;
+      big.alt = img.alt;
+      caption.textContent = img.alt;
+      caption.hidden = !img.alt;
+      box.hidden = false;
+      document.body.style.overflow = 'hidden';
+      close.focus();
+    }
+    function hide() {
+      box.hidden = true;
+      big.removeAttribute('src');
+      document.body.style.overflow = '';
+      if (lastFocus) lastFocus.focus();
+    }
+
+    imgs.forEach(function (img) {
+      if (img.closest('a')) return; // verlinkte Bilder behalten ihren Link
+      img.classList.add('mbd-zoomable');
+      img.tabIndex = 0;
+      img.setAttribute('role', 'button');
+      img.setAttribute('aria-label', 'Bild vergrößern' + (img.alt ? ': ' + img.alt : ''));
+      img.addEventListener('click', function () { open(img); });
+      img.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(img); }
+      });
+    });
+    box.addEventListener('click', hide);
+    document.addEventListener('keydown', function (e) {
+      if (!box.hidden && e.key === 'Escape') hide();
+    });
+  });
+</script>

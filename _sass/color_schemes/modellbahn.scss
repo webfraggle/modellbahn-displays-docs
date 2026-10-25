@@ -781,11 +781,74 @@ body::before {
   }
 }
 
+// --- Lightbox -------------------------------------------------
+// Bilder im Inhalt öffnen sich per Klick groß (Skript in
+// _includes/head_custom.html). Im Fließtext ändert sich nur der
+// Mauszeiger; Druck und PDF bleiben unberührt.
+
+.main-content img.mbd-zoomable {
+  cursor: zoom-in;
+}
+
+.mbd-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 3rem 1rem 1.5rem;
+  background: rgba(0, 0, 0, 0.85);
+  cursor: zoom-out;
+
+  &[hidden] { display: none; }
+
+  img {
+    max-width: 100%;
+    max-height: calc(100vh - 7rem);
+    object-fit: contain;
+    background: var(--mbd-paper);
+    border-radius: 4px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  }
+
+  figcaption {
+    max-width: 68ch;
+    color: #ffffff;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    text-align: center;
+  }
+}
+
+.mbd-lightbox-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--mbd-orange);
+  color: #ffffff;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+  }
+}
+
 // --- Print ----------------------------------------------------
 
 @media print {
   body::before { display: none; }
-  .side-bar, .aux-nav { display: none; }
+  .side-bar, .aux-nav, .mbd-lightbox { display: none; }
 
   .main-content {
     h1, h2 { page-break-after: avoid; }
