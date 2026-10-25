@@ -29,7 +29,7 @@ Zum Schluss klickst du unten auf **Speichern**. **Abbrechen** verwirft alles.
 
 ---
 
-## Die fünf Anzeigearten
+## Die Anzeigearten
 
 Ganz oben wählst du die Anzeigeart:
 
@@ -40,10 +40,12 @@ Ganz oben wählst du die Anzeigeart:
 | **Live** | Holt alle 60 Sekunden echte Fahrplandaten aus dem Internet und zeigt die nächsten drei Züge | Wenn der Anzeiger den Fahrplan eines realen Bahnhofs übernehmen soll |
 | **Bilder Manuell** | Zeigt ein Bild und wartet | Für selbst gestaltete Anzeigen, etwa im Stil einer anderen Bahn |
 | **Bilder Intervall** | Wechselt von selbst alle paar Sekunden zum nächsten Bild | Für mehrere solcher Anzeigen nacheinander |
+| **Client: Bild** | Zeigt 1:1 das Bild eines Gleises auf einem anderen Controller (ab Firmware 3.2.11) | Wenn zwei Anzeiger an verschiedenen Controllern genau gleich aussehen sollen |
+| **Client: Züge** | Übernimmt die Züge eines Gleises auf einem anderen Controller und zeichnet sie selbst (ab Firmware 3.2.11) | Wie **Client: Bild**, aber mit flüssigen Lauftexten |
 
 > **Hinweis:** In den Anzeigearten **Live** haben die Knöpfe **‹** und **›** keine Wirkung — welcher Zug zu sehen ist, bestimmt dort der Fahrplan. In allen anderen Anzeigearten kannst du jederzeit von Hand weiterschalten, auch im laufenden Intervallbetrieb.
 
-Die beiden Bild-Anzeigearten sind unter [Bilder statt Züge anzeigen](bilder-anzeigen.md) beschrieben, der Live-Betrieb unter [Echte Fahrplandaten anzeigen](live-daten.md).
+Die beiden Bild-Anzeigearten sind unter [Bilder statt Züge anzeigen](bilder-anzeigen.md) beschrieben, der Live-Betrieb unter [Echte Fahrplandaten anzeigen](live-daten.md), die beiden Client-Anzeigearten unter [Zwei Anzeiger gleich schalten](client-modus.md).
 
 ---
 

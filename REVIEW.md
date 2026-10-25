@@ -70,7 +70,8 @@ Zum Abhaken beim Gegenlesen, in der Reihenfolge der Navigation.
       · gegengelesen 2026-09-13 · Frage 11 eingearbeitet (Spannungen ergaenzt!) · offen 03, 19
 - [x] **Züge anlegen und anzeigen** — `zuege-verwalten.md`
       · gegengelesen 2026-09-13 · offen bleiben Fragen 02, 27
-- [x] **Anzeigeart und Einstellungen** — `anzeigearten.md`
+- [ ] **Anzeigeart und Einstellungen** — `anzeigearten.md`
+      · **2026-10-25 geändert, neu gegenlesen:** Tabelle um Client: Bild / Client: Züge ergänzt, Überschrift „Die fünf Anzeigearten“ → „Die Anzeigearten“
       · gegengelesen 2026-09-13 · Fragen 04 und 06 eingearbeitet, offen bleiben 18, 24
 - [x] **Wagenreihung darstellen** — `wagenreihung.md`
       · gegengelesen 2026-09-20 · Einleitung um Hinweis-Codierung ergänzt, Strg/Cmd+C und +V bei **Kopieren** nachgetragen
@@ -93,8 +94,10 @@ Zum Abhaken beim Gegenlesen, in der Reihenfolge der Navigation.
       · neuer Abschnitt „Win-Digipet" (Anlass für die MQTT-Anbindung, noch ungetestet) · offen: eigener oder externer Broker bei Win-Digipet
 - [x] **Zugdaten sichern und wiederherstellen** — `backup.md`
       · gegengelesen 2026-09-20 · Abschnitt zu Konfiguration und Bildern ergänzt · keine offenen Fragen mehr
+- [ ] **Zwei Anzeiger gleich schalten (Client-Modus)** — `client-modus.md`
+      · **2026-10-25 neu** (Firmware 3.2.11): Screenshots an QUAD .107 (Master) und DUAL .97 (Client) · offen 28–32
 
-**Stand: 10 von 11 gegengelesen — `inbetriebnahme.md` nach Änderung vom 2026-09-26 erneut offen.**
+**Stand: 9 von 12 gegengelesen — offen: `inbetriebnahme.md` (Änderungen 2026-09-26 und 3.2), `anzeigearten.md` und `client-modus.md` (2026-10-25).**
 
 > Die nummerierten Fragen stehen in `ZZA-RECHERCHE/50-offene-fragen.md`.
 > Im Text sind sie als `{% raw %}{% comment %} OFFEN-NN: … {% endcomment %}{% endraw %}` markiert
