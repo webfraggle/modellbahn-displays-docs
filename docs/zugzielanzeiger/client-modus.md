@@ -41,13 +41,13 @@ Eingestellt wird das **pro Gleis**. Beim Zugzielanzeiger für zwei Gleise kann a
 | **Client: Bild** | Zeigt 1:1 das fertige Bild des Masters — egal ob Züge, Bilder oder eine Wagenreihung | Wenn beide Anzeiger wirklich **genau gleich** aussehen sollen, auch in den Bild-Anzeigearten |
 | **Client: Züge** | Übernimmt nur die drei Züge vom Master und zeichnet sie selbst | Wenn Lauftexte **flüssig** laufen sollen |
 
-**Client: Bild** überträgt das Bild immer wieder neu. Deshalb laufen Lauftexte am Client ruckelig. Außerdem zeigen **beide Displays** des Client-Gleises dasselbe Bild — auch dann, wenn der Master auf seinen beiden Displays gerade verschiedene Bilder zeigt.
+**Client: Bild** überträgt das Bild immer wieder neu. Deshalb laufen Lauftexte am Client ruckelig. Außerdem zeigt der Client auf **Vorder- und Rückseite** dasselbe, nämlich die **Vorderseite** des Masters. Das fällt nur bei Bildern auf, die vorn und hinten verschieden sind (siehe [Wie das Bild auf Vorder- und Rückseite kommt](bilder-anzeigen.md#wie-das-bild-auf-vorder--und-rückseite-kommt)): Die Rückseite des Masters ist am Client dann nicht zu sehen.
 
-**Client: Züge** zeichnet selbst, Lauftexte laufen flüssig — aber nicht genau gleichzeitig mit dem Master. Damit beide gleich aussehen, müssen **Gleis**, **Abschnitt** und **Folgezüge** am Client genauso eingetragen sein wie am Master.
+**Client: Züge** zeichnet selbst, Lauftexte laufen flüssig — aber nicht genau gleichzeitig mit dem Master. Der Master überträgt die drei angezeigten Züge vollständig — mit Zeit, Ziel, Hinweis und Wagenreihung. Am Client musst du deshalb **keine Züge anlegen**; was dort in der Zugliste steht, spielt keine Rolle.
 
-> **Tipp:** Weißt du nicht, welche du nehmen sollst, fang mit **Client: Züge** an. Zeigt der Master Bilder statt Zügen, nimm **Client: Bild**.
+> **Tipp:** Weißt du nicht, welche du nehmen sollst, fang mit **Client: Bild** an. Damit zeigt der Client alles, was der Master zeigt — auch Bilder. Stören dich die ruckeligen Lauftexte, wechsle zu **Client: Züge**.
 
-{% comment %} OFFEN-29: Stimmt die Empfehlung „zuerst Client: Züge“? Steht der Master in einer Bild-Anzeigeart, zeigt ein Client: Züge laut Spec die zuletzt übertragenen Züge weiter. {% endcomment %}
+> **Hinweis:** Zeigt der Master Bilder statt Zügen, behält ein Client im Modus **Client: Züge** die zuletzt übertragenen Züge auf dem Display.
 
 ---
 
@@ -61,8 +61,7 @@ Dann öffnest du die Weboberfläche des **Clients**:
 2. Wähle unter **Modus** die Anzeigeart **Client: Bild** oder **Client: Züge**. Darunter erscheinen zwei neue Felder.
 3. Trage bei **Master-IP** die Adresse des Masters ein, zum Beispiel `192.168.178.107` — nur die Zahlen, ohne `http://`.
 4. Wähle bei **Master-Gleis**, welches Gleis des Masters übernommen werden soll: **Gleis A** oder **Gleis B**. Hat der Master nur ein Gleis, ist es **Gleis A**.
-5. Bei **Client: Züge**: Prüfe, ob **Gleis**, **Abschnitt** und **Folgezüge** mit dem Master übereinstimmen.
-6. Klicke unten auf **Speichern**.
+5. Klicke unten auf **Speichern**.
 
 ![Das Konfigurationsfenster mit der Anzeigeart Client: Bild, darunter die Felder Master-IP mit 192.168.178.107 und Master-Gleis mit Gleis A](client-konfiguration.png)
 
@@ -133,6 +132,5 @@ Im Modus **Client: Züge** bleiben die zuletzt übertragenen Züge stehen, bis d
 | Beim Speichern erscheint **Der Master muss ein anderer Controller sein als dieser** | Du hast die eigene Adresse eingetragen. Trage die Adresse des anderen Controllers ein |
 | Beim Speichern erscheint **Bitte die IP-Adresse des Masters eintragen** | Das Feld **Master-IP** ist leer |
 | Lauftexte laufen am Client ruckelig | Das ist bei **Client: Bild** so. Nimm **Client: Züge**, wenn der Master Züge zeigt |
-| Client und Master sehen bei **Client: Züge** unterschiedlich aus | Trage **Gleis**, **Abschnitt** und **Folgezüge** am Client genauso ein wie am Master |
 | **‹**, **›**, Taster oder DCC tun am Client nichts | Das ist so. Im Client-Modus wird nur am Master geschaltet |
 | Die Kachel des Clients zeigt kein Bild | Das ist so. Das Bild siehst du in der Kachel des Masters |

@@ -79,4 +79,4 @@ Von Zeit zu Zeit gibt es neue Funktionen oder Verbesserungen. Über den Knopf **
 | Display bleibt dunkel | Prüfe die Stromversorgung (USB-C-Kabel und Netzteil) und ob das Flachbandkabel zum Display fest sitzt |
 | Ich finde die Adresse des Displays nicht | Folge der Anleitung [WLAN einrichten](../allgemein/wlan-einrichten.md) — dort steht, wo du die Adresse abliest |
 | Die Weboberfläche lädt nicht | Prüfe, ob dein Smartphone oder Computer im selben WLAN ist wie das Display, und tippe die Adresse ohne Tippfehler ein |
-| WLAN-Verbindung klappt nicht mehr | Setze das WLAN zurück und richte es neu ein — siehe [WLAN-Daten löschen oder ändern](../allgemein/wlan-einrichten.md#wlan-daten-löschen-oder-ändern) |
+| WLAN-Verbindung klappt nicht mehr | Setze das WLAN zurück und richte es neu ein — siehe [WLAN-Daten resetten oder ändern](../allgemein/wlan-einrichten.md#wlan-daten-resetten-oder-ändern) |

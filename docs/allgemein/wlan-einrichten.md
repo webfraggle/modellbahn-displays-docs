@@ -32,7 +32,7 @@ Beim ersten Einschalten (oder wenn keine WLAN-Daten gespeichert sind) erstellt d
 
 ### Einrichten Schritt für Schritt
 
-1. Verbinde dich mit deinem Smartphone oder Computer mit dem WLAN deines Displays (Name und Passwort stehen auf dem Display). Unter Windows findest du die WLAN-Auswahl in der Taskleiste:
+1. Verbinde dich mit deinem Smartphone oder Computer mit dem WLAN deines Displays (Name und Passwort zeigt das Display, wenn du kurz **BTN 0** drückst). Unter Windows findest du die WLAN-Auswahl in der Taskleiste:
    ![WLAN-Auswahl unter Windows — das Netzwerk des Displays erscheint in der Liste der verfügbaren Netzwerke](WLAN-Auswahl-Windows.png){: style="max-width: 50%;" }
 2. Öffne einen Browser (z.B. Chrome, Safari oder Firefox) und gib oben in die Adressleiste `192.168.4.1` ein. Du siehst die Startseite des Webinterfaces (die Einstellungsseite deines Displays im Browser).
 3. Klicke auf **WLAN-Konfiguration**. Die Seite heißt **WiFi Configuration** und hat zwei Bereiche: **WiFi 1** und **WiFi 2**. Für dein Heim-WLAN nimmst du **WiFi 1**:
@@ -43,6 +43,8 @@ Beim ersten Einschalten (oder wenn keine WLAN-Daten gespeichert sind) erstellt d
 7. Unter den Eingabefeldern steht jetzt **Saved. Connecting to …** — das Display versucht, sich mit deinem WLAN zu verbinden. Das dauert einige Sekunden. Das Display startet dabei nicht neu, und sein eigenes WLAN bleibt währenddessen an.
 8. Hat es geklappt, steht dort **Connected to …** und darunter die neue Adresse des Displays in deinem Heim-WLAN, zum Beispiel `http://192.168.178.41/`. Notiere sie dir.
    ![Unter den Eingabefeldern steht in Türkis: Connected to „MeinHeimnetz“, darunter die neue Adresse http://192.168.178.41/](wifi-configuration-32-verbunden.png)
+
+   > **Tipp:** Diese Rückmeldung erscheint nicht immer. Die Adresse findest du auch direkt am Display: Sobald die LED am Controller **grün** leuchtet, ist das Display mit deinem Heim-WLAN verbunden. Drücke dann kurz **BTN 0** — die Info-Anzeige zeigt unter **IP-Adresse:** die neue Adresse. War die Info-Anzeige schon offen, schalte sie mit **BTN 0** einmal aus und wieder ein, damit sie die neue Adresse zeigt.
 9. Verbinde dein Smartphone oder deinen Computer wieder mit deinem Heim-WLAN. Danach erreichst du das Display unter der neuen Adresse. Sein eigenes WLAN schaltet es nach etwa einer halben Minute ab.
 
 > **Tipp:** Steht dort **Could not connect to …**, stimmt meist das Passwort nicht. Prüfe Name und Passwort und klicke noch einmal auf **Save WiFi 1**.
@@ -101,7 +103,7 @@ Drücke die **Reset**-Taste am Controller dreimal hintereinander — aber nicht 
 
 ### Schritt für Schritt
 
-1. Verbinde dich mit deinem Smartphone oder Computer mit dem WLAN deines Displays (Name und Passwort stehen auf dem Display). Unter Windows findest du die WLAN-Auswahl in der Taskleiste:
+1. Verbinde dich mit deinem Smartphone oder Computer mit dem WLAN deines Displays (Name und Passwort zeigt das Display, wenn du kurz **BTN 0** drückst). Unter Windows findest du die WLAN-Auswahl in der Taskleiste:
    ![WLAN-Auswahl unter Windows — das Netzwerk des Displays erscheint in der Liste der verfügbaren Netzwerke](WLAN-Auswahl-Windows.png){: style="max-width: 50%;" }
 2. Öffne einen Browser (z.B. Chrome, Safari oder Firefox) und gib oben in die Adressleiste `192.168.4.1` ein. Du siehst die Startseite des Webinterfaces (die Einstellungsseite deines Displays im Browser):
    ![Startseite des Webinterfaces mit den Bereichen Konfiguration, WLAN-Konfiguration und Controller-Upgrade](index-beispiel.png)

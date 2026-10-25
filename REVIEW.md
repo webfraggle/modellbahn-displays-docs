@@ -26,10 +26,10 @@ Datum im Format `JJJJ-MM-TT`, bezogen auf die Freigabe bzw. die letzte Prüfung.
 |---|---|---|---|---|
 | `docs/allgemein/index.md` | Allgemein | offen | — | 2026-09-26: Link auf Hintergrundbeleuchtung ergänzt |
 | `docs/allgemein/flachbandkabel-anschliessen.md` | Flachbandkabel anschließen | freigegeben | 2026-08-08 | |
-| `docs/allgemein/wlan-einrichten.md` | WLAN einrichten | offen | — | 2026-09-27 geändert, neu gegenlesen: Reset-Taste dreimal, nach jedem Druck warten, bis das Bild wieder da ist (vorher „zwei- bis dreimal“, „1–2 Sekunden“) |
+| `docs/allgemein/wlan-einrichten.md` | WLAN einrichten | freigegeben | 2026-10-25 | Aufteilung ab 3.2 / bis 3.1 gegengelesen. Danach beim Gegenlesen ergänzt: BTN-0-Hinweis bei Name/Passwort, Tipp „Rückmeldung erscheint nicht immer → LED grün + BTN 0“ |
 | `docs/allgemein/controller-aktualisieren-wlan.md` | Controller aktualisieren (über WLAN) | offen | — | |
 | `docs/allgemein/controller-aktualisieren-usb.md` | Controller aktualisieren (per USB) | offen | — | |
-| `docs/allgemein/hintergrundbeleuchtung.md` | Hintergrundbeleuchtung | offen | — | 2026-09-26 neu: Erkennung beim ersten Start, Umschalten per BTN 3 lang (im Betrieb) und BTN 3 beim Einschalten — bewusst ohne Produktnamen und Versionsnummern |
+| `docs/allgemein/hintergrundbeleuchtung.md` | Hintergrundbeleuchtung | freigegeben | 2026-10-25 | Ab 3.2 BTN 0 lang, bis 3.1 BTN 3 |
 
 ## Bildgeneratoren
 
@@ -65,8 +65,9 @@ Zum Abhaken beim Gegenlesen, in der Reihenfolge der Navigation.
 
 - [x] **Zugzielanzeiger** (Kapitelübersicht) — `index.md`
       · gegengelesen 2026-09-20 · neu gefasste Einleitung bestätigt · Frage 03 beantwortet, keine offenen Fragen mehr
-- [ ] **Zugzielanzeiger in Betrieb nehmen** — `inbetriebnahme.md`
-      · **2026-09-26 geändert, neu gegenlesen:** „Danebengedrückt?“ um BTN 3 lang drücken (ab 3.1.10) ergänzt, Link auf `allgemein/hintergrundbeleuchtung.md`, Hinweis zum Ausprobieren bei dunklem Display
+- [x] **Zugzielanzeiger in Betrieb nehmen** — `inbetriebnahme.md`
+      · gegengelesen 2026-10-25 · Änderungen 3.2 (Info-Anzeige 60 s, BTN 0) und vom 2026-09-26 bestätigt
+      · 2026-09-26 geändert: „Danebengedrückt?“ um BTN 3 lang drücken (ab 3.1.10) ergänzt, Link auf `allgemein/hintergrundbeleuchtung.md`, Hinweis zum Ausprobieren bei dunklem Display
       · gegengelesen 2026-09-13 · Frage 11 eingearbeitet (Spannungen ergaenzt!) · offen 03, 19
 - [x] **Züge anlegen und anzeigen** — `zuege-verwalten.md`
       · gegengelesen 2026-09-13 · offen bleiben Fragen 02, 27
@@ -94,10 +95,11 @@ Zum Abhaken beim Gegenlesen, in der Reihenfolge der Navigation.
       · neuer Abschnitt „Win-Digipet" (Anlass für die MQTT-Anbindung, noch ungetestet) · offen: eigener oder externer Broker bei Win-Digipet
 - [x] **Zugdaten sichern und wiederherstellen** — `backup.md`
       · gegengelesen 2026-09-20 · Abschnitt zu Konfiguration und Bildern ergänzt · keine offenen Fragen mehr
-- [ ] **Zwei Anzeiger gleich schalten (Client-Modus)** — `client-modus.md`
+- [x] **Zwei Anzeiger gleich schalten (Client-Modus)** — `client-modus.md`
+      · gegengelesen 2026-10-25 · Tipp umgedreht (zuerst Client: Bild), Vorder-/Rückseite präzisiert, Gleis/Abschnitt/Folgezüge-Pflicht gestrichen (Züge kommen vollständig vom Master) · offen bleiben 28, 30, 31, 32
       · **2026-10-25 neu** (Firmware 3.2.11): Screenshots an QUAD .107 (Master) und DUAL .97 (Client) · offen 28–32
 
-**Stand: 9 von 12 gegengelesen — offen: `inbetriebnahme.md` (Änderungen 2026-09-26 und 3.2), `anzeigearten.md` und `client-modus.md` (2026-10-25).**
+**Stand: 11 von 12 gegengelesen — offen: `anzeigearten.md` (Tabelle um Client-Arten ergänzt, 2026-10-25).**
 
 > Die nummerierten Fragen stehen in `ZZA-RECHERCHE/50-offene-fragen.md`.
 > Im Text sind sie als `{% raw %}{% comment %} OFFEN-NN: … {% endcomment %}{% endraw %}` markiert
