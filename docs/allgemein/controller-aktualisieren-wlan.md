@@ -103,7 +103,7 @@ Bilder und die Einstellungen der Gleise (Anzeigeart, Gleisnummer, Intervall …)
 
 ### Schritt 3: Züge wieder einspielen (nur Zugzielanzeiger)
 
-Nach dem Neustart zeigt der Zugzielanzeiger die Beispielzüge, die mit der Firmware kommen. Deine eigenen Züge spielst du mit dem **Züge Backuptool** wieder ein:
+Nach dem Neustart zeigt der Zugzielanzeiger die Beispielzüge, die mit der Firmware kommen. Deine eigenen Züge spielst du mit dem **Züge Backuptool** wieder ein. Lade vorher die Weboberfläche einmal neu, damit dein Browser nicht noch die alten Seiten zeigt (siehe [Nach dem Update: Seite neu laden](#nach-dem-update-seite-neu-laden)):
 
 1. Öffne die Weboberfläche und wähle im Menü (☰) **Züge Backuptool**. Das Backuptool verbindet sich von selbst mit dem Controller.
 2. Wähle unter **Restore** bei **Choose file** die Sicherungsdatei von Gleis A aus.
@@ -187,7 +187,7 @@ Steht oben **Controller Upgrade** und gibt es die zwei Felder **Firmware (firmwa
 
 > **Hinweis:** Die Seite nimmt nur Dateien mit genau diesen Namen an. Hat dein Browser beim Herunterladen etwas angehängt (zum Beispiel `firmware (1).bin`), meldet sie **Falscher Dateiname**. Benenne die Datei dann um oder lade die Firmware noch einmal herunter.
 
-Fertig. Wenn auf dem Display wieder das Startbild erscheint und die LED grün leuchtet, ist das Update abgeschlossen. Beim Zugzielanzeiger spielst du danach deine Züge mit dem Backuptool wieder ein (wie bei [Weg 1, Schritt 3](#schritt-3-züge-wieder-einspielen-nur-zugzielanzeiger)) und richtest deine Einstellungen wieder ein.
+Fertig. Wenn auf dem Display wieder das Startbild erscheint und die LED grün leuchtet, ist das Update abgeschlossen. Lade die Weboberfläche danach einmal neu (siehe [Nach dem Update: Seite neu laden](#nach-dem-update-seite-neu-laden)). Beim Zugzielanzeiger spielst du danach deine Züge mit dem Backuptool wieder ein (wie bei [Weg 1, Schritt 3](#schritt-3-züge-wieder-einspielen-nur-zugzielanzeiger)) und richtest deine Einstellungen wieder ein.
 
 ---
 
@@ -272,13 +272,35 @@ Fertig. Wenn auf dem Display wieder das Startbild erscheint und die LED grün le
 
 > **Tipp:** Bei neueren Firmware-Versionen wird die installierte Versionsnummer im Webinterface angezeigt. Dort kannst du nachsehen, ob wirklich die neue Version läuft. Bei älteren Versionen gibt es diese Anzeige noch nicht.
 
-Zum Schluss richtest du deine Einstellungen wieder ein, die beim Dateisystem-Update zurückgesetzt wurden.
+Zum Schluss lädst du die Weboberfläche einmal neu (siehe [Nach dem Update: Seite neu laden](#nach-dem-update-seite-neu-laden)) und richtest deine Einstellungen wieder ein, die beim Dateisystem-Update zurückgesetzt wurden.
 
 ---
 
 ## Weg 4: Update per USB
 
 Ist der Controller über WLAN nicht mehr erreichbar oder klappt keiner der anderen Wege, aktualisierst du ihn per USB-C-Kabel an einem Windows-PC. Wie das geht, steht in einer eigenen Anleitung: [Controller aktualisieren (per USB)](controller-aktualisieren-usb.md).
+
+---
+
+## Nach dem Update: Seite neu laden
+
+Dein Browser merkt sich Teile von Webseiten, die er schon einmal geladen hat, damit sie beim nächsten Mal schneller erscheinen. Dieser Zwischenspeicher heißt **Cache**. Nach einem Update kann es deshalb passieren, dass der Browser noch die alte Weboberfläche zeigt, obwohl auf dem Controller schon die neue läuft — oder eine Mischung aus alt und neu. Typische Anzeichen:
+
+- Neue Menüpunkte oder Knöpfe fehlen
+- Die angezeigte Versionsnummer ist noch die alte
+- Knöpfe reagieren nicht oder Seiten bleiben leer
+
+Das gilt für alle vier Wege, also auch nach einem Update per USB. So holst du die neuen Seiten vom Controller:
+
+| Browser | So lädst du die Seite ohne Cache neu |
+|---|---|
+| Chrome, Edge, Firefox unter Windows | **Strg + F5** oder **Strg + Umschalt + R** |
+| Chrome, Edge, Firefox am Mac | **Cmd + Umschalt + R** |
+| Safari am Mac | **Cmd + Wahl + R** |
+
+Mach das auf jeder Seite der Weboberfläche, die du nach dem Update öffnest und die noch alt aussieht — zum Beispiel auch im **Züge Backuptool**.
+
+> **Tipp:** Auf Smartphone und Tablet gibt es keine solche Tastenkombination. Öffne die Weboberfläche dort am einfachsten in einem privaten Tab (in Safari **Privat**, in Chrome **Inkognito**) — der benutzt den Cache nicht. Hilft das alles nicht, lösche in den Einstellungen deines Browsers die gespeicherten Bilder und Dateien („Browserdaten löschen“).
 
 ---
 
@@ -293,6 +315,7 @@ Ist der Controller über WLAN nicht mehr erreichbar oder klappt keiner der ander
 | Firmware-Update: Meldung **Prüfsumme stimmt nicht** | Die Datei ist beim Herunterladen beschädigt worden. Auf den Controller wurde nichts übertragen. Lade die Seite neu und starte das Update noch einmal |
 | Update-Seite lässt sich nicht öffnen | Drücke **BTN 0** am Controller und prüfe die angezeigte IP-Adresse. Achte darauf, dass `http://` und nicht `https://` davorsteht |
 | Weg 3: Nach dem Dateisystem-Update ist der Controller nicht mehr erreichbar | Das ist normal — die WLAN-Daten wurden gelöscht. Richte das WLAN neu ein, siehe [WLAN einrichten](wlan-einrichten.md) |
+| Nach dem Update sieht die Weboberfläche noch aus wie vorher, Knöpfe fehlen oder reagieren nicht | Dein Browser zeigt noch die alten Seiten aus seinem Cache. Lade die Seite ohne Cache neu, siehe [Nach dem Update: Seite neu laden](#nach-dem-update-seite-neu-laden) |
 | Upload bricht ab oder bleibt stehen | Gehe mit dem Smartphone oder Computer näher an den Router und starte den Upload erneut. Bei schlechtem WLAN-Empfang brechen Uploads häufig ab |
 | Display bleibt nach dem Update dunkel | Trenne den Controller kurz von der Stromversorgung und schalte ihn wieder ein. Hilft das nicht, spiele die Firmware per USB neu auf, siehe [Controller aktualisieren (per USB)](controller-aktualisieren-usb.md) |
 | Update über WLAN klappt gar nicht | Aktualisiere den Controller stattdessen per USB-Kabel am PC, siehe [Controller aktualisieren (per USB)](controller-aktualisieren-usb.md) |
