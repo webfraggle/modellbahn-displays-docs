@@ -37,21 +37,28 @@ Die Einstellungen sind schnell wieder eingetragen — die Zugliste nicht. Deshal
 
 Klicke unten links auf das **Menü-Symbol** (drei Striche) und wähle **Züge Backuptool**.
 
-![Die Seite Backup & Restore mit dem Feld für die Controller-IP und den Bereichen Backup und Restore](backup-restore.png)
+Das Backuptool verbindet sich von selbst mit dem Anzeiger, von dem die Seite kommt: Oben bei **Controller IP** steht schon seine Adresse, der Punkt neben **Backup & Restore** leuchtet grün und unten steht **Verbunden mit …**.
 
-> **Hinweis:** Obwohl die Seite vom Anzeiger selbst kommt, musst du seine **IP-Adresse** zuerst von Hand eintragen. Gib sie oben bei **Controller IP** ein und klicke auf **Verbinden**. Erst danach lassen sich die Knöpfe darunter benutzen.
+![Die Seite Backup & Restore direkt nach dem Öffnen: oben ist die IP-Adresse des Controllers eingetragen, der Punkt neben der Überschrift ist grün, links der Bereich Backup mit Gleis A, Gleis B und Von Controller lesen, rechts der Bereich Restore mit Dateiauswahl, Textfeld und dem noch ausgegrauten Knopf Wiederherstellen](backup-restore.png){: style="max-width: 80%;" }
+
+> **Hinweis:** Bis Version 3.2.12 musst du die **IP-Adresse** zuerst von Hand eintragen: Gib sie oben bei **Controller IP** ein und klicke auf **Verbinden**. Erst danach lassen sich die Knöpfe darunter benutzen.
+
+Bei der Ausführung für **ein Gleis** gibt es nur **Gleis A**. Wählst du dort **Gleis B**, meldet das Backuptool **Controller nicht erreichbar** — schalte dann zurück auf **Gleis A**.
 
 ---
 
 ## Eine Sicherung erstellen
 
 1. Wähle im Bereich **BACKUP** aus, welches Gleis du sichern willst — **Gleis A** oder **Gleis B**
-2. Klicke auf **Von Controller lesen**. Im großen Feld darunter erscheinen deine Zugdaten
-3. Klicke auf **⇩ Als Datei speichern**
+2. Klicke auf **Von Controller lesen**. Das Backuptool liest jetzt jeden Zug einzeln — bei vielen Zügen dauert das einige Sekunden. Am Ende steht unten zum Beispiel **18 Züge geladen**
+3. Erst jetzt erscheinen neben dem Knopf die Knöpfe **⇩ Als Datei speichern** und **Alle Züge löschen**. Im Feld darunter stehen deine Zugdaten, ganz unten die Liste **Züge auf Controller**
+4. Klicke auf **⇩ Als Datei speichern**
 
-Die Datei landet im Download-Ordner deines Browsers.
+![Das Backuptool nach Von Controller lesen: neben dem Knopf sind jetzt die Knöpfe Als Datei speichern und Alle Züge löschen erschienen, im Feld darunter stehen die Zugdaten, unten die Liste Züge auf Controller mit einem roten Kreuz hinter jedem Zug](backup-gelesen.png){: style="max-width: 80%;" }
 
-> **Tipp:** Nimm einen Dateinamen, aus dem hervorgeht, zu welchem Gleis und welchem Stand die Sicherung gehört, zum Beispiel `bahnhof-nord-gleisA-2026-09.json`.
+Die Datei landet im Download-Ordner deines Browsers — je nach Einstellung fragt der Browser vorher, wo du sie speichern willst. Ihr Name verrät, woher sie stammt: `backup_`, die IP-Adresse des Anzeigers, das Gleis und das Datum, zum Beispiel `backup_192-168-178-41_GleisA_2026-10-26.json`.
+
+> **Tipp:** Du kannst die Datei danach umbenennen, zum Beispiel in `bahnhof-nord-gleisA-2026-10.json`. Das Backuptool liest beim Zurückspielen nur den Inhalt, der Name ist egal.
 
 > **Hinweis:** Hast du zwei Gleise, brauchst du **zwei** Sicherungen — eine je Gleis.
 
@@ -59,19 +66,35 @@ Die Datei landet im Download-Ordner deines Browsers.
 
 ## Eine Sicherung zurückspielen
 
-1. Klicke im Bereich **RESTORE** auf **Datei auswählen** und wähle deine Sicherungsdatei
+1. Klicke im Bereich **RESTORE** auf **Datei auswählen** (je nach Browser auch **Choose file**) und wähle deine Sicherungsdatei. Ihr Inhalt erscheint im Textfeld darunter
 2. Wähle darunter das Gleis aus, auf das die Züge sollen
-3. Klicke auf **Wiederherstellen**
+3. Klicke auf **Wiederherstellen**. Das Backuptool zählt mit, welcher Zug gerade dran ist, und meldet am Ende zum Beispiel **Fertig: 52 gespeichert**
+
+![Das Backuptool nach dem Wiederherstellen: rechts unter Restore ist die Sicherungsdatei von Gleis A geladen, darunter steht Fertig: 52 gespeichert](../allgemein/backuptool-wiederhergestellt.png){: style="max-width: 80%;" }
 
 Alternativ kannst du den Inhalt einer Sicherung auch direkt in das Textfeld einfügen, wenn du ihn zum Beispiel per Mail bekommen hast.
 
+**Wiederherstellen** lässt sich erst anklicken, wenn das Backuptool verbunden ist und im Textfeld etwas steht.
+
 > **Wichtig:** Achte darauf, das richtige Gleis auszuwählen. Spielst du eine Sicherung von Gleis A auf Gleis B ein, landen die Züge dort.
+
+Das Zurückspielen **ergänzt** die Zugliste: Züge aus der Sicherung, die es auf dem Gleis schon gibt, werden überschrieben — alle anderen Züge auf dem Gleis bleiben stehen. Willst du genau den Stand aus der Sicherung, lösche vorher alle Züge des Gleises (siehe [Alle Züge löschen](#alle-züge-löschen)).
+
+> **Hinweis:** Ein Gleis fasst höchstens **100 Züge**. Würden es mit der Sicherung mehr, nimmt der Anzeiger die übrigen nicht an und das Backuptool meldet am Ende **Fehler**.
 
 ---
 
 ## Alle Züge löschen
 
-Im Bereich **BACKUP** gibt es den Knopf **Alle Züge löschen**. Der räumt die komplette Zugliste des gewählten Gleises ab — praktisch, wenn du von vorn anfangen willst.
+Der Knopf **Alle Züge löschen** räumt die komplette Zugliste des gewählten Gleises ab — praktisch, wenn du von vorn anfangen willst oder eine Sicherung ohne alte Reste zurückspielen möchtest.
+
+Du findest den Knopf nicht sofort: Er erscheint im Bereich **BACKUP** erst, **nachdem du auf Von Controller lesen geklickt hast**. Gelöscht werden genau die Züge, die das Backuptool dabei gelesen hat.
+
+1. Wähle das Gleis aus und klicke auf **Von Controller lesen**
+2. Klicke auf **⇩ Als Datei speichern**, damit du eine Sicherung hast
+3. Klicke auf **Alle Züge löschen** und bestätige die Rückfrage. Das Backuptool zählt mit und meldet am Ende **Alle Züge gelöscht**
+
+Einzelne Züge löschst du in der Liste **Züge auf Controller** mit dem roten **✕** hinter dem Zug.
 
 > **Wichtig:** Erst sichern, dann löschen. Rückgängig machen lässt sich das nicht.
 
@@ -84,6 +107,8 @@ Hast du mehrere Zugzielanzeiger und willst dieselben Züge auf allen haben:
 1. Sichere die Zugliste des ersten Anzeigers wie oben beschrieben
 2. Öffne das Backuptool des zweiten Anzeigers — oder trage oben einfach dessen **IP-Adresse** ein und klicke auf **Verbinden**
 3. Spiele die Datei dort ein
+
+Die Sicherung lässt sich auch auf ein anderes Gleis zurückspielen: Wähle unter **RESTORE** einfach das Ziel-Gleis.
 
 So kannst du auch einen Bahnsteig mit zwei Gleisen schnell gleich bestücken und danach nur noch die Abweichungen von Hand ändern.
 
@@ -118,7 +143,11 @@ Schalte in der Kachel auf **Bilder** um. Klicke dann mit der rechten Maustaste a
 
 | Problem | Lösung |
 |---|---|
-| Die Knöpfe sind ausgegraut | Trage oben die **Controller IP** ein und klicke auf **Verbinden** |
+| Die Knöpfe sind ausgegraut | Prüfe, ob der Punkt neben **Backup & Restore** grün ist. Wenn nicht: Trage oben die **Controller IP** ein und klicke auf **Verbinden** |
+| **Wiederherstellen** ist ausgegraut, obwohl die Datei geladen ist | Das Backuptool ist nicht verbunden. Klicke oben auf **Verbinden** |
+| Der Knopf **Alle Züge löschen** fehlt | Er erscheint erst, nachdem du **Von Controller lesen** geklickt hast |
+| Unten steht **Controller nicht erreichbar**, obwohl die IP stimmt | Beim Anzeiger für ein Gleis ist **Gleis B** gewählt. Schalte auf **Gleis A** |
+| Nach dem Wiederherstellen sind noch alte Züge da | Das Zurückspielen ergänzt nur. Lösche vorher alle Züge des Gleises, siehe [Alle Züge löschen](#alle-züge-löschen) |
 | **Von Controller lesen** bringt nichts | Prüfe, ob die IP-Adresse stimmt und der Anzeiger eingeschaltet ist |
 | Nach dem Wiederherstellen fehlen Züge | Prüfe, ob das richtige Gleis ausgewählt war |
 | Meine Bilder sind nach dem Wiederherstellen weg | Bilder sind nicht Teil der Sicherung. Lade sie neu hoch — siehe [Bilder statt Züge anzeigen](bilder-anzeigen.md) |
