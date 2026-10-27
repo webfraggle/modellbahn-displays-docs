@@ -179,10 +179,11 @@ Unten links auf jeder Seite sitzt das **Menü-Symbol** (drei Striche). Ein Klick
 
 ![Das geöffnete Menü mit allen Einträgen](menue.png)
 
-Für den normalen Betrieb brauchst du davon vier Einträge:
+Für den normalen Betrieb brauchst du davon diese Einträge:
 
 - **Display Steuerung** — zurück zur Bedienoberfläche
 - **Züge Backuptool** — deine Zugliste sichern und wiederherstellen, siehe [Zugdaten sichern](backup.md)
+- **Komplett-Backup** (ab Version 3.2.14) — Züge, Bilder und Einstellungen in einer Datei sichern und wiederherstellen, siehe [Sichern und wiederherstellen](backup.md#komplettes-backup--alles-in-einer-datei)
 - **WLAN Konfiguration** — WLAN-Zugangsdaten ändern
 - **Controller Upgrade** — neue Firmware einspielen
 
