@@ -55,7 +55,7 @@ Bei diesem Weg lädt dein Browser die neue Firmware direkt von modellbahn-displa
 ### Was du brauchst
 
 - Ein Smartphone, Tablet oder einen Computer, der **im selben WLAN** hängt wie dein Display **und** ins Internet kommt — dein Browser holt die Firmware aus dem Internet und reicht sie an den Controller weiter
-- Bei einem Zugzielanzeiger: ein paar Minuten, um vorher deine Züge zu sichern (das macht die Seite für dich)
+- Bei einem Zugzielanzeiger: ein paar Minuten, um vorher alles zu sichern (das macht die Seite für dich)
 
 Der Controller selbst braucht dafür **keinen** Internetzugang.
 
@@ -75,35 +75,67 @@ http://192.168.178.41/update.htm
 
 Oben unter **Installiert** siehst du die Version, die gerade läuft, und die Variante deines Controllers.
 
-![Die Seite Firmware-Update eines Zugzielanzeigers: oben die installierte Version 3.2.13-beta, darunter die Knöpfe Gleis A sichern und Gleis B sichern, unten die Liste der Versionen und der noch ausgegraute Knopf Ausgewählte Version installieren](firmware-update-uebersicht.png){: style="max-width: 80%;" }
+![Die Seite Firmware-Update eines Zugzielanzeigers ab Version 3.2.14: oben die installierte Version, darunter unter 1. Alles sichern der Knopf Alles sichern und klein der Link Ich habe schon eine Sicherung – Sichern überspringen, unten die Liste der Versionen und der noch ausgegraute Knopf Ausgewählte Version installieren](firmware-update-alles-sichern.png){: style="max-width: 80%;" }
 
-### Schritt 1: Züge sichern (nur Zugzielanzeiger)
+### Schritt 1: Alles sichern (nur Zugzielanzeiger)
 
-Das Update ersetzt das komplette Dateisystem des Controllers — dabei gehen **alle Züge, Bilder und Einstellungen der Gleise** verloren. Deine WLAN-Daten und die eingestellte Helligkeit bleiben erhalten.
+Das Update ersetzt das komplette Dateisystem des Controllers — dabei gehen **alle Züge, Bilder und Einstellungen** verloren. Deine WLAN-Daten und die eingestellte Helligkeit bleiben erhalten.
+
+Wie du sicherst, hängt von der Version ab, die **gerade** auf deinem Controller läuft — sie steht oben unter **Installiert**.
+
+#### Ab Version 3.2.14
+
+1. Klicke auf **Alles sichern**. Die Seite lädt Züge, Bilder und Einstellungen aller Gleise und speichert sie zusammen als eine ZIP-Datei, zum Beispiel `komplett_192-168-178-41_2026-10-27.zip`. Eine ZIP-Datei ist ein Paket, das mehrere Dateien zusammenfasst.
+2. Neben dem Knopf erscheint dann zum Beispiel **✓ Gesichert: Gleis A: 18 Züge, 12 Bilder · Gleis B: 15 Züge, 2 Bilder**.
+
+> **Hinweis:** Je nach Einstellung deines Browsers fragt er beim Download, wo die Datei gespeichert werden soll. Wähle einen Ordner, in dem du sie wiederfindest — du brauchst sie nach dem Update.
+
+Hast du gerade erst eine Sicherung gemacht, zum Beispiel mit dem [Komplett-Backup](../zugzielanzeiger/backup.md#komplettes-backup--alles-in-einer-datei), klicke stattdessen auf den kleinen Link **Ich habe schon eine Sicherung – Sichern überspringen**. Neben dem Knopf steht dann **Sichern übersprungen**.
+
+> **Wichtig:** Überspringe das Sichern nur, wenn deine Sicherung den **aktuellen** Stand enthält. Alles, was danach dazugekommen ist, ist nach dem Update weg.
+
+#### Bis Version 3.2.13
+
+Hier sichert die Seite nur die Züge, für jedes Gleis in eine eigene Datei.
 
 1. Klicke auf **Gleis A sichern**. Die Seite liest alle Züge des Gleises und lädt sie als eine Datei herunter, zum Beispiel `backup_192-168-178-41_GleisA_2026-10-25.json`. Neben dem Knopf erscheint dann zum Beispiel **✓ 52 Züge gesichert**.
 2. Beim Zugzielanzeiger für zwei Gleise klickst du danach auf **Gleis B sichern**.
 
-> **Hinweis:** Je nach Einstellung deines Browsers fragt er bei jedem Download, wo die Datei gespeichert werden soll. Wähle einen Ordner, in dem du die Dateien wiederfindest — du brauchst sie nach dem Update.
+![Die Seite Firmware-Update bis Version 3.2.13: oben die installierte Version 3.2.13-beta, darunter die Knöpfe Gleis A sichern und Gleis B sichern, unten die Liste der Versionen und der noch ausgegraute Knopf Ausgewählte Version installieren](firmware-update-uebersicht.png){: style="max-width: 80%;" }
 
-Bilder und die Einstellungen der Gleise (Anzeigeart, Gleisnummer, Intervall …) sichert die Seite nicht. Eigene Bilder lädst du vorher am besten selbst herunter, und die Einstellungen notierst du dir.
+Bilder und die Einstellungen der Gleise (Anzeigeart, Gleisnummer, Intervall …) sichert diese Seite nicht. Eigene Bilder lädst du vorher am besten selbst herunter, und die Einstellungen notierst du dir, siehe [Einstellungen und Bilder von Hand sichern](../zugzielanzeiger/backup.md#einstellungen-und-bilder-von-hand-sichern-bis-version-3213).
 
 {% comment %} OFFEN-34: Was geht bei Tankstelle und Video beim Online-Update verloren (Dateisystem wird ersetzt)? Deren Update-Seite hat keinen Sicherungsschritt und keinen Hinweis — muss der Leser dort vorher etwas sichern? {% endcomment %}
 
 ### Schritt 2: Version auswählen und installieren
 
 1. Unter **Version auswählen und installieren** stehen alle Versionen, die es für deinen Controller gibt — die neueste oben. Die Version, die gerade läuft, ist mit **(installiert)** markiert. Wähle die neueste Version aus.
-2. Klicke auf **Ausgewählte Version installieren**. Beim Zugzielanzeiger geht der Knopf erst, wenn alle Gleise gesichert sind.
-   ![Die Seite Firmware-Update nach dem Sichern: neben Gleis A sichern steht 52 Züge gesichert, neben Gleis B sichern 15 Züge gesichert, die oberste Version ist ausgewählt und der Knopf Ausgewählte Version installieren ist orange](firmware-update-gesichert.png){: style="max-width: 80%;" }
+2. Klicke auf **Ausgewählte Version installieren**. Beim Zugzielanzeiger geht der Knopf erst, wenn du in Schritt 1 gesichert (oder das Sichern übersprungen) hast.
+   ![Die Seite Firmware-Update nach Alles sichern: neben dem Knopf Alles sichern steht Gesichert: Gleis A: 18 Züge, 12 Bilder, Gleis B: 15 Züge, 2 Bilder, die oberste Version ist ausgewählt und der Knopf Ausgewählte Version installieren ist orange](firmware-update-alles-gesichert.png){: style="max-width: 80%;" }
 3. Bestätige die Rückfrage mit **OK**.
 4. Die Seite lädt jetzt die Firmware, prüft sie und überträgt sie an den Controller. Lass die Seite dabei geöffnet und schalte den Controller nicht aus.
-5. Ist alles übertragen, steht dort **Update erfolgreich. Gerät startet neu.** Der Controller startet von selbst neu — jetzt mit der neuen Firmware.
+5. Ist alles übertragen, startet der Controller von selbst neu — jetzt mit der neuen Firmware. Die Seite zeigt **Übertragen. Controller startet neu…** und zählt die Sekunden mit. Ist er wieder da, steht dort zum Beispiel **Update fertig – Version 3.2.14-beta läuft.**, darunter die Knöpfe für den nächsten Schritt.
+
+> **Hinweis:** Bis Version 3.2.13 bleibt die Anzeige nach dem Übertragen bei **Dateisystem übertragen… 100%** stehen. Das Update läuft trotzdem: Warte etwa eine Minute, dann ist der Controller neu gestartet.
 
 > **Tipp:** Auch ältere Versionen sind in der Liste wählbar. Läuft eine neue Version bei dir nicht so wie gewünscht, kannst du so auf die vorherige zurückgehen.
 
-### Schritt 3: Züge wieder einspielen (nur Zugzielanzeiger)
+### Schritt 3: Sicherung wieder einspielen (nur Zugzielanzeiger)
 
-Nach dem Neustart zeigt der Zugzielanzeiger die Beispielzüge, die mit der Firmware kommen. Deine eigenen Züge spielst du mit dem **Züge Backuptool** wieder ein. Lade vorher die Weboberfläche einmal neu, damit dein Browser nicht noch die alten Seiten zeigt (siehe [Nach dem Update: Seite neu laden](#nach-dem-update-seite-neu-laden)):
+Nach dem Neustart zeigt der Zugzielanzeiger die Beispielzüge, die mit der Firmware kommen. Deine eigenen Daten spielst du jetzt wieder ein. Lade vorher die Weboberfläche einmal neu, damit dein Browser nicht noch die alten Seiten zeigt (siehe [Nach dem Update: Seite neu laden](#nach-dem-update-seite-neu-laden)).
+
+#### Hast du in Schritt 1 alles gesichert (ab Version 3.2.14)
+
+1. Klicke unter der Meldung **Update fertig** auf **Sicherung einspielen**. Es öffnet sich das **Komplett-Backup**, gleich beim Einspielen. Du findest es auch im Menü (☰) unter **Komplett-Backup**
+2. Klicke unter **Datei wählen** auf **Datei auswählen** und wähle die ZIP-Datei aus Schritt 1
+3. Lass unter **Wie einspielen?** die Einstellung **Alles ersetzen** stehen und klicke auf **Einspielen**. Bestätige die Rückfrage
+4. Die Seite überträgt alles und startet den Controller neu. Am Ende steht zum Beispiel **Fertig: 50 Dateien eingespielt.**
+
+![Die Seite Komplett-Backup beim Einspielen: unter Datei wählen ist die Sicherung geladen, darunter Version, Datum, Herkunft und die Zahl der Züge und Bilder je Gleis; unter Wie einspielen? ist Alles ersetzen gewählt, darunter der Knopf Einspielen](../zugzielanzeiger/komplett-backup-einspielen.png){: style="max-width: 80%;" }
+
+Damit sind Züge, Bilder und Einstellungen wieder da, und die Beispielzüge sind verschwunden. Ausführlich steht das unter [Sicherung einspielen](../zugzielanzeiger/backup.md#sicherung-einspielen).
+
+#### Hast du in Schritt 1 nur die Züge gesichert (bis Version 3.2.13)
 
 1. Öffne die Weboberfläche und wähle im Menü (☰) **Züge Backuptool**. Das Backuptool verbindet sich von selbst mit dem Controller.
 2. Wähle unter **Restore** bei **Choose file** die Sicherungsdatei von Gleis A aus.
@@ -112,7 +144,7 @@ Nach dem Neustart zeigt der Zugzielanzeiger die Beispielzüge, die mit der Firmw
 
 ![Das Züge Backuptool nach dem Wiederherstellen: oben ist die IP-Adresse des Controllers schon eingetragen, rechts unter Restore ist die Sicherungsdatei von Gleis A geladen, darunter steht Fertig: 52 gespeichert](backuptool-wiederhergestellt.png){: style="max-width: 80%;" }
 
-Ausführlich steht das unter [Zugdaten sichern und wiederherstellen](../zugzielanzeiger/backup.md). Zum Schluss stellst du die Einstellungen der Gleise wieder ein.
+Ausführlich steht das unter [Sichern und wiederherstellen](../zugzielanzeiger/backup.md). Zum Schluss stellst du die Einstellungen der Gleise wieder ein.
 
 {% comment %} OFFEN-35: Die Beispielzüge aus der Firmware bleiben nach dem Wiederherstellen zusätzlich in der Liste, wenn sie nicht in der Sicherung waren. Erwähnen, wie man sie loswird? {% endcomment %}
 
@@ -131,7 +163,7 @@ Der Speicher des Controllers ist in zwei Bereiche aufgeteilt:
 
 Auf der Seite `/ota` wählst du beide Dateien aus, und die Seite überträgt sie nacheinander. Der Controller startet erst neu, wenn beide angekommen sind.
 
-> **Achtung:** Das neue Dateisystem ersetzt das alte komplett. Beim Zugzielanzeiger gehen dabei **alle Züge, Bilder und Einstellungen der Gleise** verloren. Sichere deine Züge vorher mit dem Züge Backuptool, siehe [Zugdaten sichern und wiederherstellen](../zugzielanzeiger/backup.md), und notiere dir deine Einstellungen.
+> **Achtung:** Das neue Dateisystem ersetzt das alte komplett. Beim Zugzielanzeiger gehen dabei **alle Züge, Bilder und Einstellungen der Gleise** verloren. Sichere vorher alles mit dem Komplett-Backup (ab Version 3.2.14) — oder bei älteren Versionen deine Züge mit dem Züge Backuptool und notiere dir deine Einstellungen. Beides steht unter [Sichern und wiederherstellen](../zugzielanzeiger/backup.md).
 
 {% comment %} OFFEN-36: Bleiben die WLAN-Daten bei Weg 2 erhalten? Zugzielanzeiger, Tankstelle und Video speichern sie auf den S3-Controllern im EEPROM, nicht im Dateisystem — beim Online-Update (gleicher Upload-Weg /doUpdate) blieben sie nachweislich erhalten (ZZA 3.2.13-beta getestet). Dann hier ausdrücklich sagen „WLAN bleibt“. Und: Was geht bei der Tankstelle verloren? {% endcomment %}
 
@@ -187,7 +219,7 @@ Steht oben **Controller Upgrade** und gibt es die zwei Felder **Firmware (firmwa
 
 > **Hinweis:** Die Seite nimmt nur Dateien mit genau diesen Namen an. Hat dein Browser beim Herunterladen etwas angehängt (zum Beispiel `firmware (1).bin`), meldet sie **Falscher Dateiname**. Benenne die Datei dann um oder lade die Firmware noch einmal herunter.
 
-Fertig. Wenn auf dem Display wieder das Startbild erscheint und die LED grün leuchtet, ist das Update abgeschlossen. Lade die Weboberfläche danach einmal neu (siehe [Nach dem Update: Seite neu laden](#nach-dem-update-seite-neu-laden)). Beim Zugzielanzeiger spielst du danach deine Züge mit dem Backuptool wieder ein (wie bei [Weg 1, Schritt 3](#schritt-3-züge-wieder-einspielen-nur-zugzielanzeiger)) und richtest deine Einstellungen wieder ein.
+Fertig. Wenn auf dem Display wieder das Startbild erscheint und die LED grün leuchtet, ist das Update abgeschlossen. Lade die Weboberfläche danach einmal neu (siehe [Nach dem Update: Seite neu laden](#nach-dem-update-seite-neu-laden)). Beim Zugzielanzeiger spielst du danach deine Sicherung wieder ein, wie bei [Weg 1, Schritt 3](#schritt-3-sicherung-wieder-einspielen-nur-zugzielanzeiger).
 
 ---
 
@@ -311,7 +343,7 @@ Mach das auf jeder Seite der Weboberfläche, die du nach dem Update öffnest und
 | Im Menü gibt es keinen Punkt **Firmware-Update** | Die Firmware auf deinem Controller ist älter. Aktualisiere ihn einmal mit [Weg 2](#weg-2-update-mit-heruntergeladenen-dateien--beide-auf-einmal) oder [Weg 3](#weg-3-update-mit-heruntergeladenen-dateien--nacheinander) |
 | Firmware-Update: **Update-Server nicht erreichbar – Gerät unverändert.** | Der Browser auf deinem Smartphone, Tablet oder Computer kommt nicht ins Internet — zum Beispiel, weil es nur mit dem Hotspot des Controllers verbunden ist. Verbinde es mit deinem Heim-WLAN und lade die Seite neu |
 | Firmware-Update: **Keine passenden Versionen gefunden.** | Für deinen Controller liegt noch keine Version zum Online-Update bereit. Nimm [Weg 2](#weg-2-update-mit-heruntergeladenen-dateien--beide-auf-einmal) |
-| Firmware-Update: **Installieren** lässt sich nicht anklicken | Beim Zugzielanzeiger musst du erst alle Gleise sichern. Prüfe außerdem, ob eine Version ausgewählt ist |
+| Firmware-Update: **Installieren** lässt sich nicht anklicken | Beim Zugzielanzeiger musst du erst sichern: ab Version 3.2.14 mit **Alles sichern** (oder **Sichern überspringen**), bis 3.2.13 jedes Gleis einzeln. Prüfe außerdem, ob eine Version ausgewählt ist |
 | Firmware-Update: Meldung **Prüfsumme stimmt nicht** | Die Datei ist beim Herunterladen beschädigt worden. Auf den Controller wurde nichts übertragen. Lade die Seite neu und starte das Update noch einmal |
 | Update-Seite lässt sich nicht öffnen | Drücke **BTN 0** am Controller und prüfe die angezeigte IP-Adresse. Achte darauf, dass `http://` und nicht `https://` davorsteht |
 | Weg 3: Nach dem Dateisystem-Update ist der Controller nicht mehr erreichbar | Das ist normal — die WLAN-Daten wurden gelöscht. Richte das WLAN neu ein, siehe [WLAN einrichten](wlan-einrichten.md) |
