@@ -75,7 +75,7 @@ Fülle aus, was du brauchst — leer lassen ist erlaubt, zum Beispiel wenn ein Z
 
 Öffne den Zug mit dem Stift **✎**. Unten links im Fenster steht der rote Knopf **Löschen**. Die Rückfrage **Zug wirklich löschen?** bestätigst du — danach ist der Zug weg.
 
-> **Tipp:** Bevor du größer aufräumst, lohnt sich eine Sicherung deiner Zugliste. Wie das geht, steht unter [Zugdaten sichern und wiederherstellen](backup.md).
+> **Tipp:** Bevor du größer aufräumst, lohnt sich eine Sicherung deiner Zugliste. Wie das geht, steht unter [Sichern und wiederherstellen](backup.md).
 
 ---
 

@@ -22,7 +22,7 @@ Am besten der Reihe nach von oben nach unten:
 - [Über die Modellbahnzentrale steuern (DCC)](dcc-steuern.md) — Züge per Weichen- oder Lokfunktionsbefehl aufrufen
 - [Anbindung an TrainController, iTrain und Rocrail](steuerungsprogramme.md) — den Anzeiger aus deinem Steuerungsprogramm schalten
 - [Fernsteuerung über MQTT](mqtt.md) — für Home Assistant, ioBroker und Node-RED
-- [Zugdaten sichern und wiederherstellen](backup.md) — deine Züge in einer Datei sichern
+- [Sichern und wiederherstellen](backup.md) — nur die Züge eines Gleises oder alles mit Bildern und Einstellungen in einer Datei sichern
 - [Zwei Anzeiger gleich schalten (Client-Modus)](client-modus.md) — ein Gleis zeigt, was ein Gleis auf einem anderen Controller zeigt
 
 > **Gilt für:** Diese Anleitung beschreibt die Zugzielanzeiger mit **1,05"-Displays** ab Firmware 3.x — die Ausführung für einen Außenbahnsteig ebenso wie die für einen Mittelbahnsteig. Für die älteren Anzeiger mit 0,96"-Displays gelten weiterhin die Anleitungen auf [modellbahn-displays.de](https://www.modellbahn-displays.de/anleitungen/).

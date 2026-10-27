@@ -1,13 +1,23 @@
 ---
-title: Zugdaten sichern und wiederherstellen
+title: Sichern und wiederherstellen
 layout: anleitung
 parent: Zugzielanzeiger
 nav_order: 10
 ---
 
-# Zugdaten sichern und wiederherstellen
+# Sichern und wiederherstellen
 
-Das Backuptool sichert die Zugliste eines Gleises in eine Datei auf deinem Computer und spielt sie bei Bedarf wieder ein.
+Für das Sichern gibt es zwei Werkzeuge. Beide findest du im Menü unten links (drei Striche), beide legen eine Datei auf deinem Computer ab und spielen sie bei Bedarf wieder ein.
+
+| | Nur Zugdaten | Komplettes Backup |
+|---|---|---|
+| Menüeintrag | **Züge Backuptool** | **Komplett-Backup** |
+| Was in der Datei steckt | die Zugliste **eines** Gleises | Züge, Bilder und Einstellungen **aller** Gleise |
+| Datei | eine `.json`-Datei je Gleis | eine `.zip`-Datei für den ganzen Anzeiger |
+| Ab Version | alle 3.x-Versionen | 3.2.14 |
+| Typischer Anlass | Zugliste aufheben, Züge auf ein anderes Gleis übertragen | vor einem Update alles sichern und danach zurückholen |
+
+Willst du nach einem Update alles wieder so haben wie vorher, nimm das **Komplette Backup**. Geht es nur um die Züge eines Gleises, reicht das **Züge Backuptool**.
 
 ## Inhalt
 {: .no_toc .text-delta }
@@ -17,7 +27,11 @@ Das Backuptool sichert die Zugliste eines Gleises in eine Datei auf deinem Compu
 
 ---
 
-## Was gesichert wird — und was nicht
+## Nur Zugdaten — Züge Backuptool
+
+Das Züge Backuptool sichert die Zugliste eines Gleises in eine Datei auf deinem Computer und spielt sie bei Bedarf wieder ein.
+
+### Was das Backuptool sichert — und was nicht
 
 Gesichert wird die **Zugliste** eines Gleises — also alle Züge mit Zeit, Zugnummer, Ziel, Via, Hinweis, Wagenreihung und DCC-Adresse.
 
@@ -27,13 +41,11 @@ Gesichert wird die **Zugliste** eines Gleises — also alle Züge mit Zeit, Zugn
 - die **Einstellungen** des Gleises (Anzeigeart, Gleisnummer, Intervall-Zeit, MQTT und so weiter)
 - die **WLAN-Zugangsdaten**
 
-Die Einstellungen sind schnell wieder eingetragen — die Zugliste nicht. Deshalb sichert das Tool genau die. Wie du die übrigen Sachen von Hand sicherst, steht unter [Konfiguration und Bilder sichern](#konfiguration-und-bilder-sichern).
+Die Einstellungen sind schnell wieder eingetragen — die Zugliste nicht. Deshalb sichert das Tool genau die. Alles zusammen sichert ab Version 3.2.14 das [Komplette Backup](#komplettes-backup--alles-in-einer-datei). Bei älteren Versionen sicherst du den Rest [von Hand](#einstellungen-und-bilder-von-hand-sichern-bis-version-3213).
 
-> **Wichtig:** Sichere deine Zugliste **bevor** du ein Update des Dateisystems einspielst. Ein solches Update überschreibt Zugdateien und Bilder.
+> **Wichtig:** Sichere deine Zugliste **bevor** du ein Update des Dateisystems einspielst. Ein solches Update überschreibt Zugdateien, Bilder und Einstellungen.
 
----
-
-## Das Backuptool öffnen
+### Das Backuptool öffnen
 
 Klicke unten links auf das **Menü-Symbol** (drei Striche) und wähle **Züge Backuptool**.
 
@@ -45,9 +57,7 @@ Das Backuptool verbindet sich von selbst mit dem Anzeiger, von dem die Seite kom
 
 Bei der Ausführung für **ein Gleis** gibt es nur **Gleis A**. Wählst du dort **Gleis B**, meldet das Backuptool **Controller nicht erreichbar** — schalte dann zurück auf **Gleis A**.
 
----
-
-## Eine Sicherung erstellen
+### Eine Sicherung erstellen
 
 1. Wähle im Bereich **BACKUP** aus, welches Gleis du sichern willst — **Gleis A** oder **Gleis B**
 2. Klicke auf **Von Controller lesen**. Das Backuptool liest jetzt jeden Zug einzeln — bei vielen Zügen dauert das einige Sekunden. Am Ende steht unten zum Beispiel **18 Züge geladen**
@@ -62,9 +72,7 @@ Die Datei landet im Download-Ordner deines Browsers — je nach Einstellung frag
 
 > **Hinweis:** Hast du zwei Gleise, brauchst du **zwei** Sicherungen — eine je Gleis.
 
----
-
-## Eine Sicherung zurückspielen
+### Eine Sicherung zurückspielen
 
 1. Klicke im Bereich **RESTORE** auf **Datei auswählen** (je nach Browser auch **Choose file**) und wähle deine Sicherungsdatei. Ihr Inhalt erscheint im Textfeld darunter
 2. Wähle darunter das Gleis aus, auf das die Züge sollen
@@ -82,9 +90,7 @@ Das Zurückspielen **ergänzt** die Zugliste: Züge aus der Sicherung, die es au
 
 > **Hinweis:** Ein Gleis fasst höchstens **100 Züge**. Würden es mit der Sicherung mehr, nimmt der Anzeiger die übrigen nicht an und das Backuptool meldet am Ende **Fehler**.
 
----
-
-## Alle Züge löschen
+### Alle Züge löschen
 
 Der Knopf **Alle Züge löschen** räumt die komplette Zugliste des gewählten Gleises ab — praktisch, wenn du von vorn anfangen willst oder eine Sicherung ohne alte Reste zurückspielen möchtest.
 
@@ -98,9 +104,7 @@ Einzelne Züge löschst du in der Liste **Züge auf Controller** mit dem roten *
 
 > **Wichtig:** Erst sichern, dann löschen. Rückgängig machen lässt sich das nicht.
 
----
-
-## Züge auf einen anderen Anzeiger übertragen
+### Züge auf einen anderen Anzeiger übertragen
 
 Hast du mehrere Zugzielanzeiger und willst dieselben Züge auf allen haben:
 
@@ -114,7 +118,96 @@ So kannst du auch einen Bahnsteig mit zwei Gleisen schnell gleich bestücken und
 
 ---
 
-## Konfiguration und Bilder sichern
+## Komplettes Backup — alles in einer Datei
+
+Das **Komplett-Backup** gibt es ab Version **3.2.14**. Es sichert alles, was du auf dem Anzeiger eingerichtet hast, in **eine** Datei — und spielt sie mit wenigen Klicks wieder ein. Danach sieht der Anzeiger aus wie zum Zeitpunkt der Sicherung.
+
+### Was im Komplett-Backup steckt — und was nicht
+
+In der Datei stecken:
+
+- die **Zuglisten** aller Gleise
+- deine **Bilder** aller Gleise
+- die **Einstellungen** der Gleise (Anzeigeart, Gleisnummer, Intervall-Zeit und so weiter)
+- die **Geräte-Einstellungen** wie Geräte-ID und MQTT-Zugang
+
+**Nicht** in der Datei sind:
+
+- die **Weboberfläche** selbst — sie kommt immer mit der Firmware. So bringt das Zurückspielen nach einem Update nicht die alten Seiten zurück
+- die **WLAN-Zugangsdaten**, die **Helligkeit** und die übrigen Einstellungen der [Hintergrundbeleuchtung](../allgemein/hintergrundbeleuchtung.md) — die bleiben bei einem Update ohnehin erhalten
+
+> **Wichtig:** In der Datei steht auch dein **MQTT-Passwort**, falls du eines eingetragen hast. Gib die Datei deshalb nicht einfach weiter.
+
+### Komplett-Backup öffnen
+
+Klicke unten links auf das **Menü-Symbol** (drei Striche) und wähle **Komplett-Backup** — es steht direkt unter **Züge Backuptool**. Oben zeigt die Seite die installierte **Version**, darunter fragt sie **Was möchtest du tun?**
+
+### Alles sichern
+
+1. Klicke auf **Alles sichern**
+2. Der Browser lädt jetzt jede Datei einzeln vom Anzeiger, der Balken zeigt den Fortschritt. Bei vielen Bildern dauert das etwas
+3. Am Ende steht zum Beispiel **✓ Gesichert: Gleis A: 18 Züge, 12 Bilder · Gleis B: 15 Züge, 2 Bilder und die Einstellungen.**
+
+![Die Seite Komplett-Backup nach Alles sichern: oben die installierte Version 3.2.14-beta, darunter die Knöpfe Alles sichern und Sicherung einspielen, im Bereich Alles sichern ein voller Balken und die Meldung Gesichert: Gleis A: 18 Züge, 12 Bilder, Gleis B: 15 Züge, 2 Bilder und die Einstellungen](komplett-backup-gesichert.png){: style="max-width: 80%;" }
+
+Die Datei landet im Download-Ordner deines Browsers — je nach Einstellung fragt der Browser vorher, wo du sie speichern willst. Ihr Name verrät, woher sie stammt: `komplett_`, die IP-Adresse des Anzeigers und das Datum, zum Beispiel `komplett_192-168-178-41_2026-10-27.zip`.
+
+Es ist eine gewöhnliche **ZIP-Datei** — ein Paket, das mehrere Dateien zusammenfasst. Mit einem Doppelklick kannst du hineinschauen, unter Windows wie am Mac. Zum Zurückspielen brauchst du aber die ZIP-Datei selbst, nicht den ausgepackten Ordner.
+
+> **Tipp:** Du kannst die Datei umbenennen, zum Beispiel in `bahnhof-nord-2026-10.zip`. Beim Zurückspielen zählt nur der Inhalt.
+
+### Sicherung einspielen
+
+1. Klicke auf **Sicherung einspielen**
+2. Klicke unter **Datei wählen** auf **Datei auswählen** (je nach Browser auch **Choose File**) und wähle deine ZIP-Datei. Darunter zeigt die Seite, was in der Sicherung steckt: Version, Datum, von welchem Anzeiger sie stammt und wie viele Züge und Bilder je Gleis
+3. Wähle unter **Wie einspielen?**, was passieren soll (siehe unten)
+4. Klicke auf **Einspielen** und bestätige die Rückfrage
+5. Die Seite überträgt jetzt Datei für Datei. Danach startet der Anzeiger neu, die Seite wartet darauf. Lass den Tab so lange offen
+6. Am Ende steht zum Beispiel **Fertig: 50 Dateien eingespielt.** und darunter der Knopf **Zur Startseite**
+
+![Die Seite Komplett-Backup beim Einspielen: unter Datei wählen ist die Sicherung komplett_192-168-178-107_2026-10-27.zip geladen, darunter Version, Datum, Herkunft und die Zahl der Züge und Bilder je Gleis; unter Wie einspielen? ist Alles ersetzen gewählt, darunter der Knopf Einspielen](komplett-backup-einspielen.png){: style="max-width: 80%;" }
+
+Du hast zwei Möglichkeiten:
+
+- **Alles ersetzen** — löscht erst alle Züge, Bilder und Einstellungen auf dem Anzeiger. Danach ist genau der gesicherte Stand drauf, nichts sonst. Das ist die richtige Wahl nach einem Update
+- **Nur Züge und Bilder hinzufügen** — die Einstellungen auf dem Anzeiger bleiben, wie sie sind. Züge und Bilder aus der Sicherung kommen dazu, alles Vorhandene bleibt stehen. Gibt es einen Zug oder ein Bild mit demselben Dateinamen schon, wird es überschrieben. So holst du dir zum Beispiel Züge und Bilder von einem anderen Anzeiger
+
+![Die Seite Komplett-Backup nach dem Einspielen: unter dem Knopf Einspielen steht Fertig: 50 Dateien eingespielt, darunter ein voller Balken, der Knopf Zur Startseite und der Hinweis, die Seite bei Bedarf mit Strg + F5 neu zu laden](komplett-backup-fertig.png){: style="max-width: 80%;" }
+
+> **Wichtig:** **Alles ersetzen** lässt sich nicht rückgängig machen. Bist du unsicher, mach vorher mit **Alles sichern** eine Sicherung vom jetzigen Stand.
+
+Gleis A der Sicherung kommt immer auf Gleis A, Gleis B auf Gleis B. Ein anderes Gleis als Ziel kannst du hier nicht wählen — dafür gibt es das [Züge Backuptool](#züge-auf-einen-anderen-anzeiger-übertragen).
+
+Bevor die Seite etwas ändert, prüft sie, ob alles passt. Hätte ein Gleis danach mehr als **100 Züge** oder reicht der Speicherplatz auf dem Anzeiger nicht, bricht sie mit einer Meldung ab — unten steht dann **Nichts geändert.**
+
+Sieht die Weboberfläche nach dem Einspielen noch aus wie vorher, zeigt dein Browser alte Seiten aus seinem Zwischenspeicher. Lade die Seite dann ohne Zwischenspeicher neu, siehe [Nach dem Update: Seite neu laden](../allgemein/controller-aktualisieren-wlan.md#nach-dem-update-seite-neu-laden).
+
+### Anzeiger mit einem Gleis
+
+Beim Anzeiger für **ein Gleis** gibt es nur **Gleis A**. Die Seite spricht dort von „diesem Controller“ statt von einzelnen Gleisen.
+
+Stammt die Sicherung von einem Anzeiger mit **zwei** Gleisen, spielt die Seite nur **Gleis A** ein. Das zeigt sie schon nach dem Auswählen der Datei an: **Gleis B der Sicherung wird weggelassen – dieser Controller hat nur ein Gleis.**
+
+Umgekehrt geht es auch: Spielst du die Sicherung eines Anzeigers mit einem Gleis auf einen mit zwei Gleisen, ändert sich nur **Gleis A**. Gleis B bleibt, wie es ist — auch bei **Alles ersetzen**.
+
+### Nach einem Update alles zurückholen
+
+Hast du schon Version 3.2.14 oder neuer, nimmt dir die Seite **Firmware-Update** das Sichern ab: In Schritt 1 legt **Alles sichern** genau diese ZIP-Datei an. Nach dem Update führt dich der Knopf **Sicherung einspielen** direkt hierher. Wie das im Einzelnen geht, steht unter [Controller aktualisieren](../allgemein/controller-aktualisieren-wlan.md#weg-1-firmware-update-aus-dem-internet).
+
+Aktualisierst du auf einem anderen Weg, zum Beispiel mit heruntergeladenen Dateien:
+
+1. Vor dem Update: **Komplett-Backup** öffnen und **Alles sichern**
+2. Das Update einspielen
+3. Danach: **Komplett-Backup** öffnen, die Datei auswählen, **Alles ersetzen** und **Einspielen**
+
+Damit sind Züge, Bilder und Einstellungen wieder da — du musst nichts von Hand eintragen.
+
+---
+
+## Einstellungen und Bilder von Hand sichern (bis Version 3.2.13)
+
+Ab Version 3.2.14 nimmt dir das [Komplette Backup](#komplettes-backup--alles-in-einer-datei) diese Arbeit ab. Bei älteren Versionen sicherst du Einstellungen und Bilder so von Hand.
+
 
 In zwei Fällen ist alles weg, was nicht in der Zugsicherung steckt:
 
@@ -150,6 +243,11 @@ Schalte in der Kachel auf **Bilder** um. Klicke dann mit der rechten Maustaste a
 | Nach dem Wiederherstellen sind noch alte Züge da | Das Zurückspielen ergänzt nur. Lösche vorher alle Züge des Gleises, siehe [Alle Züge löschen](#alle-züge-löschen) |
 | **Von Controller lesen** bringt nichts | Prüfe, ob die IP-Adresse stimmt und der Anzeiger eingeschaltet ist |
 | Nach dem Wiederherstellen fehlen Züge | Prüfe, ob das richtige Gleis ausgewählt war |
-| Meine Bilder sind nach dem Wiederherstellen weg | Bilder sind nicht Teil der Sicherung. Lade sie neu hoch — siehe [Bilder statt Züge anzeigen](bilder-anzeigen.md) |
-| Die Einstellungen stimmen nicht mehr | Auch die sind nicht Teil der Sicherung. Trage sie über das Zahnrad **⚙** neu ein |
+| Züge Backuptool: Meine Bilder sind nach dem Wiederherstellen weg | Bilder sind nicht Teil dieser Sicherung — das [Komplette Backup](#komplettes-backup--alles-in-einer-datei) nimmt sie mit. Lade sie neu hoch — siehe [Bilder statt Züge anzeigen](bilder-anzeigen.md) |
+| Züge Backuptool: Die Einstellungen stimmen nicht mehr | Auch die sind nicht Teil dieser Sicherung. Trage sie über das Zahnrad **⚙** neu ein |
 | Nach einem Firmware-Update sind alle Züge weg | Das passiert beim Update des Dateisystems. Spiele deine Sicherung wieder ein |
+| **Komplett-Backup** fehlt im Menü | Das Komplett-Backup gibt es ab Version 3.2.14. Aktualisiere den Anzeiger, siehe [Controller aktualisieren](../allgemein/controller-aktualisieren-wlan.md). Ist die Version schon neu, lade die Seite ohne Zwischenspeicher neu (Strg + F5) |
+| Komplett-Backup: **Einspielen** bricht ab, unten steht **Nichts geändert.** | Die Vorab-Prüfung hat etwas gefunden, die Meldung steht über dem Balken: mehr als 100 Züge auf einem Gleis oder zu wenig Speicherplatz. Mit **Alles ersetzen** statt **Nur Züge und Bilder hinzufügen** wird vorher Platz frei |
+| Komplett-Backup: Die Seite meldet, die Datei sei **keine Komplett-Sicherung** | Wähle die ZIP-Datei, die **Alles sichern** angelegt hat — nicht eine `.json`-Datei aus dem Züge Backuptool und nicht den ausgepackten Ordner |
+| Komplett-Backup: Am Ende steht **Nicht eingespielt:** mit einer Liste von Dateien | Der Anzeiger wurde trotzdem neu gestartet. Spiel die Sicherung noch einmal mit **Alles ersetzen** ein |
+| Komplett-Backup: **Der Controller meldet sich nicht** | Warte einen Moment und öffne dann die Startseite. Drücke sonst kurz **BTN 0** am Controller — das Display zeigt die IP-Adresse |
