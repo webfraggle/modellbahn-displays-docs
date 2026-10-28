@@ -13,7 +13,7 @@ Anleitungen rund um die Tankstellenanzeige: Ersteinrichtung, Konfiguration und e
 
 Am besten der Reihe nach von oben nach unten:
 
-- [Einrichtung & Bedienung](anleitung.md) — Ersteinrichtung und Konfiguration der Preisanzeige
+- [Einrichtung & Bedienung](anleitung.md) — Ersteinrichtung, Konfiguration der Preisanzeige, Taster, Hintergrundbeleuchtung und Helligkeit
 - [Weitere Inhalte anzeigen](anzeige-reihenfolge.md) — mehrere Inhalte nacheinander durchlaufen lassen, zum Beispiel Wetter, Börsenkurse oder eigene Bilder
 - [Eigene API-URL](api.md) — eine eigene Datenquelle statt der voreingestellten Preisabfrage nutzen
 - [Backup & Wiederherstellung](backup-restore.md) — die komplette Konfiguration in einer Datei sichern und wieder einspielen
