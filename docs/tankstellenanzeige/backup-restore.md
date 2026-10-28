@@ -56,7 +56,7 @@ Bewahre diese Datei an einem sicheren Ort auf (Computer, Cloud, USB-Stick). Sie 
 
 **Enthalten:** die komplette Konfiguration — alle Inhalte der Anzeige-Reihenfolge (siehe [Weitere Inhalte anzeigen](anzeige-reihenfolge.md)), die Tankstellen-Einstellungen (Tankstelle, Template, Preise, Zeilen, Intervall) sowie alle hochgeladenen **eigenen Bilder**.
 
-**Nicht enthalten:** die **WLAN-Zugangsdaten**. Sie werden aus Sicherheitsgründen separat gespeichert und über die [WLAN-Konfiguration](../allgemein/wlan-einrichten.md) verwaltet. Nach einem Wiederherstellen auf einem anderen Controller richtest du dort das WLAN also einmalig neu ein.
+**Nicht enthalten:** die **WLAN-Zugangsdaten**. Sie werden aus Sicherheitsgründen separat gespeichert und über die [WLAN-Konfiguration](../allgemein/wlan-einrichten.md) verwaltet. Nach einem Wiederherstellen auf einem anderen Controller richtest du dort das WLAN also einmalig neu ein. Dasselbe gilt für die [Helligkeit](anleitung.md#helligkeit-einstellen) (ab 3.2.15).
 
 ---
 

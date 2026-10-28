@@ -33,6 +33,38 @@ Prüfe, dass das Flachbandkabel zwischen Controller und Display richtig eingeste
 
 Die WLAN-Einrichtung ist bei allen Displays gleich. Die vollständige Anleitung findest du unter [WLAN einrichten](../allgemein/wlan-einrichten.md).
 
+> **Hinweis:** Die allgemeinen Seiten unterscheiden zwischen „Ab Firmware 3.2“ und „Bis Firmware 3.1“. Bei der Tankstellenanzeige gilt der Abschnitt **Ab Firmware 3.2** ab Version **3.2.15**. Mit älteren Versionen (bis 3.0.14) folgst du dem Abschnitt **Bis Firmware 3.1**. Welche Version dein Display hat, siehst du, wenn du kurz **BTN 0** drückst: Die Info-Anzeige zeigt die Nummer ganz unten.
+
+Ab 3.2.15 kann die Tankstellenanzeige sich **zwei WLANs** merken, zum Beispiel dein Heim-WLAN und das im Vereinsheim. Außerdem lassen sich die WLAN-Daten direkt am Controller mit **BTN 0** löschen. Beides steht unter [WLAN einrichten](../allgemein/wlan-einrichten.md#ab-firmware-32).
+
+---
+
+## Taster und Hintergrundbeleuchtung
+
+Ab Version 3.2.15 bedienst du die Tankstellenanzeige mit **BTN 0** genauso wie den Zugzielanzeiger:
+
+- **kurz drücken** — Info-Anzeige mit IP-Adresse und Version ein- oder ausschalten. Nach einer Minute schließt sie sich auch von selbst.
+- **zwei Sekunden halten** bei normaler Anzeige — Hintergrundbeleuchtung umschalten
+- **lange halten bei offener Info-Anzeige** — Countdown, nach acht Sekunden werden die WLAN-Daten gelöscht. Loslassen bricht ab.
+
+Die Displays gibt es mit zwei verschiedenen Schaltungen für die Hintergrundbeleuchtung. Beim Controller mit den Tastern **BTN 0** und **BTN 3** findet die Tankstellenanzeige beim ersten Start heraus, welche angeschlossen ist — dazu braucht sie einmal deine Hilfe. Auf dem Display steht dann **Jetzt BTN0 druecken**, und du bestätigst mit **BTN 0**, während das Display **hell** ist. Wie das genau geht und was du tust, wenn das Display danach dunkel bleibt, steht unter [Hintergrundbeleuchtung](../allgemein/hintergrundbeleuchtung.md) im Abschnitt **Ab Firmware 3.2**.
+
+> **Wichtig:** Diese Abfrage erscheint auch **einmal nach dem Update** von einer älteren Version (bis 3.0.14) auf 3.2.15 oder neuer, weil die alten Versionen die Beleuchtung noch nicht gespeichert haben. Die Tankstellenanzeige startet erst weiter, wenn du **BTN 0** gedrückt hast. Danach kommt die Abfrage nicht wieder.
+
+> **Hinweis:** Die Wege mit **BTN 3** im laufenden Betrieb aus dem Abschnitt „Bis Firmware 3.1“ gibt es bei der Tankstellenanzeige nicht. Die Versionen bis 3.0.14 kennen nur die ursprüngliche Schaltung und lassen sich nicht umschalten.
+
+> **Tipp:** Auf dem 1,14"-Display steht der Countdown zum WLAN-Löschen in zwei Zeilen: **WLAN loeschen** und darunter **in 6 s**.
+
+---
+
+## Helligkeit einstellen
+
+Ab Version 3.2.15 stellst du die Helligkeit der Beleuchtung im Webinterface ein. Öffne **Konfiguration**. Direkt unter der Anzeige-Reihenfolge findest du den Bereich **Helligkeit** mit einem Schieberegler von 20 bis 100 %.
+
+Die neue Helligkeit gilt sofort, sobald du den Regler loslässt. **Konfiguration speichern** brauchst du dafür nicht. Die Einstellung bleibt auch nach einem Neustart erhalten.
+
+> **Hinweis:** Die Helligkeit gehört nicht zum [Backup](backup-restore.md). Wie die WLAN-Daten ist sie direkt im Controller gespeichert. Nach dem Wiederherstellen auf einem anderen Controller stellst du sie dort einmal neu ein.
+
 ---
 
 ## Das Webinterface und das Menü
@@ -132,7 +164,9 @@ Mit dem Knopf **Live-Preise aktualisieren** kannst du jederzeit die neuesten Pre
 
 | Problem | Lösung |
 |---|---|
-| Display bleibt dunkel | Prüfe die Stromversorgung (USB-C-Kabel und Netzteil) sowie das Flachbandkabel zum Display |
+| Display bleibt dunkel | Prüfe die Stromversorgung (USB-C-Kabel und Netzteil) sowie das Flachbandkabel zum Display. Ab 3.2.15: Halte **BTN 0** zwei Sekunden gedrückt, um die Beleuchtung umzuschalten, siehe [Hintergrundbeleuchtung](../allgemein/hintergrundbeleuchtung.md) |
+| Nach dem Update steht **Jetzt BTN0 druecken** auf dem Display | Das ist die einmalige Erkennung der Beleuchtung. Drücke **BTN 0**, während das Display hell ist, siehe [Taster und Hintergrundbeleuchtung](#taster-und-hintergrundbeleuchtung) |
+| Der Bereich **Helligkeit** fehlt in der Konfiguration | Die Firmware ist älter als 3.2.15. Aktualisiere den Controller |
 | Preise werden nicht aktualisiert | Prüfe, ob eine Tankstelle ausgewählt ist und die WLAN-Verbindung steht (LED grün) |
 | Falsche Preise angezeigt | Prüfe die ausgewählte Tankstelle im **Tankstelle**-Eintrag unter **Bearbeiten** |
 | Ich finde die Einstellungen nicht mehr | Alle Preis-Einstellungen liegen im Eintrag **Tankstelle** → **Bearbeiten**. Zwischen den Seiten wechselst du über das **Menü** unten links |
