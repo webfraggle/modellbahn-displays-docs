@@ -47,7 +47,7 @@ Ab Version 3.2.15 bedienst du die Tankstellenanzeige mit **BTN 0** genauso wie d
 - **zwei Sekunden halten** bei normaler Anzeige — Hintergrundbeleuchtung umschalten
 - **lange halten bei offener Info-Anzeige** — Countdown, nach acht Sekunden werden die WLAN-Daten gelöscht. Loslassen bricht ab.
 
-Die Displays gibt es mit zwei verschiedenen Schaltungen für die Hintergrundbeleuchtung. Beim Controller mit den Tastern **BTN 0** und **BTN 3** findet die Tankstellenanzeige beim ersten Start selbst heraus, welche angeschlossen ist. Auf dem Display steht dann **Jetzt BTN0 druecken**, und du bestätigst mit **BTN 0**, während das Display **hell** ist. Wie das genau geht und was du tust, wenn das Display danach dunkel bleibt, steht unter [Hintergrundbeleuchtung](../allgemein/hintergrundbeleuchtung.md) im Abschnitt **Ab Firmware 3.2**.
+Die Displays gibt es mit zwei verschiedenen Schaltungen für die Hintergrundbeleuchtung. Beim Controller mit den Tastern **BTN 0** und **BTN 3** findet die Tankstellenanzeige beim ersten Start heraus, welche angeschlossen ist — dazu braucht sie einmal deine Hilfe. Auf dem Display steht dann **Jetzt BTN0 druecken**, und du bestätigst mit **BTN 0**, während das Display **hell** ist. Wie das genau geht und was du tust, wenn das Display danach dunkel bleibt, steht unter [Hintergrundbeleuchtung](../allgemein/hintergrundbeleuchtung.md) im Abschnitt **Ab Firmware 3.2**.
 
 > **Wichtig:** Diese Abfrage erscheint auch **einmal nach dem Update** von einer älteren Version (bis 3.0.14) auf 3.2.15 oder neuer, weil die alten Versionen die Beleuchtung noch nicht gespeichert haben. Die Tankstellenanzeige startet erst weiter, wenn du **BTN 0** gedrückt hast. Danach kommt die Abfrage nicht wieder.
 
